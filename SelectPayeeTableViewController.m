@@ -17,17 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.payeeArray = [Payee returnPayees];
+    }
+    return self;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 #pragma mark - Table view data source
 
@@ -38,8 +46,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+    self.payeeArray = [Payee returnPayees];
     
-    return 5;
+    int rows = (int)[self.payeeArray count];
+    
+    return rows;
 }
 
 
@@ -47,6 +58,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"payee" forIndexPath:indexPath];
     
     
+    cell.textLabel.text = [[self.payeeArray objectAtIndex:indexPath.row]objectForKey:@"name"];
     
     return cell;
 }

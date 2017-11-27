@@ -29,6 +29,7 @@
 
 - (IBAction)payeeSelectComplete:(id)sender {
     
+    [self.selectPayeeButton setTitle:self.payeeName forState:UIControlStateNormal];
     
     
     

@@ -13,5 +13,11 @@
 
 - (IBAction)payeeSelectComplete:(UIStoryboardSegue *)segue;
 
+@property (strong, nonatomic) NSString *payeeName;
+@property int payeeID;
+
+
+
+@property (weak, nonatomic) IBOutlet UIButton *selectPayeeButton;
 
 @end

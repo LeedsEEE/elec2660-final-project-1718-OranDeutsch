@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<Payee *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nonatomic) int16_t payeeID;
+@property (nonatomic) NSNumber *payeeID;
 @property (nullable, nonatomic, retain) NSSet<Debt *> *debt;
 
 @end

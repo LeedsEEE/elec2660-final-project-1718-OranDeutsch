@@ -15,7 +15,7 @@
     </entity>
     <entity name="Payee" representedClassName=".Payee" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="payeeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="payeeID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="debt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Debt" inverseName="payee" inverseEntity="Debt" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName=".Settings" syncable="YES">

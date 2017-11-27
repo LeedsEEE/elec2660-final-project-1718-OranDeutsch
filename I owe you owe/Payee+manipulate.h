@@ -7,7 +7,19 @@
 //
 
 #import "Payee+CoreDataClass.h"
+#import "AppDelegate.h"
 
-@interface Payee (manipulate)
+@interface Payee (manipulate) 
+
+
+
++ (NSArray *) returnPayees;
+
++ (int)newPayeeID;
+
++ (NSDictionary *)payeeEntityToDictonary:(Debt *)payee;
+
++ (Payee *) AddDebtFromDictionary:(NSDictionary *)debtInfo;
+
 
 @end

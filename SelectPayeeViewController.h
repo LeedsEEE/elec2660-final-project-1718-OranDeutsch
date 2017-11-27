@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SelectPayeeTableViewController.h"
+#import "NewDebtViewController.h"
 
 
 
@@ -19,7 +20,14 @@
 @property (strong, nonatomic) UITableViewController *SelectPayeeTableController;
 
 
-@property (weak, nonatomic) IBOutlet UIButton *newpayee;
+- (IBAction)payeeFromTextField:(id)sender;
+- (IBAction)importPayeeFromContacts:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *payeeNameField;
 @property (weak, nonatomic) IBOutlet UIButton *payeeFromContacts;
+
+
+
 
 @end

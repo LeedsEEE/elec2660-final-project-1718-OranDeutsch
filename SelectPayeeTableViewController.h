@@ -11,4 +11,8 @@
 
 @interface SelectPayeeTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) NSArray *payeeArray;
+
++(void)refresh;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "SelectPayeeViewController.h"
 
+
 @interface SelectPayeeViewController ()
 
 @end
@@ -29,14 +30,60 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NewDebtViewController *destinationViewController = [segue destinationViewController];
+    
+    NSIndexPath *indexPath = [self.payeeTable indexPathForSelectedRow];
+
+    NSLog(@"row selected = %i", (int)indexPath.row);
+    
+    if ([[segue identifier] isEqualToString:@"payeeSelected"]) {
+    
+        
+        NSArray *tempPayees = [Payee returnPayees];
+        
+        NSNumber *tempPayeeID = [[tempPayees objectAtIndex: indexPath.row] objectForKey:@"payeeID"];
+        
+        destinationViewController.payeeName = [[tempPayees objectAtIndex: indexPath.row] objectForKey:@"name"];
+        destinationViewController.payeeID = [tempPayeeID intValue];
+        
+        
+    }
+    
+    
+
 }
-*/
+
+
+- (IBAction)payeeFromTextField:(id)sender {
+    
+    NSString *payeeName = self.payeeNameField.text;
+    int payeeID = [Payee newPayeeID];
+    
+    NSDictionary *newPayee = @{@"name" : payeeName,
+                               @"payeeID" : [NSNumber numberWithInt:payeeID]};
+    
+    
+    
+    
+    [Payee AddDebtFromDictionary:newPayee];
+    [self.payeeTable reloadData];
+    
+    self.payeeNameField.text = @"payeeSelected";
+    
+    
+}
+
+
+- (IBAction)importPayeeFromContacts:(id)sender {
+         
+    
+    
+}
 
 @end
