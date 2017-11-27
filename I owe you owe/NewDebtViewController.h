@@ -7,15 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataModel.h"
 
 
 @interface NewDebtViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *NameFeild;
-@property (weak, nonatomic) IBOutlet UITextField *AmountFeild;
+- (IBAction)payeeSelectComplete:(UIStoryboardSegue *)segue;
 
-@property (strong, nonatomic) Debt *debt;
-@property (nonatomic, assign) DataModel *data;
 
 @end

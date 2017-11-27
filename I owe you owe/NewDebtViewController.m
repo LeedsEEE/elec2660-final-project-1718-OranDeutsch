@@ -27,7 +27,7 @@
 }
 
 
-- (IBAction)newDebt:(id)sender {
+- (IBAction)payeeSelectComplete:(id)sender {
     
     
     

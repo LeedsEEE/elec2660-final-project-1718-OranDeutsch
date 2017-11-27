@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Debt+manipulate.h"
 
 @interface IOweTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 

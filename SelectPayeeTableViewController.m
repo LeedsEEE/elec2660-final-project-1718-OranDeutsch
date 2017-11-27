@@ -1,30 +1,33 @@
 //
-//  IOweTableViewController.m
+//  SelectPayeeTableViewController.m
 //  I owe you owe
 //
-//  Created by Oran Deutsch [el16od] on 21/11/2017.
+//  Created by Oran Deutsch [el16od] on 27/11/2017.
 //  Copyright © 2017 Oran Deutsch [el16od]. All rights reserved.
 //
 
-#import "IOweTableViewController.h"
+#import "SelectPayeeTableViewController.h"
 
-@interface IOweTableViewController () 
+@interface SelectPayeeTableViewController ()
 
 @end
 
-@implementation IOweTableViewController
+@implementation SelectPayeeTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -34,26 +37,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     
-    
-    NSInteger numberOfRows;
-    
-    if (section == 0) {
-        numberOfRows = 5;
-    }
-    
-    return numberOfRows;
+    return 5;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"iowecell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"payee" forIndexPath:indexPath];
     
-    if(indexPath.section == 0) {
-        
-        
-        
-    }
+    
     
     return cell;
 }

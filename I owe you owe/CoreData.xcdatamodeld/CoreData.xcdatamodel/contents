@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Debt" representedClassName=".Debt" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dateDue" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="datePaid" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dateStarted" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="debtID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imOwedDebt" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="infomation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iOweDebt" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isPaid" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sendNotification" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="payee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Payee" inverseName="debt" inverseEntity="Payee" syncable="YES"/>
+    </entity>
+    <entity name="Payee" representedClassName=".Payee" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="payeeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="debt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Debt" inverseName="payee" inverseEntity="Debt" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName=".Settings" syncable="YES">
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Debt" positionX="106" positionY="189" width="128" height="210"/>
+        <element name="Payee" positionX="-92" positionY="135" width="128" height="88"/>
+        <element name="Settings" positionX="34" positionY="-114" width="128" height="58"/>
+    </elements>
+</model>
