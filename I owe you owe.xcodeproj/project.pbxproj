@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62867A301FC454BD00AED0FF /* IOweTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62867A2F1FC454BD00AED0FF /* IOweTableViewController.m */; };
+		62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62867A321FC454DF00AED0FF /* ImOwedTableViewController.m */; };
+		62B0A3D51FC4795E008C7A4A /* ViewDebtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */; };
+		62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */; };
 		62D4D84F1FC4269500F6B1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D84E1FC4269500F6B1D4 /* main.m */; };
 		62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8511FC4269500F6B1D4 /* AppDelegate.m */; };
-		62D4D8551FC4269500F6B1D4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8541FC4269500F6B1D4 /* FirstViewController.m */; };
-		62D4D8581FC4269500F6B1D4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8571FC4269500F6B1D4 /* SecondViewController.m */; };
+		62D4D8581FC4269500F6B1D4 /* DebtHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */; };
 		62D4D85B1FC4269500F6B1D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D4D8591FC4269500F6B1D4 /* Main.storyboard */; };
 		62D4D85D1FC4269500F6B1D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */; };
 		62D4D8601FC4269500F6B1D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */; };
 		62D4D86B1FC4269500F6B1D4 /* I_owe_you_oweTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D86A1FC4269500F6B1D4 /* I_owe_you_oweTests.m */; };
 		62D4D8761FC4269500F6B1D4 /* I_owe_you_oweUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8751FC4269500F6B1D4 /* I_owe_you_oweUITests.m */; };
+		62D4D8851FC4272E00F6B1D4 /* NewDebtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8841FC4272E00F6B1D4 /* NewDebtViewController.m */; };
+		62D4D8881FC429BE00F6B1D4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8871FC429BE00F6B1D4 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +41,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62867A2E1FC454BD00AED0FF /* IOweTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOweTableViewController.h; sourceTree = "<group>"; };
+		62867A2F1FC454BD00AED0FF /* IOweTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOweTableViewController.m; sourceTree = "<group>"; };
+		62867A311FC454DF00AED0FF /* ImOwedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImOwedTableViewController.h; sourceTree = "<group>"; };
+		62867A321FC454DF00AED0FF /* ImOwedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImOwedTableViewController.m; sourceTree = "<group>"; };
+		62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewDebtViewController.h; sourceTree = "<group>"; };
+		62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDebtViewController.m; sourceTree = "<group>"; };
+		62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingDebtsViewController.h; sourceTree = "<group>"; };
+		62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OngoingDebtsViewController.m; sourceTree = "<group>"; };
 		62D4D84A1FC4269500F6B1D4 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I owe you owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D4D84E1FC4269500F6B1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62D4D8501FC4269500F6B1D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62D4D8511FC4269500F6B1D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		62D4D8531FC4269500F6B1D4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		62D4D8541FC4269500F6B1D4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		62D4D8561FC4269500F6B1D4 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		62D4D8571FC4269500F6B1D4 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		62D4D8561FC4269500F6B1D4 /* DebtHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebtHistoryViewController.h; sourceTree = "<group>"; };
+		62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebtHistoryViewController.m; sourceTree = "<group>"; };
 		62D4D85A1FC4269500F6B1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62D4D85F1FC4269500F6B1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +65,10 @@
 		62D4D8711FC4269500F6B1D4 /* I owe you oweUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D4D8751FC4269500F6B1D4 /* I_owe_you_oweUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I_owe_you_oweUITests.m; sourceTree = "<group>"; };
 		62D4D8771FC4269500F6B1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62D4D8831FC4272E00F6B1D4 /* NewDebtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDebtViewController.h; sourceTree = "<group>"; };
+		62D4D8841FC4272E00F6B1D4 /* NewDebtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDebtViewController.m; sourceTree = "<group>"; };
+		62D4D8861FC429BE00F6B1D4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		62D4D8871FC429BE00F6B1D4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62867A341FC454E600AED0FF /* Table View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				62867A2E1FC454BD00AED0FF /* IOweTableViewController.h */,
+				62867A2F1FC454BD00AED0FF /* IOweTableViewController.m */,
+				62867A311FC454DF00AED0FF /* ImOwedTableViewController.h */,
+				62867A321FC454DF00AED0FF /* ImOwedTableViewController.m */,
+			);
+			name = "Table View Controllers";
+			sourceTree = "<group>";
+		};
 		62D4D8411FC4269500F6B1D4 = {
 			isa = PBXGroup;
 			children = (
@@ -106,13 +132,20 @@
 			children = (
 				62D4D8501FC4269500F6B1D4 /* AppDelegate.h */,
 				62D4D8511FC4269500F6B1D4 /* AppDelegate.m */,
-				62D4D8531FC4269500F6B1D4 /* FirstViewController.h */,
-				62D4D8541FC4269500F6B1D4 /* FirstViewController.m */,
-				62D4D8561FC4269500F6B1D4 /* SecondViewController.h */,
-				62D4D8571FC4269500F6B1D4 /* SecondViewController.m */,
+				62D4D8561FC4269500F6B1D4 /* DebtHistoryViewController.h */,
+				62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */,
 				62D4D8591FC4269500F6B1D4 /* Main.storyboard */,
-				62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */,
+				62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */,
+				62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */,
+				62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */,
+				62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */,
+				62D4D8861FC429BE00F6B1D4 /* SettingsViewController.h */,
+				62D4D8871FC429BE00F6B1D4 /* SettingsViewController.m */,
+				62D4D8831FC4272E00F6B1D4 /* NewDebtViewController.h */,
+				62D4D8841FC4272E00F6B1D4 /* NewDebtViewController.m */,
+				62867A341FC454E600AED0FF /* Table View Controllers */,
 				62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */,
+				62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */,
 				62D4D8611FC4269500F6B1D4 /* Info.plist */,
 				62D4D84D1FC4269500F6B1D4 /* Supporting Files */,
 			);
@@ -278,10 +311,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62D4D8581FC4269500F6B1D4 /* SecondViewController.m in Sources */,
+				62D4D8581FC4269500F6B1D4 /* DebtHistoryViewController.m in Sources */,
+				62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */,
 				62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */,
-				62D4D8551FC4269500F6B1D4 /* FirstViewController.m in Sources */,
+				62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */,
+				62D4D8881FC429BE00F6B1D4 /* SettingsViewController.m in Sources */,
 				62D4D84F1FC4269500F6B1D4 /* main.m in Sources */,
+				62D4D8851FC4272E00F6B1D4 /* NewDebtViewController.m in Sources */,
+				62B0A3D51FC4795E008C7A4A /* ViewDebtViewController.m in Sources */,
+				62867A301FC454BD00AED0FF /* IOweTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +551,7 @@
 				62D4D87C1FC4269500F6B1D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62D4D87D1FC4269500F6B1D4 /* Build configuration list for PBXNativeTarget "I owe you oweTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +560,7 @@
 				62D4D87F1FC4269500F6B1D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62D4D8801FC4269500F6B1D4 /* Build configuration list for PBXNativeTarget "I owe you oweUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +569,7 @@
 				62D4D8821FC4269500F6B1D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

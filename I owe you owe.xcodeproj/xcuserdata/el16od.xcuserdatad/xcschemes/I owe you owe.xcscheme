@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
+               BuildableName = "I owe you owe.app"
+               BlueprintName = "I owe you owe"
+               ReferencedContainer = "container:I owe you owe.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "62D4D8651FC4269500F6B1D4"
+               BuildableName = "I owe you oweTests.xctest"
+               BlueprintName = "I owe you oweTests"
+               ReferencedContainer = "container:I owe you owe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "62D4D8701FC4269500F6B1D4"
+               BuildableName = "I owe you oweUITests.xctest"
+               BlueprintName = "I owe you oweUITests"
+               ReferencedContainer = "container:I owe you owe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
+            BuildableName = "I owe you owe.app"
+            BlueprintName = "I owe you owe"
+            ReferencedContainer = "container:I owe you owe.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
+            BuildableName = "I owe you owe.app"
+            BlueprintName = "I owe you owe"
+            ReferencedContainer = "container:I owe you owe.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
+            BuildableName = "I owe you owe.app"
+            BlueprintName = "I owe you owe"
+            ReferencedContainer = "container:I owe you owe.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

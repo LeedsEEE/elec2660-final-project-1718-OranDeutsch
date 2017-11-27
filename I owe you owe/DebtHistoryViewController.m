@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  I owe you owe
 //
 //  Created by Oran Deutsch [el16od] on 21/11/2017.
 //  Copyright © 2017 Oran Deutsch [el16od]. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "DebtHistoryViewController.h"
 
-@interface FirstViewController ()
+@interface DebtHistoryViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation DebtHistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

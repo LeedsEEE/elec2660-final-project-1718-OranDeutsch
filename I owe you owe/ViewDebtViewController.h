@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ViewDebtViewController.h
 //  I owe you owe
 //
 //  Created by Oran Deutsch [el16od] on 21/11/2017.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface ViewDebtViewController : UIViewController
+
 
 
 @end
-
