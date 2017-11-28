@@ -27,11 +27,45 @@
 }
 
 
+
+#pragma mark exit navigation
+
 - (IBAction)payeeSelectComplete:(id)sender {
     
     [self.selectPayeeButton setTitle:self.payeeName forState:UIControlStateNormal];
     
     
+}
+
+- (IBAction)dateSelectComplete:(UIStoryboardSegue *)segue{
+    
+    
+    //conversion method found on stack overflow by user : Adam Richardson
+    //https://stackoverflow.com/questions/37117129/ios-convert-a-nsdate-object-into-a-string-to-get-the-current-time
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setCalendar:[NSCalendar currentCalendar]];
+    [dateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
+    [dateFormatter setDateFormat:@"M.d.y"];
+    
+    NSString *dateString = [dateFormatter stringFromDate:self.dueDate];
+    
+    NSLog(@"returned date = %@", self.dueDate);
+    
+    [self.selectDateButton setTitle:dateString forState:UIControlStateNormal];
+    
+    
+}
+- (IBAction)amountSelectComplete:(UIStoryboardSegue *)segue{
+    
+    
+    NSString *amountpreview = [NSString stringWithFormat:@"%.2f",[self.amount floatValue]];
+    
+    
+    
+    [self.selectAmountButton setTitle:amountpreview forState:UIControlStateNormal];
     
     
 }

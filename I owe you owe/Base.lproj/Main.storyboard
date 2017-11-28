@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -388,13 +389,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmA-Ii-PBO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmA-Ii-PBO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Select Date">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="YG1-Lv-AvN" kind="show" id="fdx-VR-3rm"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsL-qw-VGy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsL-qw-VGy">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Select Payee">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -403,11 +409,15 @@
                                     <segue destination="Jpn-Da-ibD" kind="show" id="IJo-mz-jGQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nu-gd-szP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nu-gd-szP">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Enter Amount">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BSN-cn-vzg" kind="show" id="dJd-rj-QWD"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uba-Zh-oQD"/>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter debt description here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eBb-BK-YRG">
@@ -458,6 +468,8 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="7TF-i1-Jdd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="selectAmountButton" destination="5Nu-gd-szP" id="XJ4-h3-uJx"/>
+                        <outlet property="selectDateButton" destination="YmA-Ii-PBO" id="WBi-cA-sCm"/>
                         <outlet property="selectPayeeButton" destination="hsL-qw-VGy" id="F5j-GU-a83"/>
                     </connections>
                 </viewController>
@@ -498,7 +510,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="payee" textLabel="cjf-fL-dRb" style="IBUITableViewCellStyleDefault" id="cTI-1X-OOM">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cTI-1X-OOM" id="eXy-PT-wlL">
                                             <frame key="frameInset" width="310" height="43"/>
@@ -552,10 +564,57 @@
             </objects>
             <point key="canvasLocation" x="2351" y="1178"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Due Date-->
+        <scene sceneID="nTg-i9-Tpy">
+            <objects>
+                <viewController title="Select Due Date" id="YG1-Lv-AvN" customClass="SelectDateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iHn-3h-taS"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2a-7y-OM1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CrE-ck-Mli">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZkH-dA-Tbt">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZkH-dA-Tbt" secondAttribute="height" multiplier="125:72" id="fxJ-TE-iOf"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="533505121.368177">
+                                    <!--2017-11-27 19:52:01 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-2f-D9o">
+                                <state key="normal" title="Save Date"/>
+                                <connections>
+                                    <action selector="selectDate:" destination="YG1-Lv-AvN" eventType="touchUpInside" id="JV9-dz-60y"/>
+                                    <segue destination="teM-bv-DrJ" kind="unwind" identifier="dateSelected" unwindAction="dateSelectComplete:" id="isP-Xd-C4P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cMa-2f-D9o" firstAttribute="trailing" secondItem="CrE-ck-Mli" secondAttribute="trailingMargin" id="BgC-LF-uSw"/>
+                            <constraint firstItem="cMa-2f-D9o" firstAttribute="leading" secondItem="CrE-ck-Mli" secondAttribute="leadingMargin" id="QZT-6w-aQ2"/>
+                            <constraint firstItem="ZkH-dA-Tbt" firstAttribute="centerY" secondItem="CrE-ck-Mli" secondAttribute="centerY" id="XsK-kC-ewa"/>
+                            <constraint firstItem="N2a-7y-OM1" firstAttribute="top" secondItem="cMa-2f-D9o" secondAttribute="bottom" constant="8" id="fEi-or-tDN"/>
+                            <constraint firstItem="ZkH-dA-Tbt" firstAttribute="centerX" secondItem="CrE-ck-Mli" secondAttribute="centerX" id="ni7-yv-s5z"/>
+                            <constraint firstItem="ZkH-dA-Tbt" firstAttribute="width" secondItem="CrE-ck-Mli" secondAttribute="width" id="rFX-bs-xfk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="ZkH-dA-Tbt" id="ADd-zk-vWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTo-9h-DDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="teM-bv-DrJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="2023.5382308845578"/>
+        </scene>
+        <!--Enter Amount-->
         <scene sceneID="obN-K3-9PM">
             <objects>
-                <viewController id="BSN-cn-vzg" sceneMemberID="viewController">
+                <viewController title="Enter Amount" id="BSN-cn-vzg" customClass="SelectAmountViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EwA-nV-H37"/>
                         <viewControllerLayoutGuide type="bottom" id="0Pf-Sf-US6"/>
@@ -563,12 +622,47 @@
                     <view key="view" contentMode="scaleToFill" id="6yo-9Y-Zvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyW-p6-VIG">
+                                <state key="normal" title="Select Amount"/>
+                                <connections>
+                                    <segue destination="cSR-Jz-d17" kind="unwind" identifier="amountSelected" unwindAction="amountSelectComplete:" id="oCP-ay-4nq"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qc0-QY-1xE">
+                                <connections>
+                                    <outlet property="dataSource" destination="BSN-cn-vzg" id="4nF-CU-37V"/>
+                                    <outlet property="delegate" destination="BSN-cn-vzg" id="orQ-5s-3GK"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-uC-EnZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Pf-Sf-US6" firstAttribute="top" secondItem="KyW-p6-VIG" secondAttribute="bottom" constant="8" id="M17-vM-ULt"/>
+                            <constraint firstItem="qc0-QY-1xE" firstAttribute="centerY" secondItem="6yo-9Y-Zvo" secondAttribute="centerY" id="ZgQ-rf-3rx"/>
+                            <constraint firstItem="p9R-uC-EnZ" firstAttribute="leading" secondItem="6yo-9Y-Zvo" secondAttribute="leadingMargin" id="eAd-sr-usZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p9R-uC-EnZ" secondAttribute="trailing" id="jhc-08-eWa"/>
+                            <constraint firstItem="KyW-p6-VIG" firstAttribute="trailing" secondItem="6yo-9Y-Zvo" secondAttribute="trailingMargin" id="n9O-UP-rvA"/>
+                            <constraint firstItem="qc0-QY-1xE" firstAttribute="centerX" secondItem="6yo-9Y-Zvo" secondAttribute="centerX" id="sOc-mV-q4U"/>
+                            <constraint firstItem="KyW-p6-VIG" firstAttribute="leading" secondItem="6yo-9Y-Zvo" secondAttribute="leadingMargin" id="sX8-wU-9pF"/>
+                            <constraint firstItem="qc0-QY-1xE" firstAttribute="width" secondItem="6yo-9Y-Zvo" secondAttribute="width" id="tpX-ad-zP2"/>
+                            <constraint firstItem="qc0-QY-1xE" firstAttribute="top" secondItem="p9R-uC-EnZ" secondAttribute="bottom" constant="8" id="xV0-a7-S6N"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="p9R-uC-EnZ" id="PZL-H2-1v2"/>
+                        <outlet property="amountPicker" destination="qc0-QY-1xE" id="4cO-vh-cpv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbi-XQ-p4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cSR-Jz-d17" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="1835"/>
+            <point key="canvasLocation" x="1706.4000000000001" y="1834.6326836581711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
