@@ -13,14 +13,15 @@
 		621A37EF1FCC7230005C4978 /* SelectPayeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37EE1FCC7230005C4978 /* SelectPayeeTableViewController.m */; };
 		621A37F81FCC86FD005C4978 /* Payee+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F11FCC86FD005C4978 /* Payee+CoreDataClass.m */; };
 		621A37F91FCC86FD005C4978 /* Payee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */; };
-		621A37FA1FCC86FD005C4978 /* Debt+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F51FCC86FD005C4978 /* Debt+CoreDataClass.m */; };
-		621A37FB1FCC86FD005C4978 /* Debt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F71FCC86FD005C4978 /* Debt+CoreDataProperties.m */; };
 		6262BD181FCD61BF008C4D02 /* SelectAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6262BD171FCD61BF008C4D02 /* SelectAmountViewController.m */; };
 		6262BD1C1FCD763D008C4D02 /* SelectDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6262BD1B1FCD763D008C4D02 /* SelectDateViewController.m */; };
 		62867A301FC454BD00AED0FF /* IOweTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62867A2F1FC454BD00AED0FF /* IOweTableViewController.m */; };
 		62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62867A321FC454DF00AED0FF /* ImOwedTableViewController.m */; };
 		62B0A3D51FC4795E008C7A4A /* ViewDebtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */; };
 		62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */; };
+		62CE78D61FCDC32A00C9A905 /* Debt+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */; };
+		62CE78D71FCDC32A00C9A905 /* Debt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */; };
+		62CE78DA1FCDCFB300C9A905 /* forward_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 62CE78D91FCDCFB300C9A905 /* forward_arrow.png */; };
 		62D4D84F1FC4269500F6B1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D84E1FC4269500F6B1D4 /* main.m */; };
 		62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8511FC4269500F6B1D4 /* AppDelegate.m */; };
 		62D4D8581FC4269500F6B1D4 /* DebtHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */; };
@@ -67,10 +68,6 @@
 		621A37F11FCC86FD005C4978 /* Payee+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payee+CoreDataClass.m"; sourceTree = "<group>"; };
 		621A37F21FCC86FD005C4978 /* Payee+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Payee+CoreDataProperties.h"; sourceTree = "<group>"; };
 		621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payee+CoreDataProperties.m"; sourceTree = "<group>"; };
-		621A37F41FCC86FD005C4978 /* Debt+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debt+CoreDataClass.h"; sourceTree = "<group>"; };
-		621A37F51FCC86FD005C4978 /* Debt+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataClass.m"; sourceTree = "<group>"; };
-		621A37F61FCC86FD005C4978 /* Debt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debt+CoreDataProperties.h"; sourceTree = "<group>"; };
-		621A37F71FCC86FD005C4978 /* Debt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6262BD161FCD61BF008C4D02 /* SelectAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectAmountViewController.h; path = ../SelectAmountViewController.h; sourceTree = "<group>"; };
 		6262BD171FCD61BF008C4D02 /* SelectAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectAmountViewController.m; path = ../SelectAmountViewController.m; sourceTree = "<group>"; };
 		6262BD1A1FCD763D008C4D02 /* SelectDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDateViewController.h; sourceTree = "<group>"; };
@@ -83,6 +80,12 @@
 		62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDebtViewController.m; sourceTree = "<group>"; };
 		62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingDebtsViewController.h; sourceTree = "<group>"; };
 		62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OngoingDebtsViewController.m; sourceTree = "<group>"; };
+		62CE78D21FCDC32A00C9A905 /* Debt+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debt+CoreDataClass.h"; sourceTree = "<group>"; };
+		62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataClass.m"; sourceTree = "<group>"; };
+		62CE78D41FCDC32A00C9A905 /* Debt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debt+CoreDataProperties.h"; sourceTree = "<group>"; };
+		62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataProperties.m"; sourceTree = "<group>"; };
+		62CE78D81FCDC39700C9A905 /* Debt+manipulate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Debt+manipulate.h"; sourceTree = "<group>"; };
+		62CE78D91FCDCFB300C9A905 /* forward_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward_arrow.png; path = ../../../../Downloads/forward_arrow.png; sourceTree = "<group>"; };
 		62D4D84A1FC4269500F6B1D4 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I owe you owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D4D84E1FC4269500F6B1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62D4D8501FC4269500F6B1D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 		62D4D8871FC429BE00F6B1D4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		62E9E50A1FCC0F0000670472 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		62E9E50E1FCC155F00670472 /* I owe you owe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "I owe you owe-Bridging-Header.h"; sourceTree = "<group>"; };
-		62E9E5301FCC172F00670472 /* Debt+manipulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debt+manipulate.h"; sourceTree = "<group>"; };
 		62E9E5311FCC172F00670472 /* Debt+manipulate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+manipulate.m"; sourceTree = "<group>"; };
 		62E9E5331FCC177500670472 /* Payee+manipulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Payee+manipulate.h"; sourceTree = "<group>"; };
 		62E9E5341FCC177500670472 /* Payee+manipulate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payee+manipulate.m"; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			name = "Table View Controllers";
 			sourceTree = "<group>";
 		};
+		62CE78DB1FCDCFBF00C9A905 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				62CE78D91FCDCFB300C9A905 /* forward_arrow.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		62D4D8411FC4269500F6B1D4 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 				62D4D8871FC429BE00F6B1D4 /* SettingsViewController.m */,
 				62D4D8831FC4272E00F6B1D4 /* NewDebtViewController.h */,
 				62D4D8841FC4272E00F6B1D4 /* NewDebtViewController.m */,
+				62CE78DB1FCDCFBF00C9A905 /* icons */,
 				6262BD191FCD7618008C4D02 /* new debt add-on controllers */,
 				62E9E50D1FCC0F2300670472 /* CoreData files */,
 				62867A341FC454E600AED0FF /* Table View Controllers */,
@@ -252,11 +263,11 @@
 		62E9E52D1FCC15E800670472 /* Debt */ = {
 			isa = PBXGroup;
 			children = (
-				621A37F41FCC86FD005C4978 /* Debt+CoreDataClass.h */,
-				621A37F51FCC86FD005C4978 /* Debt+CoreDataClass.m */,
-				621A37F61FCC86FD005C4978 /* Debt+CoreDataProperties.h */,
-				621A37F71FCC86FD005C4978 /* Debt+CoreDataProperties.m */,
-				62E9E5301FCC172F00670472 /* Debt+manipulate.h */,
+				62CE78D21FCDC32A00C9A905 /* Debt+CoreDataClass.h */,
+				62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */,
+				62CE78D41FCDC32A00C9A905 /* Debt+CoreDataProperties.h */,
+				62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */,
+				62CE78D81FCDC39700C9A905 /* Debt+manipulate.h */,
 				62E9E5311FCC172F00670472 /* Debt+manipulate.m */,
 			);
 			name = Debt;
@@ -397,6 +408,7 @@
 			files = (
 				62D4D8601FC4269500F6B1D4 /* LaunchScreen.storyboard in Resources */,
 				62D4D85D1FC4269500F6B1D4 /* Assets.xcassets in Resources */,
+				62CE78DA1FCDCFB300C9A905 /* forward_arrow.png in Resources */,
 				62D4D85B1FC4269500F6B1D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,17 +435,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				62D4D8581FC4269500F6B1D4 /* DebtHistoryViewController.m in Sources */,
+				62CE78D71FCDC32A00C9A905 /* Debt+CoreDataProperties.m in Sources */,
 				621A37EF1FCC7230005C4978 /* SelectPayeeTableViewController.m in Sources */,
 				62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */,
 				62E9E50B1FCC0F0000670472 /* CoreData.xcdatamodeld in Sources */,
+				62CE78D61FCDC32A00C9A905 /* Debt+CoreDataClass.m in Sources */,
 				621A37DE1FCC6892005C4978 /* Settings+CoreDataProperties.m in Sources */,
 				62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */,
-				621A37FB1FCC86FD005C4978 /* Debt+CoreDataProperties.m in Sources */,
 				621A37F81FCC86FD005C4978 /* Payee+CoreDataClass.m in Sources */,
 				62E9E5321FCC172F00670472 /* Debt+manipulate.m in Sources */,
 				62E9E5351FCC177500670472 /* Payee+manipulate.m in Sources */,
 				62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */,
-				621A37FA1FCC86FD005C4978 /* Debt+CoreDataClass.m in Sources */,
 				621A37F91FCC86FD005C4978 /* Payee+CoreDataProperties.m in Sources */,
 				62D4D8881FC429BE00F6B1D4 /* SettingsViewController.m in Sources */,
 				621A37DD1FCC6892005C4978 /* Settings+CoreDataClass.m in Sources */,

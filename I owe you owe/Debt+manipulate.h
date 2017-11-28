@@ -7,7 +7,21 @@
 //
 
 #import "Debt+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface Debt (manipulate)
+
++ (int)returnAmountOfDebts;
+
++ (Debt *) AddDebtFromDictionary:(NSDictionary *)debtInfo;
+
+//+ (NSArray *)returnDebts: isPaid:(BOOL)isPaid IOwe:(BOOL)IOwe;
+
++ (NSDictionary *)debtToDictionary:(Debt *)debtInfo;
+
++ (NSDictionary *)ViewDebtFromId: (int)debtID;
+
++ (void)deleteDebtFromID: (int)DebtID;
+
 
 @end

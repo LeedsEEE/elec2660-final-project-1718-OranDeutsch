@@ -354,6 +354,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payee: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waB-PE-x5X">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="uhg-60-AZO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -361,7 +364,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTJ-xD-kJk">
                                 <state key="normal" title="New Debt"/>
                                 <connections>
-                                    <action selector="newDebt:" destination="15X-5a-6j6" eventType="touchUpInside" id="Tr6-wy-yfY"/>
+                                    <action selector="createNewDebt:" destination="15X-5a-6j6" eventType="touchUpInside" id="pJv-Rz-YzM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payee Owes me" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-ec-0uF">
@@ -432,29 +435,32 @@
                             <constraint firstItem="3B3-At-MCB" firstAttribute="leading" secondItem="OlZ-DM-Q7V" secondAttribute="leadingMargin" id="0rs-4g-Vcb"/>
                             <constraint firstItem="3B3-At-MCB" firstAttribute="top" secondItem="CNE-CO-1CO" secondAttribute="bottom" constant="16" id="4XQ-z3-Goe"/>
                             <constraint firstItem="waB-PE-x5X" firstAttribute="top" secondItem="oj0-Lh-gDB" secondAttribute="bottom" constant="8" id="4hL-08-l9p"/>
-                            <constraint firstItem="5Nu-gd-szP" firstAttribute="trailing" secondItem="OlZ-DM-Q7V" secondAttribute="trailingMargin" id="4hR-Ti-eBm"/>
-                            <constraint firstItem="uba-Zh-oQD" firstAttribute="trailing" secondItem="OlZ-DM-Q7V" secondAttribute="trailingMargin" id="5sU-55-WQl"/>
+                            <constraint firstItem="5Nu-gd-szP" firstAttribute="trailing" secondItem="hsL-qw-VGy" secondAttribute="trailing" id="4us-lW-91f"/>
+                            <constraint firstItem="5Nu-gd-szP" firstAttribute="trailing" secondItem="hsL-qw-VGy" secondAttribute="trailing" id="5MT-k7-NNI"/>
                             <constraint firstItem="XTJ-xD-kJk" firstAttribute="leading" secondItem="OlZ-DM-Q7V" secondAttribute="leadingMargin" id="7jD-8i-Nzx"/>
                             <constraint firstItem="hsL-qw-VGy" firstAttribute="centerY" secondItem="waB-PE-x5X" secondAttribute="centerY" id="8KA-LJ-Iwf"/>
                             <constraint firstItem="Zsi-YE-zrK" firstAttribute="top" secondItem="3B3-At-MCB" secondAttribute="bottom" constant="16" id="8yJ-l2-wj1"/>
                             <constraint firstItem="CNE-CO-1CO" firstAttribute="width" secondItem="waB-PE-x5X" secondAttribute="width" id="B0M-jg-rc0"/>
                             <constraint firstItem="CNE-CO-1CO" firstAttribute="top" secondItem="BPp-Lw-pkI" secondAttribute="bottom" constant="16" id="Bb9-OS-Fnb"/>
                             <constraint firstItem="eBb-BK-YRG" firstAttribute="trailing" secondItem="OlZ-DM-Q7V" secondAttribute="trailingMargin" id="Bie-PT-YRm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hsL-qw-VGy" secondAttribute="trailing" constant="25" id="CyD-6A-f7P"/>
                             <constraint firstItem="BGR-2h-Bqr" firstAttribute="centerX" secondItem="OlZ-DM-Q7V" secondAttribute="centerX" id="Ecu-IU-ElD"/>
                             <constraint firstItem="BGR-2h-Bqr" firstAttribute="centerY" secondItem="Zsi-YE-zrK" secondAttribute="centerY" id="GFC-XY-ntC"/>
                             <constraint firstItem="y9R-ec-0uF" firstAttribute="centerY" secondItem="Zsi-YE-zrK" secondAttribute="centerY" id="H2M-3Q-0L9"/>
-                            <constraint firstItem="hsL-qw-VGy" firstAttribute="trailing" secondItem="OlZ-DM-Q7V" secondAttribute="trailingMargin" id="Icp-Qj-cjI"/>
                             <constraint firstItem="BPp-Lw-pkI" firstAttribute="width" secondItem="waB-PE-x5X" secondAttribute="width" id="NFo-it-UeP"/>
                             <constraint firstItem="XTJ-xD-kJk" firstAttribute="top" secondItem="eBb-BK-YRG" secondAttribute="bottom" constant="8" id="O1u-wO-dv9"/>
+                            <constraint firstItem="YmA-Ii-PBO" firstAttribute="trailing" secondItem="hsL-qw-VGy" secondAttribute="trailing" id="RSz-0Y-AHA"/>
                             <constraint firstItem="YmA-Ii-PBO" firstAttribute="centerY" secondItem="CNE-CO-1CO" secondAttribute="centerY" id="Rxp-eg-twr"/>
                             <constraint firstItem="Zsi-YE-zrK" firstAttribute="leading" secondItem="OlZ-DM-Q7V" secondAttribute="leadingMargin" id="UL6-Tu-DVQ"/>
                             <constraint firstItem="hsL-qw-VGy" firstAttribute="width" secondItem="waB-PE-x5X" secondAttribute="width" id="XTS-5l-tzd"/>
                             <constraint firstItem="YmA-Ii-PBO" firstAttribute="width" secondItem="waB-PE-x5X" secondAttribute="width" id="XXw-NU-hqd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YmA-Ii-PBO" secondAttribute="trailing" id="Ysm-ca-Ema"/>
                             <constraint firstItem="XTJ-xD-kJk" firstAttribute="trailing" secondItem="OlZ-DM-Q7V" secondAttribute="trailingMargin" id="d4f-nZ-59W"/>
                             <constraint firstItem="CNE-CO-1CO" firstAttribute="leading" secondItem="OlZ-DM-Q7V" secondAttribute="leadingMargin" id="e2V-ye-S8Y"/>
                             <constraint firstItem="BPp-Lw-pkI" firstAttribute="top" secondItem="waB-PE-x5X" secondAttribute="bottom" constant="16" id="gHH-eg-gxE"/>
+                            <constraint firstItem="YmA-Ii-PBO" firstAttribute="trailing" secondItem="hsL-qw-VGy" secondAttribute="trailing" id="gvy-Rv-k3S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hsL-qw-VGy" secondAttribute="trailing" id="iCQ-bE-uwb"/>
                             <constraint firstItem="eBb-BK-YRG" firstAttribute="top" secondItem="BGR-2h-Bqr" secondAttribute="bottom" constant="8" id="iPs-rh-m62"/>
+                            <constraint firstItem="uba-Zh-oQD" firstAttribute="trailing" secondItem="OlZ-DM-Q7V" secondAttribute="trailingMargin" id="kpd-xC-vwm"/>
                             <constraint firstItem="5Nu-gd-szP" firstAttribute="width" secondItem="waB-PE-x5X" secondAttribute="width" id="p5H-dL-cPu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y9R-ec-0uF" secondAttribute="trailing" id="pnQ-49-hZA"/>
                             <constraint firstItem="eBb-BK-YRG" firstAttribute="leading" secondItem="OlZ-DM-Q7V" secondAttribute="leadingMargin" id="vCI-Pn-bNy"/>
@@ -468,6 +474,9 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="7TF-i1-Jdd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ImOwedSwitch" destination="BGR-2h-Bqr" id="pCJ-Zi-ep1"/>
+                        <outlet property="infomationField" destination="eBb-BK-YRG" id="blc-Gf-pe3"/>
+                        <outlet property="notificatioSwitch" destination="uba-Zh-oQD" id="Lif-fX-JmK"/>
                         <outlet property="selectAmountButton" destination="5Nu-gd-szP" id="XJ4-h3-uJx"/>
                         <outlet property="selectDateButton" destination="YmA-Ii-PBO" id="WBi-cA-sCm"/>
                         <outlet property="selectPayeeButton" destination="hsL-qw-VGy" id="F5j-GU-a83"/>
@@ -510,7 +519,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="payee" textLabel="cjf-fL-dRb" style="IBUITableViewCellStyleDefault" id="cTI-1X-OOM">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cTI-1X-OOM" id="eXy-PT-wlL">
                                             <frame key="frameInset" width="310" height="43"/>

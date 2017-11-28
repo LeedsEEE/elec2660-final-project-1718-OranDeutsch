@@ -50,7 +50,7 @@
         NSNumber *tempPayeeID = [[tempPayees objectAtIndex: indexPath.row] objectForKey:@"payeeID"];
         
         destinationViewController.payeeName = [[tempPayees objectAtIndex: indexPath.row] objectForKey:@"name"];
-        destinationViewController.payeeID = [tempPayeeID intValue];
+        destinationViewController.payeeID = tempPayeeID;
         
         
     }

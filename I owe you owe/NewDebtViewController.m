@@ -18,7 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+
+
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +73,33 @@
     
     [self.selectAmountButton setTitle:amountpreview forState:UIControlStateNormal];
     
+    
+}
+
+- (IBAction)createNewDebt:(id)sender {
+    
+    
+    
+    NSLog(@"out of function payee id == %@", self.payeeID);
+    
+    NSDictionary *newDebt = @{@"payee" : self.payeeName,
+                               @"payeeID" : self.payeeID,
+                               @"amount": self.amount,
+                               @"isPaid": [NSNumber numberWithBool:0],
+                               @"debtID": [NSNumber numberWithInt:-1],
+                               @"dateStarted": [NSDate date],
+                               @"dateDue" : self.dueDate,
+                               @"infomation": self.infomationField.text,
+                              @"imOwedDebt" : [NSNumber numberWithInt:self.ImOwedSwitch.on],
+                               @"iOweDebt" : [NSNumber numberWithInt:!(self.ImOwedSwitch.on)],
+                              @"sendNotification" : [NSNumber numberWithInt:(self.notificatioSwitch.on)]};
+    
+    NSLog(@"out of function dictionary payee id == %i", (int)[newDebt objectForKey:@"payeeID"]);
+    
+    NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
+    
+    
+    NSLog(@"%@", log);
     
 }
 
