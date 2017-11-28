@@ -12,5 +12,9 @@
 @interface IOweTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 
+@property (strong, nonatomic) NSArray *IOweDebts;
+
+
+
 
 @end

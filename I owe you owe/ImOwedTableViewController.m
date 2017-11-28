@@ -35,18 +35,30 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger numberOfRows;
     
-    if (section == 0) {
-        numberOfRows = 5;
-    }
+    self.ImOwedDebts = [Debt returnDebts:0 owed:1];
     
-    return numberOfRows;
+    
+    return (int)[self.ImOwedDebts count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imowedcell" forIndexPath:indexPath];
     
-
+    cell.textLabel.text = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
+    
+    
+    
+    
+    
+    
+    NSNumber *amountVal = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
+    
+    NSString *amount = [NSString stringWithFormat:@"£%.2f",[amountVal floatValue]];
+    
+    cell.textLabel.text = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
+    cell.detailTextLabel.text = amount;
+    
     
     return cell;
 }

@@ -78,7 +78,7 @@
 
 - (IBAction)createNewDebt:(id)sender {
     
-    
+    //All user data and some metadata is collected into a dictionary and pushed to the new debt method
     
     NSLog(@"out of function payee id == %@", self.payeeID);
     

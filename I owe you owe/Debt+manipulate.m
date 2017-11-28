@@ -90,18 +90,61 @@
     
 }
 
-/*
 
-+ (NSArray *)returnDebts: isPaid:(BOOL)isPaid IOwe:(BOOL)IOwe{
+
++ (NSArray *)returnDebts: (BOOL)isPaid owed:(BOOL)ImOwed{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSError *error;
+    
+    Debt *debtEntity = nil;
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    request.predicate = [NSPredicate predicateWithFormat:@"isPaid == %i AND imOwedDebt == %i",isPaid,ImOwed];
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    
+    
+    
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    
+    for (debtEntity in fetchedObject) {
+        
+        [results addObject:[self debtToDictionary:debtEntity]];
+        
+    }
+    
+    return results;
     
     
 }
+ 
 
+ 
 + (NSDictionary *)debtToDictionary:(Debt *)debtInfo{
     
+    NSMutableDictionary *debtDict = [[NSMutableDictionary alloc] init];
     
+    Payee *tempPayee = debtInfo.payee;
+    
+    debtDict[@"name"] = tempPayee.name;
+    debtDict[@"payeeID"] = tempPayee.payeeID;
+    
+    
+    debtDict[@"amount"] = debtInfo.amount;
+    debtDict[@"isPaid"] = debtInfo.isPaid;
+    debtDict[@"ImOwedDebt"] = debtInfo.imOwedDebt;
+    debtDict[@"IOweDebt"] = debtInfo.iOweDebt;
+
+    
+    return debtDict;
 }
 
+    
+/*
 + (NSDictionary *)ViewDebtFromId: (int)debtID{
     
     

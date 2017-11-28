@@ -12,6 +12,6 @@
 
 @interface ImOwedTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-
+@property (strong, nonatomic) NSArray *ImOwedDebts;
 
 @end

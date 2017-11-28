@@ -27,10 +27,19 @@
     
     
     
+    
 }
 
 
-
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+    [self.IOweTable reloadData];
+    [self.ImOwedTable reloadData];
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

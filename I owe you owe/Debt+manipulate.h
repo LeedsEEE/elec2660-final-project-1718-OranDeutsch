@@ -7,6 +7,7 @@
 //
 
 #import "Debt+CoreDataClass.h"
+#import "Payee+CoreDataClass.h"
 #import "AppDelegate.h"
 
 @interface Debt (manipulate)
@@ -15,7 +16,7 @@
 
 + (Debt *) AddDebtFromDictionary:(NSDictionary *)debtInfo;
 
-//+ (NSArray *)returnDebts: isPaid:(BOOL)isPaid IOwe:(BOOL)IOwe;
++ (NSArray *)returnDebts: (BOOL)isPaid owed:(BOOL)ImOwed;
 
 + (NSDictionary *)debtToDictionary:(Debt *)debtInfo;
 

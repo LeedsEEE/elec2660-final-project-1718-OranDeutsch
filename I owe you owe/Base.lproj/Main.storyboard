@@ -83,7 +83,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kkB-8Y-Z0L" kind="show" identifier="ImOwedSegue" id="HOx-Au-BOW"/>
+                                            <segue destination="kkB-8Y-Z0L" kind="show" identifier="ImOwedSegue" id="9fT-q3-26Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,7 +119,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kkB-8Y-Z0L" kind="show" identifier="IOweSegue" id="opn-lc-Dtv"/>
+                                            <segue destination="kkB-8Y-Z0L" kind="show" identifier="IOweSegue" id="cEc-fw-IAQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -225,10 +225,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View Debt" id="EAP-A0-zaY"/>
-                    <connections>
-                        <outlet property="amountLabel" destination="Ql0-KW-ayK" id="peW-cN-QiR"/>
-                        <outlet property="nameLabel" destination="zoP-zO-gW0" id="0Km-IP-K9E"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWH-JC-U1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -701,6 +697,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HOx-Au-BOW"/>
+        <segue reference="9fT-q3-26Q"/>
     </inferredMetricsTieBreakers>
 </document>

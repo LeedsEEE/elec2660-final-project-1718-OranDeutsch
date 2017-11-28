@@ -14,10 +14,15 @@
 
 @implementation IOweTableViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
     
+
+    
 }
+
+    
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,11 +41,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    NSInteger numberOfRows;
+    self.IOweDebts = [Debt returnDebts:0 owed:0];
     
-    if (section == 0) {
-        numberOfRows = 5;
-    }
+    NSLog(@"%@", [self IOweDebts].description);
+    
+    int numberOfRows;
+    
+    numberOfRows = (int)[self.IOweDebts count];
     
     return numberOfRows;
 }
@@ -49,11 +56,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"iowecell" forIndexPath:indexPath];
     
-    if(indexPath.section == 0) {
-        
-        
-        
-    }
+    cell.textLabel.text = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
+    
+    
+    NSNumber *amountVal = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
+    
+    NSString *amount = [NSString stringWithFormat:@"£%.2f",[amountVal floatValue]];
+    
+    cell.textLabel.text = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
+    cell.detailTextLabel.text = amount;
     
     return cell;
 }
