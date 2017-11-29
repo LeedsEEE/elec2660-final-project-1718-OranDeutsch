@@ -90,4 +90,11 @@
     
 }
 
+- (IBAction)debtRepayed:(UIStoryboardSegue *)segue{
+    
+    
+    
+    
+}
+
 @end

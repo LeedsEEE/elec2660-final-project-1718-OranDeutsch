@@ -8,6 +8,7 @@
 
 #import "Debt+CoreDataClass.h"
 #import "Payee+CoreDataClass.h"
+#import "Settings+manipulate.h"
 #import "AppDelegate.h"
 
 @interface Debt (manipulate)
@@ -23,6 +24,10 @@
 + (NSDictionary *)ViewDebtFromId: (NSInteger)debtID;
 
 + (void)deleteDebtFromID: (int)DebtID;
+
++ (void)markDebtPaidFromID: (NSInteger)DebtID;
+
++ (NSString *)amountString: (NSNumber *)amount;
 
 
 @end

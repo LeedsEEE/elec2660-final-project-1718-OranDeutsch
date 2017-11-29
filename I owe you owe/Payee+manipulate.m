@@ -10,7 +10,7 @@
 
 @implementation Payee (manipulate)
 
-+ (Payee *) AddDebtFromDictionary:(NSDictionary *)payeeInfo{
++ (Payee *) AddPayeeFromDictionary:(NSDictionary *)payeeInfo{
     
     //This code uses elements of HuxTek's youtube tutorial series
     

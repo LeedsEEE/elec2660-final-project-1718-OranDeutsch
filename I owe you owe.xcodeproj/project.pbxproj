@@ -22,9 +22,9 @@
 		62CE78D61FCDC32A00C9A905 /* Debt+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */; };
 		62CE78D71FCDC32A00C9A905 /* Debt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */; };
 		62CE78DA1FCDCFB300C9A905 /* forward_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 62CE78D91FCDCFB300C9A905 /* forward_arrow.png */; };
+		62D2F8711FCF44410013CDBC /* PaidDebtsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D2F8701FCF44410013CDBC /* PaidDebtsTableViewController.m */; };
 		62D4D84F1FC4269500F6B1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D84E1FC4269500F6B1D4 /* main.m */; };
 		62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8511FC4269500F6B1D4 /* AppDelegate.m */; };
-		62D4D8581FC4269500F6B1D4 /* DebtHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */; };
 		62D4D85B1FC4269500F6B1D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D4D8591FC4269500F6B1D4 /* Main.storyboard */; };
 		62D4D85D1FC4269500F6B1D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */; };
 		62D4D8601FC4269500F6B1D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */; };
@@ -86,12 +86,12 @@
 		62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataProperties.m"; sourceTree = "<group>"; };
 		62CE78D81FCDC39700C9A905 /* Debt+manipulate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Debt+manipulate.h"; sourceTree = "<group>"; };
 		62CE78D91FCDCFB300C9A905 /* forward_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward_arrow.png; path = ../../../../Downloads/forward_arrow.png; sourceTree = "<group>"; };
+		62D2F86F1FCF44410013CDBC /* PaidDebtsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaidDebtsTableViewController.h; sourceTree = "<group>"; };
+		62D2F8701FCF44410013CDBC /* PaidDebtsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaidDebtsTableViewController.m; sourceTree = "<group>"; };
 		62D4D84A1FC4269500F6B1D4 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I owe you owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D4D84E1FC4269500F6B1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62D4D8501FC4269500F6B1D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62D4D8511FC4269500F6B1D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		62D4D8561FC4269500F6B1D4 /* DebtHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebtHistoryViewController.h; sourceTree = "<group>"; };
-		62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebtHistoryViewController.m; sourceTree = "<group>"; };
 		62D4D85A1FC4269500F6B1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62D4D85F1FC4269500F6B1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,10 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				62D4D8591FC4269500F6B1D4 /* Main.storyboard */,
+				62D2F86F1FCF44410013CDBC /* PaidDebtsTableViewController.h */,
+				62D2F8701FCF44410013CDBC /* PaidDebtsTableViewController.m */,
 				62D4D8501FC4269500F6B1D4 /* AppDelegate.h */,
 				62D4D8511FC4269500F6B1D4 /* AppDelegate.m */,
-				62D4D8561FC4269500F6B1D4 /* DebtHistoryViewController.h */,
-				62D4D8571FC4269500F6B1D4 /* DebtHistoryViewController.m */,
 				62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */,
 				62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */,
 				62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */,
@@ -434,7 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62D4D8581FC4269500F6B1D4 /* DebtHistoryViewController.m in Sources */,
+				62D2F8711FCF44410013CDBC /* PaidDebtsTableViewController.m in Sources */,
 				62CE78D71FCDC32A00C9A905 /* Debt+CoreDataProperties.m in Sources */,
 				621A37EF1FCC7230005C4978 /* SelectPayeeTableViewController.m in Sources */,
 				62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */,

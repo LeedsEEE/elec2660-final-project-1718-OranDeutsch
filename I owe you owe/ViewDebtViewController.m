@@ -43,4 +43,12 @@
 }
 */
 
+- (IBAction)repayDebt:(id)sender {
+    
+    [Debt markDebtPaidFromID: self.debtID];
+    
+}
+
+- (IBAction)modifyDebt:(id)sender {
+}
 @end

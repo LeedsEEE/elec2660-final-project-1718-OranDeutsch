@@ -53,10 +53,9 @@
     
     NSNumber *amountVal = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
     
-    NSString *amount = [NSString stringWithFormat:@"£%.2f",[amountVal floatValue]];
     
     cell.textLabel.text = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    cell.detailTextLabel.text = amount;
+    cell.detailTextLabel.text = [Debt amountString:amountVal];;
     
     
     return cell;

@@ -10,19 +10,75 @@
 
 @interface SettingsViewController ()
 
+
 @end
 
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.currencyLogos = @[@"£",        @"$",           @"€",       @"¥",   @"¥"];
+    self.currencyNames = @[@"Pound",    @"US Dollar",   @"Euro",    @"Yen", @"Yuan "];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Picker View Data Source Methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:
+(NSInteger)component{
+    NSInteger rows;
+    
+    rows = [self.currencyLogos count];
+    
+    return rows;
+    
+}
+
+#pragma mark - Picker View Delegate Methods
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component{
+    
+    
+    
+    NSString *rowvalue = [NSString stringWithFormat:@"%@ (%@)",
+                          [self.currencyNames objectAtIndex:row],
+                          [self.currencyLogos objectAtIndex:row]];
+    
+    return rowvalue;
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component{
+    
+    
+    self.tempSettings.currency = [self.currencyLogos objectAtIndex:row];
+    
+    NSLog(@"selected currency = %@ or %@", self.tempSettings.currency, [self.currencyLogos objectAtIndex:row]);
+    
+    [Settings updateCurrency:[self.currencyLogos objectAtIndex:row]];
+
+    
+    
+}
+
 
 
 #pragma mark - Navigation

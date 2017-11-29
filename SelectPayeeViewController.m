@@ -71,7 +71,7 @@
     
     
     
-    [Payee AddDebtFromDictionary:newPayee];
+    [Payee AddPayeeFromDictionary:newPayee];
     [self.payeeTable reloadData];
     
     self.payeeNameField.text = @"payeeSelected";

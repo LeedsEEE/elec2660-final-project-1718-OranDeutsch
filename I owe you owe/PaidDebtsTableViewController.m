@@ -1,74 +1,55 @@
 //
-//  IOweTableViewController.m
+//  PaidDebtsTableViewController.m
 //  I owe you owe
 //
-//  Created by Oran Deutsch [el16od] on 21/11/2017.
+//  Created by Oran Deutsch [el16od] on 29/11/2017.
 //  Copyright © 2017 Oran Deutsch [el16od]. All rights reserved.
 //
 
-#import "IOweTableViewController.h"
+#import "PaidDebtsTableViewController.h"
 
-@interface IOweTableViewController () 
+@interface PaidDebtsTableViewController ()
 
 @end
 
-@implementation IOweTableViewController
+@implementation PaidDebtsTableViewController
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-    
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    
-    self.IOweDebts = [Debt returnDebts:0 owed:0];
-    
-    NSLog(@"%@", [self IOweDebts].description);
-    
-    int numberOfRows;
-    
-    numberOfRows = (int)[self.IOweDebts count];
-    
-    return numberOfRows;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"iowecell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    
-    
-    NSNumber *amountVal = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
-    
-    NSString *amount = [Debt amountString:amountVal];
-    
-    cell.textLabel.text = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    cell.detailTextLabel.text = amount;
+    // Configure the cell...
     
     return cell;
 }
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

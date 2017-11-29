@@ -7,7 +7,12 @@
 //
 
 #import "Settings+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface Settings (manipulate)
+
++ (void)updateCurrency: (NSString *)newCurrency;
+
++ (NSDictionary *) returnSettings;
 
 @end

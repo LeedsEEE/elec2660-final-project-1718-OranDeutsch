@@ -14,4 +14,11 @@
 @property NSInteger debtID;
 @property NSDictionary *debtDictionary;
 
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+
+- (IBAction)repayDebt:(id)sender;
+- (IBAction)modifyDebt:(id)sender;
+
 @end

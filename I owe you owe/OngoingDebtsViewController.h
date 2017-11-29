@@ -20,5 +20,8 @@
 @property (strong, nonatomic) UITableViewController *imOwedTableViewController;
 
 
+- (IBAction)debtRepayed:(UIStoryboardSegue *)segue;
+
+
 
 @end

@@ -121,11 +121,28 @@
     NSError *error;
     
     Debt *debtEntity = nil;
-    
+    //NSSortDescriptor *descriptor = nil;
     request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
-    request.predicate = [NSPredicate predicateWithFormat:@"isPaid == %i AND imOwedDebt == %i",isPaid,ImOwed];
     
-    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    //returns all debts if user is requesting paid dates and sorts request by date paid
+    
+    if (isPaid == 1) {
+        
+        request.predicate = [NSPredicate predicateWithFormat:@"isPaid == %i AND imOwedDebt == %i",isPaid,ImOwed];
+        
+         //descriptor = [NSSortDescriptor sortDescriptorWithKey:@"datePaid" ascending:YES];
+        
+    } else {
+        
+        request.predicate = [NSPredicate predicateWithFormat:@"isPaid == %i AND imOwedDebt == %i",isPaid,ImOwed];
+        
+        //descriptor = [NSSortDescriptor sortDescriptorWithKey:@"dateStarted" ascending:YES];
+        
+    }
+    
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request  error:&error];
     
     
     
@@ -197,9 +214,44 @@
     
 }
 
++ (void)markDebtPaidFromID: (NSInteger)debtID{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSError *error;
+    Debt *debtEntity = nil;
+    
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    request.predicate = [NSPredicate predicateWithFormat:@"debtID == %i",debtID];
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    debtEntity = [fetchedObject objectAtIndex:0];
+    
+    debtEntity.isPaid = [NSNumber numberWithInt:1];
+    
+    debtEntity.datePaid = [NSDate date];
+    
+    [context save:nil];
+    
+}
+
+
 
 + (void)deleteDebtFromID: (int)DebtID{
     
+    
+}
+
++ (NSString *)amountString: (NSNumber *)amount{
+    
+    NSString *currencySymbol = [[Settings returnSettings] objectForKey:@"currency"];
+    
+    NSString *output = [NSString stringWithFormat:@"%@%.2f",currencySymbol,[amount floatValue]];
+    
+    return output;
     
 }
 

@@ -19,7 +19,7 @@
 
 + (NSDictionary *)payeeEntityToDictonary:(Debt *)payee;
 
-+ (Payee *) AddDebtFromDictionary:(NSDictionary *)debtInfo;
++ (Payee *) AddPayeeFromDictionary:(NSDictionary *)debtInfo;
 
 
 @end

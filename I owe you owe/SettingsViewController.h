@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Settings+manipulate.h"
 
 @interface SettingsViewController : UIViewController
+
+@property (nonatomic, strong) NSArray *currencyNames;
+@property (nonatomic, strong) NSArray *currencyLogos;
+
+@property (nonatomic, strong) Settings *tempSettings;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *currencyPicker;
 
 @end

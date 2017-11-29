@@ -10,4 +10,74 @@
 
 @implementation Settings (manipulate)
 
++ (void)updateCurrency: (NSString *)newCurrency{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSError *error;
+    Settings *CurrentSettings = nil;
+    
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Settings"];
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    
+    
+    @try {
+        CurrentSettings = [fetchedObject objectAtIndex:0];
+        
+    }
+    @catch (NSException *exception) {
+        
+        CurrentSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:context];
+        
+        NSLog(@"no settings found");
+        
+    }
+    
+    CurrentSettings.currency = newCurrency;
+    
+    
+    [context save:nil];
+    
+}
+
++ (NSDictionary *) returnSettings {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSError *error;
+    
+    Settings *importedsettings = nil;
+    
+    //create a new fetch request of all objects in payee entity
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Settings"];
+    
+    
+    // execute
+    
+    
+    
+    NSArray *fetchedSettings = [context executeFetchRequest:request error:&error];
+    
+    // takes the first (and only) entry for the called array and puts into in a dictinary
+    // right now it is overkill but it allows for more string to be saved as settings and called later
+
+    
+    NSMutableDictionary *returnSettings = [[NSMutableDictionary alloc]init];
+    
+    importedsettings = [fetchedSettings objectAtIndex:0];
+    
+    returnSettings[@"currency"] = importedsettings.currency;
+    
+    
+    return returnSettings;
+    
+}
+
+
 @end

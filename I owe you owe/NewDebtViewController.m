@@ -82,6 +82,11 @@
     
     NSLog(@"out of function payee id == %@", self.payeeID);
     
+    
+    if ([self.infomationField.text  isEqual: @"Enter debt description here"]) {
+        self.infomationField.text = @"No description given";
+    }
+    
     NSDictionary *newDebt = @{@"payee" : self.payeeName,
                                @"payeeID" : self.payeeID,
                                @"amount": self.amount,
