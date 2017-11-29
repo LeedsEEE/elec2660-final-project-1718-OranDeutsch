@@ -21,6 +21,11 @@
     
     
     
+    self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
+    
+    NSLog(@"%@",self.debtDictionary);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

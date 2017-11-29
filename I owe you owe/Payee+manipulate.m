@@ -89,15 +89,38 @@
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     NSError *error;
     
-    
     //create a new fetch request of all objects in payee entity
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
     
-    NSUInteger amount = [context countForFetchRequest:request error:&error];
+    NSUInteger newID = [context countForFetchRequest:request error:&error];
+
     
-    return (int)amount;
+    //loads up an array to check that generated payee ID value is unique, adds 1 until it is
+    
+    
+    NSArray *payeeIDs = [context executeFetchRequest:request error:&error];
+    
+    
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    
+    
+    
+    Payee *payeeEntity;
+    for (payeeEntity in payeeIDs) {
+        
+        [results addObject: [NSNumber numberWithInt:(int)payeeEntity.payeeID]];
+        
+    }
+    
+    
+    while ([results containsObject:[NSNumber numberWithInt:(int)newID]]) {
+        newID++;
+    }
+    
+    
+    return (int)newID;
 }
 
 

@@ -18,13 +18,34 @@
     
     NSError *error;
     
+    
+    
     request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
     
     
-    NSUInteger amount = [context countForFetchRequest:request error:&error];
+    NSUInteger newID = [context countForFetchRequest:request error:&error];
+    
+    //loads up an array to check that generated debt ID value is unique, adds 1 until it is
+    
+    NSArray *debtIDs = [context executeFetchRequest:request error:&error];
+    NSMutableArray *results = [[NSMutableArray alloc]init];
     
     
-    return (int)amount;
+    
+    Debt *debtEntity;
+    for (debtEntity in debtIDs) {
+        
+        [results addObject: debtEntity.debtID];
+        
+    }
+    
+    
+    while ([results containsObject:[NSNumber numberWithInt:(int)newID]]) {
+        newID++;
+    }
+    
+    
+    return (int)newID;
     
 }
 
@@ -118,8 +139,7 @@
     }
     
     return results;
-    
-    
+        
 }
  
 
@@ -138,22 +158,50 @@
     debtDict[@"isPaid"] = debtInfo.isPaid;
     debtDict[@"ImOwedDebt"] = debtInfo.imOwedDebt;
     debtDict[@"IOweDebt"] = debtInfo.iOweDebt;
+    debtDict[@"debtID"] = debtInfo.debtID;
 
     
     return debtDict;
 }
 
     
-/*
-+ (NSDictionary *)ViewDebtFromId: (int)debtID{
+
++ (NSDictionary *)ViewDebtFromId: (NSInteger)debtID{
     
+    
+    //Identical to return debts however just sends a single debt based on its ID
+    //this function is used for views where more detail is shown on a specific debt entry
+    
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSError *error;
+    Debt *debtEntity = nil;
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    request.predicate = [NSPredicate predicateWithFormat:@"debtID == %i",debtID];
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    
+    for (debtEntity in fetchedObject) {
+        
+        [results addObject:[self debtToDictionary:debtEntity]];
+        
+    }
+    
+    return [results objectAtIndex:0];
+
     
 }
+
 
 + (void)deleteDebtFromID: (int)DebtID{
     
     
 }
-*/
+
 
 @end

@@ -33,7 +33,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger numberOfRows;
     
     self.ImOwedDebts = [Debt returnDebts:0 owed:1];
     

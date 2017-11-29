@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
 
-@interface IOweTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface IOweTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> 
 
 
 @property (strong, nonatomic) NSArray *IOweDebts;

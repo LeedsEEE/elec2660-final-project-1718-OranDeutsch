@@ -20,7 +20,7 @@
 
 + (NSDictionary *)debtToDictionary:(Debt *)debtInfo;
 
-+ (NSDictionary *)ViewDebtFromId: (int)debtID;
++ (NSDictionary *)ViewDebtFromId: (NSInteger)debtID;
 
 + (void)deleteDebtFromID: (int)DebtID;
 

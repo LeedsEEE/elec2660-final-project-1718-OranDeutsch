@@ -53,17 +53,38 @@
     
     
     
+    ViewDebtViewController *destinationViewController = [segue destinationViewController];
+    
+    
+    
+    
+    
     if ([[segue identifier] isEqualToString:@"IOweSegue"]) {
         
+        NSIndexPath *indexPath = [self.IOweTable indexPathForSelectedRow];
+        
+        NSArray *tempDebt = [Debt returnDebts:0 owed:0];
 
+        NSInteger segueDebtID = [[[tempDebt objectAtIndex:indexPath.row] objectForKey:@"debtID"] integerValue];
+        
+        destinationViewController.debtID = segueDebtID;
+        
         
     }
     
     if ([[segue identifier] isEqualToString:@"ImOwedSegue"]) {
         
+        NSIndexPath *indexPath = [self.ImOwedTable indexPathForSelectedRow];
+        
+        NSArray *tempDebt = [Debt returnDebts:0 owed:1];
+        
+        NSNumber *segueDebtID = [[tempDebt objectAtIndex:indexPath.row] objectForKey:@"debtID"];
+        
+        destinationViewController.debtID = [segueDebtID integerValue];
 
         
     }
+    
 
     
     
