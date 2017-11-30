@@ -282,7 +282,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="View Debt" id="EAP-A0-zaY"/>
                     <connections>
-                        <outlet property="titleLabel" destination="3gI-1W-Qic" id="4an-Tr-kE5"/>
+                        <outlet property="amountLabel" destination="Ql0-KW-ayK" id="Wvs-CI-e1l"/>
+                        <outlet property="dateDueLabel" destination="xgy-lR-ius" id="Ged-sA-DOF"/>
+                        <outlet property="dateStartedLabel" destination="IBG-Jx-sQN" id="7B9-8X-RNx"/>
+                        <outlet property="infomationTextField" destination="awZ-gF-Zh7" id="XRi-Bb-WzR"/>
+                        <outlet property="payeeNameLabel" destination="zoP-zO-gW0" id="4Nb-Fb-JfN"/>
+                        <outlet property="titleLabel" destination="3gI-1W-Qic" id="PzJ-qt-R0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWH-JC-U1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,7 +326,7 @@
         <!--Item-->
         <scene sceneID="jjg-3c-jR3">
             <objects>
-                <tableViewController id="iSd-Xx-yEm" sceneMemberID="viewController">
+                <tableViewController id="iSd-Xx-yEm" customClass="PaidDebtsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BGY-NT-SoP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -26,6 +26,29 @@
     NSLog(@"%@",self.debtDictionary);
     
     
+    self.payeeNameLabel.text = [self.debtDictionary objectForKey:@"name"];
+    
+    NSNumber *amount = [self.debtDictionary objectForKey:@"amount"];
+    
+    self.amountLabel.text = [Debt amountString:amount];
+    
+    //conversion method found on stack overflow by user : Adam Richardson
+    //https://stackoverflow.com/questions/37117129/ios-convert-a-nsdate-object-into-a-string-to-get-the-current-time
+    
+    
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setCalendar:[NSCalendar currentCalendar]];
+    [dateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
+    [dateFormatter setDateFormat:@"d. MMMM YYYY"];
+    
+    NSString *dateString = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
+    
+    self.dateStartedLabel.text = dateString;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

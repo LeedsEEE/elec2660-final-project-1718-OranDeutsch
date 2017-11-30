@@ -87,24 +87,48 @@
         self.infomationField.text = @"No description given";
     }
     
-    NSDictionary *newDebt = @{@"payee" : self.payeeName,
-                               @"payeeID" : self.payeeID,
-                               @"amount": self.amount,
-                               @"isPaid": [NSNumber numberWithBool:0],
-                               @"debtID": [NSNumber numberWithInt:-1],
-                               @"dateStarted": [NSDate date],
-                               @"dateDue" : self.dueDate,
-                               @"infomation": self.infomationField.text,
-                              @"imOwedDebt" : [NSNumber numberWithInt:self.ImOwedSwitch.on],
-                               @"iOweDebt" : [NSNumber numberWithInt:!(self.ImOwedSwitch.on)],
-                              @"sendNotification" : [NSNumber numberWithInt:(self.notificatioSwitch.on)]};
-    
-    NSLog(@"out of function dictionary payee id == %i", (int)[newDebt objectForKey:@"payeeID"]);
-    
-    NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
     
     
-    NSLog(@"%@", log);
+    //NSLog(@"out of function dictionary payee id == %i", (int)[newDebt objectForKey:@"payeeID"]);
+    
+    
+    
+    #pragma mark invalid entry checking
+    
+    @try {
+        
+        
+        NSDictionary *newDebt = @{@"payee" : self.payeeName,
+                                  @"payeeID" : self.payeeID,
+                                  @"amount": self.amount,
+                                  @"isPaid": [NSNumber numberWithBool:0],
+                                  @"debtID": [NSNumber numberWithInt:-1],
+                                  @"dateStarted": [NSDate date],
+                                  @"dateDue" : self.dueDate,
+                                  @"infomation": self.infomationField.text,
+                                  @"imOwedDebt" : [NSNumber numberWithInt:self.ImOwedSwitch.on],
+                                  @"iOweDebt" : [NSNumber numberWithInt:!(self.ImOwedSwitch.on)],
+                                  @"sendNotification" : [NSNumber numberWithInt:(self.notificatioSwitch.on)]};
+        
+
+        
+        NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
+        
+        NSLog(@"%@", log);
+    }
+    
+    @catch (NSException *exception) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
+    
+
+    
+    
+    
+
     
 }
 

@@ -176,7 +176,9 @@
     debtDict[@"ImOwedDebt"] = debtInfo.imOwedDebt;
     debtDict[@"IOweDebt"] = debtInfo.iOweDebt;
     debtDict[@"debtID"] = debtInfo.debtID;
-
+    
+    debtDict[@"dateStarted"] = debtInfo.dateStarted;
+    debtDict[@"dateDue"] = debtInfo.dateDue;
     
     return debtDict;
 }

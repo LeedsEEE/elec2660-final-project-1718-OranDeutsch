@@ -16,6 +16,11 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *payeeNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *amountLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateStartedLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateDueLabel;
+@property (strong, nonatomic) IBOutlet UITextView *infomationTextField;
 
 
 - (IBAction)repayDebt:(id)sender;
