@@ -17,11 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSLog(@"%@", self.paidDebts);
+ 
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,25 +39,64 @@
 
 #pragma mark - Table view data source
 
+-(NSArray *)loadData {
+    
+    NSArray *data =  [Debt returnDebts:1 owed:0];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: @"datePaid" ascending: NO];
+    NSArray *sortedData = [data sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    return sortedData;
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    self.paidDebts = [self loadData];
+    
+    int numberOfRows = (int)[self.paidDebts count];
+    
+    return numberOfRows;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    self.paidDebts = [self loadData];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"paidDebt" forIndexPath:indexPath];
+    
+    cell.textLabel.text = [[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
+    
+    
+    NSNumber *amountVal = [[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
+    
+    cell.textLabel.text = [[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
+    
+    
+    
+    
+    
+    if ([[[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"ImOwedDebt"]  integerValue] == 1) {
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Owed Me %@",[Debt amountString:amountVal]];
+        cell.detailTextLabel.textColor = [UIColor redColor];
+        
+    }else{
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Loaned Me %@",[Debt amountString:amountVal]];
+        
+        UIColor *darkGreen = [UIColor colorWithRed:(0) green:(150/255.0) blue:(0) alpha:1];
+        
+        cell.detailTextLabel.textColor =  darkGreen;
+        
+    }
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

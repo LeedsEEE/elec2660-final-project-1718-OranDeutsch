@@ -129,7 +129,7 @@
     
     if (isPaid == 1) {
         
-        request.predicate = [NSPredicate predicateWithFormat:@"isPaid == %i AND imOwedDebt == %i",isPaid,ImOwed];
+        request.predicate = [NSPredicate predicateWithFormat:@"isPaid == %i",isPaid];
         
          //descriptor = [NSSortDescriptor sortDescriptorWithKey:@"datePaid" ascending:YES];
         
@@ -179,7 +179,7 @@
     
     debtDict[@"dateStarted"] = debtInfo.dateStarted;
     debtDict[@"dateDue"] = debtInfo.dateDue;
-    
+    debtDict[@"datePaid"] = debtInfo.datePaid;
     return debtDict;
 }
 

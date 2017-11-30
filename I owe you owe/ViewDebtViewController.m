@@ -25,6 +25,19 @@
     
     NSLog(@"%@",self.debtDictionary);
     
+    NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];
+    
+    if ([[self.debtDictionary objectForKey:@"IOweDebt"] integerValue] == 1) {
+        
+        self.titleLabel.text = [NSString stringWithFormat:@"Debt to %@",firstName];
+        
+    }else{
+        
+        self.titleLabel.text = [NSString stringWithFormat:@"Debt from %@",firstName];
+
+        
+    }
+    
     
     self.payeeNameLabel.text = [self.debtDictionary objectForKey:@"name"];
     
@@ -36,17 +49,15 @@
     //https://stackoverflow.com/questions/37117129/ios-convert-a-nsdate-object-into-a-string-to-get-the-current-time
     
     
-    
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
     [dateFormatter setCalendar:[NSCalendar currentCalendar]];
     [dateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
     [dateFormatter setDateFormat:@"d. MMMM YYYY"];
     
-    NSString *dateString = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
-    
-    self.dateStartedLabel.text = dateString;
+    self.dateStartedLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
+    self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+    self.infomationTextField.text = [self.debtDictionary objectForKey:@"infomation"];
     
     
 }
