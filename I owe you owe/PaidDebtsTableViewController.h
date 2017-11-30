@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
+#import "ViewPaidDebtViewController.h"
 
 @interface PaidDebtsTableViewController : UITableViewController
 

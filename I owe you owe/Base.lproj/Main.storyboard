@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5sM-6a-mso">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5sM-6a-mso">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imowedcell" textLabel="yj8-ma-Y0K" detailTextLabel="u2e-4f-izr" style="IBUITableViewCellStyleValue1" id="0NM-4L-S35">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NM-4L-S35" id="7Gr-bw-Hed">
                                             <frame key="frameInset" width="276" height="43"/>
@@ -96,7 +96,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iowecell" textLabel="vUT-ql-5sc" detailTextLabel="ocS-hM-mR9" style="IBUITableViewCellStyleValue1" id="vPU-Uj-d6P">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPU-Uj-d6P" id="Xpj-3C-0Vy">
                                             <frame key="frameInset" width="276" height="43"/>
@@ -361,7 +361,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="QCr-05-0fg" kind="show" id="Kmw-SX-rOR"/>
+                                    <segue destination="QCr-05-0fg" kind="show" identifier="paidDebtSegue" id="Kmw-SX-rOR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -375,6 +375,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQO-Ps-cx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="495"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="w4B-Em-pFv">
+            <objects>
+                <viewController id="wM7-xx-1Dd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EdH-wi-obJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="mLl-9V-3u3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VZU-rh-qnD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="6oc-XA-TWd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jco-jp-KYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="1486.5067466266867"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MmB-Va-bqE">
@@ -423,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTY-EG-0C3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-434.39999999999998" y="1654.7226386806599"/>
+            <point key="canvasLocation" x="81" y="1512"/>
         </scene>
         <!--New Debt-->
         <scene sceneID="3xZ-jf-bxC">
@@ -554,7 +573,7 @@
                             <constraint firstItem="e2e-Qj-ltv" firstAttribute="top" secondItem="XTJ-xD-kJk" secondAttribute="bottom" constant="8" id="zra-bi-2bE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="7TF-i1-Jdd"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="7TF-i1-Jdd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ImOwedSwitch" destination="BGR-2h-Bqr" id="pCJ-Zi-ep1"/>
@@ -567,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2d-q5-tgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704.79999999999995" y="1178.8605697151424"/>
+            <point key="canvasLocation" x="783" y="1151"/>
         </scene>
         <!--Select Payee-->
         <scene sceneID="O3b-uU-W8Z">
@@ -630,19 +649,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o8n-Xr-zkl" firstAttribute="top" secondItem="iUU-Xx-Zd0" secondAttribute="bottom" constant="8" id="0kY-kZ-eCI"/>
-                            <constraint firstItem="Fnu-TV-9UK" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="A53-86-D8b"/>
-                            <constraint firstItem="0N3-Jd-C0f" firstAttribute="top" secondItem="ds3-PP-QjW" secondAttribute="bottom" constant="8" id="Bns-k5-Kp2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ds3-PP-QjW" secondAttribute="trailing" id="H0f-xl-jWJ"/>
-                            <constraint firstItem="o8n-Xr-zkl" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="Z6E-aO-Fvh"/>
-                            <constraint firstItem="5wa-pF-Pty" firstAttribute="top" secondItem="o8n-Xr-zkl" secondAttribute="bottom" constant="8" id="aei-Co-0dw"/>
-                            <constraint firstItem="o8n-Xr-zkl" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="ddn-Ia-5Bb"/>
-                            <constraint firstItem="Fnu-TV-9UK" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="ibz-Zu-9Xp"/>
-                            <constraint firstItem="5wa-pF-Pty" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="mGA-Q1-Qgq"/>
-                            <constraint firstItem="ds3-PP-QjW" firstAttribute="top" secondItem="Fnu-TV-9UK" secondAttribute="bottom" constant="8" id="mcS-nW-4zZ"/>
-                            <constraint firstItem="ds3-PP-QjW" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="n14-Ao-9Fd"/>
-                            <constraint firstItem="Fnu-TV-9UK" firstAttribute="top" secondItem="5wa-pF-Pty" secondAttribute="bottom" constant="8" id="q9b-VW-LbF"/>
-                            <constraint firstItem="5wa-pF-Pty" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="xe1-2I-SMv"/>
+                            <constraint firstItem="ds3-PP-QjW" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="JhG-X0-Kab"/>
+                            <constraint firstItem="ds3-PP-QjW" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="MEb-wg-0vX"/>
+                            <constraint firstItem="o8n-Xr-zkl" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="Rcn-4h-Z83"/>
+                            <constraint firstItem="o8n-Xr-zkl" firstAttribute="top" secondItem="Fnu-TV-9UK" secondAttribute="bottom" constant="16" id="cPy-W1-2gN"/>
+                            <constraint firstItem="0N3-Jd-C0f" firstAttribute="top" secondItem="o8n-Xr-zkl" secondAttribute="bottom" constant="8" id="eo3-sH-OGx"/>
+                            <constraint firstItem="5wa-pF-Pty" firstAttribute="top" secondItem="ds3-PP-QjW" secondAttribute="bottom" constant="16" id="hvD-7w-O1e"/>
+                            <constraint firstItem="5wa-pF-Pty" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="iN6-P0-LEE"/>
+                            <constraint firstItem="Fnu-TV-9UK" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="lEm-5N-UpS"/>
+                            <constraint firstItem="ds3-PP-QjW" firstAttribute="top" secondItem="iUU-Xx-Zd0" secondAttribute="bottom" constant="8" id="mWg-Me-W8w"/>
+                            <constraint firstItem="o8n-Xr-zkl" firstAttribute="trailing" secondItem="AEx-oe-cxc" secondAttribute="trailingMargin" id="nPO-lN-98G"/>
+                            <constraint firstItem="5wa-pF-Pty" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="rJs-ea-fjy"/>
+                            <constraint firstItem="Fnu-TV-9UK" firstAttribute="top" secondItem="5wa-pF-Pty" secondAttribute="bottom" constant="8" id="rvB-Z0-15P"/>
+                            <constraint firstItem="Fnu-TV-9UK" firstAttribute="leading" secondItem="AEx-oe-cxc" secondAttribute="leadingMargin" id="toq-V8-f7w"/>
                         </constraints>
                     </view>
                     <connections>
@@ -772,16 +791,17 @@
                         <segue destination="15X-5a-6j6" kind="relationship" relationship="viewControllers" id="bOq-5W-59C"/>
                         <segue destination="vAO-BG-i4W" kind="relationship" relationship="viewControllers" id="qCK-cj-Wta"/>
                         <segue destination="iSd-Xx-yEm" kind="relationship" relationship="viewControllers" id="SMZ-VZ-Pxq"/>
+                        <segue destination="wM7-xx-1Dd" kind="relationship" relationship="viewControllers" id="gh0-rb-evB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-353" y="685"/>
         </scene>
-        <!--View Debt-->
+        <!--View Paid Debt-->
         <scene sceneID="CJF-WI-e8g">
             <objects>
-                <viewController title="View Debt" id="QCr-05-0fg" sceneMemberID="viewController">
+                <viewController title="View Paid Debt" id="QCr-05-0fg" customClass="ViewPaidDebtViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4db-Qj-BZG"/>
                         <viewControllerLayoutGuide type="bottom" id="L3l-Ng-1Z2"/>
@@ -791,13 +811,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVV-Nh-U5m">
-                                <state key="normal" title="Repay Debt"/>
+                                <state key="normal" title="Delete Debt Entry"/>
                                 <connections>
                                     <segue destination="8OW-54-Vzl" kind="unwind" unwindAction="debtRepayed:" id="WvF-dF-K4w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMi-0H-gJq">
-                                <state key="normal" title="Modify Debt"/>
+                                <state key="normal" title="Mark Debt as Unpaid"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payee Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdK-vW-UKR">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -855,24 +875,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Paid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPS-ZR-orf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-kd-IIG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="H6M-es-Mhh" secondAttribute="trailing" id="02v-55-zgW"/>
+                            <constraint firstItem="LPS-ZR-orf" firstAttribute="leading" secondItem="QBM-Gl-MBU" secondAttribute="leadingMargin" id="2dT-pK-qcQ"/>
                             <constraint firstItem="EdK-vW-UKR" firstAttribute="top" secondItem="gsY-3g-Q4V" secondAttribute="bottom" constant="-2" id="3c5-GL-zOK"/>
+                            <constraint firstItem="C0D-kd-IIG" firstAttribute="bottom" secondItem="LPS-ZR-orf" secondAttribute="bottom" id="8g8-vG-kyV"/>
                             <constraint firstItem="3ma-BK-Wti" firstAttribute="height" secondItem="EdK-vW-UKR" secondAttribute="height" id="9oU-v6-aJ5"/>
                             <constraint firstItem="EVV-Nh-U5m" firstAttribute="trailing" secondItem="QBM-Gl-MBU" secondAttribute="trailingMargin" id="BlR-QG-Jy1"/>
                             <constraint firstItem="LTL-e0-fCf" firstAttribute="trailing" secondItem="H6M-es-Mhh" secondAttribute="trailing" id="EO8-o5-DyB"/>
                             <constraint firstItem="L3l-Ng-1Z2" firstAttribute="top" secondItem="EVV-Nh-U5m" secondAttribute="bottom" constant="8" id="FVX-Q0-kJA"/>
                             <constraint firstItem="EVV-Nh-U5m" firstAttribute="leading" secondItem="QBM-Gl-MBU" secondAttribute="leadingMargin" id="FWT-Rp-PiO"/>
-                            <constraint firstItem="vHf-Um-y1F" firstAttribute="top" secondItem="3ma-BK-Wti" secondAttribute="bottom" constant="42" id="H30-6R-O3A"/>
+                            <constraint firstItem="vHf-Um-y1F" firstAttribute="top" secondItem="3ma-BK-Wti" secondAttribute="bottom" constant="8" id="H30-6R-O3A"/>
                             <constraint firstItem="00J-uM-Q0W" firstAttribute="height" secondItem="EdK-vW-UKR" secondAttribute="height" id="IFp-jk-Qc4"/>
                             <constraint firstItem="H6M-es-Mhh" firstAttribute="bottom" secondItem="EdK-vW-UKR" secondAttribute="bottom" id="IpY-WO-lHt"/>
                             <constraint firstItem="vMi-0H-gJq" firstAttribute="top" secondItem="vHf-Um-y1F" secondAttribute="bottom" constant="8" id="MhQ-0o-0Vh"/>
                             <constraint firstItem="4nl-OS-ClF" firstAttribute="bottom" secondItem="00J-uM-Q0W" secondAttribute="bottom" id="P6d-8N-3Tf"/>
                             <constraint firstItem="EdK-vW-UKR" firstAttribute="top" secondItem="4db-Qj-BZG" secondAttribute="bottom" constant="50" id="PZy-c6-bIF"/>
+                            <constraint firstItem="LPS-ZR-orf" firstAttribute="top" secondItem="Hag-9T-3xD" secondAttribute="bottom" constant="8" id="Sk1-NU-RQq"/>
                             <constraint firstItem="gsY-3g-Q4V" firstAttribute="leading" secondItem="QBM-Gl-MBU" secondAttribute="leadingMargin" id="TIB-SV-r2y"/>
                             <constraint firstItem="Hag-9T-3xD" firstAttribute="leading" secondItem="EdK-vW-UKR" secondAttribute="leading" id="Tn4-5o-NCE"/>
+                            <constraint firstItem="C0D-kd-IIG" firstAttribute="trailing" secondItem="QBM-Gl-MBU" secondAttribute="trailingMargin" id="UVB-rc-cmx"/>
                             <constraint firstItem="00J-uM-Q0W" firstAttribute="top" secondItem="EdK-vW-UKR" secondAttribute="bottom" constant="8" id="WS7-Zi-yPt"/>
                             <constraint firstItem="YAt-kf-IeB" firstAttribute="bottom" secondItem="mOY-wR-mtq" secondAttribute="bottom" id="Yn1-RV-YCN"/>
                             <constraint firstItem="Hag-9T-3xD" firstAttribute="top" secondItem="mOY-wR-mtq" secondAttribute="bottom" constant="8" id="aFp-Ff-6Xr"/>
@@ -888,19 +922,28 @@
                             <constraint firstItem="vHf-Um-y1F" firstAttribute="trailing" secondItem="QBM-Gl-MBU" secondAttribute="trailingMargin" id="kkm-KO-UeL"/>
                             <constraint firstItem="3ma-BK-Wti" firstAttribute="centerX" secondItem="QBM-Gl-MBU" secondAttribute="centerX" id="lyf-ch-yLb"/>
                             <constraint firstItem="EdK-vW-UKR" firstAttribute="top" secondItem="gsY-3g-Q4V" secondAttribute="bottom" constant="-2" id="mta-Ey-rdy"/>
-                            <constraint firstItem="3ma-BK-Wti" firstAttribute="top" secondItem="Hag-9T-3xD" secondAttribute="bottom" constant="8" id="oF5-QM-dUZ"/>
                             <constraint firstItem="00J-uM-Q0W" firstAttribute="leading" secondItem="EdK-vW-UKR" secondAttribute="leading" id="r5q-rt-hyQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="EdK-vW-UKR" secondAttribute="leading" id="roM-IE-U2N"/>
                             <constraint firstItem="EVV-Nh-U5m" firstAttribute="top" secondItem="vMi-0H-gJq" secondAttribute="bottom" constant="8" id="rxO-ca-FVE"/>
                             <constraint firstItem="YAt-kf-IeB" firstAttribute="trailing" secondItem="H6M-es-Mhh" secondAttribute="trailing" id="tcp-BR-6K4"/>
                             <constraint firstItem="vMi-0H-gJq" firstAttribute="trailing" secondItem="QBM-Gl-MBU" secondAttribute="trailingMargin" id="uRk-tD-lmG"/>
                             <constraint firstItem="vMi-0H-gJq" firstAttribute="leading" secondItem="QBM-Gl-MBU" secondAttribute="leadingMargin" id="uUK-tg-dmr"/>
+                            <constraint firstItem="3ma-BK-Wti" firstAttribute="top" secondItem="LPS-ZR-orf" secondAttribute="bottom" constant="8" id="uwp-ZZ-9rI"/>
                             <constraint firstItem="gsY-3g-Q4V" firstAttribute="top" secondItem="4db-Qj-BZG" secondAttribute="bottom" constant="8" id="v9r-NY-n2A"/>
                             <constraint firstItem="EdK-vW-UKR" firstAttribute="top" secondItem="gsY-3g-Q4V" secondAttribute="bottom" constant="-2" id="wf6-Zx-n4t"/>
                             <constraint firstItem="vHf-Um-y1F" firstAttribute="leading" secondItem="QBM-Gl-MBU" secondAttribute="leadingMargin" id="xVM-l7-x0x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View Debt" id="PIS-gX-22W"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="4nl-OS-ClF" id="vHP-XT-v9s"/>
+                        <outlet property="dateDueLabel" destination="LTL-e0-fCf" id="hIF-Bx-8kX"/>
+                        <outlet property="datePaidLabel" destination="C0D-kd-IIG" id="A5A-o8-1UM"/>
+                        <outlet property="dateStartedLabel" destination="YAt-kf-IeB" id="IB1-gb-2ap"/>
+                        <outlet property="infomationField" destination="vHf-Um-y1F" id="iLO-F1-246"/>
+                        <outlet property="nameLabel" destination="H6M-es-Mhh" id="Na4-kc-Fyd"/>
+                        <outlet property="titleLabel" destination="gsY-3g-Q4V" id="0Z7-Op-Iaq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGe-G5-kfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8OW-54-Vzl" userLabel="Exit" sceneMemberID="exit"/>

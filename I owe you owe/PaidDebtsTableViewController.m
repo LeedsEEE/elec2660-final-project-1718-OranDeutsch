@@ -132,14 +132,31 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    ViewPaidDebtViewController *destinationViewController = [segue destinationViewController];
+    
+    
+    
+    
+    
+    if ([[segue identifier] isEqualToString:@"paidDebtSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSArray *tempDebt = [Debt returnDebts:1 owed:0];
+        
+        NSInteger segueDebtID = [[[tempDebt objectAtIndex:indexPath.row] objectForKey:@"debtID"] integerValue];
+        
+        destinationViewController.debtID = segueDebtID;
+        
+        
+    }
 }
-*/
+
 
 @end

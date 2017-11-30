@@ -1,27 +1,28 @@
 //
-//  ViewDebtViewController.m
+//  ViewPaidDebtViewController.m
 //  I owe you owe
 //
-//  Created by Oran Deutsch [el16od] on 21/11/2017.
+//  Created by Oran Deutsch [el16od] on 30/11/2017.
 //  Copyright © 2017 Oran Deutsch [el16od]. All rights reserved.
 //
 
-#import "ViewDebtViewController.h"
+#import "ViewPaidDebtViewController.h"
+
+@interface ViewPaidDebtViewController ()
 
 
-@interface ViewDebtViewController ()
 
 @end
 
-@implementation ViewDebtViewController
+@implementation ViewPaidDebtViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
-    
-    
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
+    
+
     
     NSLog(@"%@",self.debtDictionary);
     
@@ -34,12 +35,12 @@
     }else{
         
         self.titleLabel.text = [NSString stringWithFormat:@"Debt from %@",firstName];
-
+        
         
     }
     
     
-    self.payeeNameLabel.text = [self.debtDictionary objectForKey:@"name"];
+    self.nameLabel.text = [self.debtDictionary objectForKey:@"name"];
     
     NSNumber *amount = [self.debtDictionary objectForKey:@"amount"];
     
@@ -57,10 +58,14 @@
     
     self.dateStartedLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
     self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
-    self.infomationTextField.text = [self.debtDictionary objectForKey:@"infomation"];
+    self.datePaidLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"datePaid"]];
     
+    
+    
+    self.infomationField.text = [self.debtDictionary objectForKey:@"infomation"];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -77,12 +82,4 @@
 }
 */
 
-- (IBAction)repayDebt:(id)sender {
-    
-    [Debt markDebtPaidFromID: self.debtID];
-    
-}
-
-- (IBAction)modifyDebt:(id)sender {
-}
 @end

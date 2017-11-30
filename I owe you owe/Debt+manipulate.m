@@ -180,6 +180,7 @@
     debtDict[@"dateStarted"] = debtInfo.dateStarted;
     debtDict[@"dateDue"] = debtInfo.dateDue;
     debtDict[@"datePaid"] = debtInfo.datePaid;
+    debtDict[@"infomation"] = debtInfo.infomation;
     return debtDict;
 }
 
