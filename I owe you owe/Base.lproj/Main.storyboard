@@ -689,7 +689,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qdp-J6-U5U">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="qdp-J6-U5U">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qdp-J6-U5U" id="vc9-1O-pDe">
@@ -697,7 +697,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AYz-yp-eei" kind="unwind" unwindAction="payeeSelectComplete:" id="omA-Dq-kua"/>
+                                    <segue destination="AYz-yp-eei" kind="unwind" trigger="accessoryAction" unwindAction="contactSelectComplete:" id="dDn-nV-NON"/>
+                                    <segue destination="AYz-yp-eei" kind="unwind" unwindAction="contactSelectComplete:" id="gHQ-5q-6Mo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

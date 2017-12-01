@@ -88,7 +88,7 @@
 
 - (IBAction)importPayeeFromContacts:(id)sender {
          
-    
+    [self.payeeTable reloadData];
     
 }
 

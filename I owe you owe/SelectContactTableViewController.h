@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Debt+manipulate.h"
+#import "Payee+manipulate.h"
 #import <ContactsUI/ContactsUI.h>
 
 
 @interface SelectContactTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *contactNames;
 
-@property (nonatomic, strong) NSArray *contactNames;
 
 @end
