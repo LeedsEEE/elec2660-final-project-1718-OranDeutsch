@@ -15,7 +15,7 @@
 
 + (int)returnNewDebtID;
 
-+ (Debt *) AddDebtFromDictionary:(NSDictionary *)debtInfo;
++ (Debt *)AddDebtFromDictionary:(NSDictionary *)debtInfo;
 
 + (NSArray *)returnDebts: (BOOL)isPaid owed:(BOOL)ImOwed;
 
@@ -27,6 +27,9 @@
 
 + (void)modifyIsPaidbyDebtID: (NSInteger)debtID isPaid:(BOOL)newIsPaid;
 
++ (void)createNotification: (NSInteger)debtID;
+
++ (void)deleteNotification: (NSInteger)debtID;
 
 
 + (NSString *)amountString: (NSNumber *)amount;

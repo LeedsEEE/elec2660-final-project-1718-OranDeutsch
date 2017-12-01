@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
 
+
 @interface ViewDebtViewController : UIViewController
 
 @property NSInteger debtID;

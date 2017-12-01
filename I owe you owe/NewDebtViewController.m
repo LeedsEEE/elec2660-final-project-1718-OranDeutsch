@@ -19,9 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-
-    
     
     
     
@@ -35,6 +32,12 @@
 
 
 #pragma mark exit navigation
+
+
+
+
+
+
 
 - (IBAction)payeeSelectComplete:(id)sender {
     
@@ -67,11 +70,27 @@
 - (IBAction)amountSelectComplete:(UIStoryboardSegue *)segue{
     
     
-    NSString *amountpreview = [NSString stringWithFormat:@"%.2f",[self.amount floatValue]];
+    [self.selectAmountButton setTitle:[Debt amountString:self.amount] forState:UIControlStateNormal];
     
     
-    
-    [self.selectAmountButton setTitle:amountpreview forState:UIControlStateNormal];
+}
+
+
+
+
+
+- (IBAction)toggleNotifications:(id)sender {
+    if (self.notificatioSwitch.on == 1) {
+        self.selectDateButton.alpha = 1.0;
+        self.selectDateButton.enabled = YES;
+        [self.selectDateButton setTitle:@"Select Date" forState:UIControlStateNormal];
+    }else{
+        self.selectDateButton.alpha = 0.4;
+        self.selectDateButton.enabled = NO;
+        
+        self.dueDate = nil;
+        [self.selectDateButton setTitle:@"not required" forState:UIControlStateNormal];
+    }
     
     
 }
@@ -80,17 +99,17 @@
     
     //All user data and some metadata is collected into a dictionary and pushed to the new debt method
     
-    NSLog(@"out of function payee id == %@", self.payeeID);
     
     
     if ([self.infomationField.text  isEqual: @"Enter debt description here"]) {
         self.infomationField.text = @"No description given";
     }
     
+    //disable due date from being recorded if user does not want a notification
     
-    
-    //NSLog(@"out of function dictionary payee id == %i", (int)[newDebt objectForKey:@"payeeID"]);
-    
+    if (self.notificatioSwitch.on == 0) {
+        self.dueDate = [NSDate date];
+    }
     
     
     #pragma mark invalid entry checking
@@ -118,17 +137,14 @@
     }
     
     @catch (NSException *exception) {
+        
+        
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
+        
+        
     }
-    
-    
-
-    
-    
-    
-    
     
 
     

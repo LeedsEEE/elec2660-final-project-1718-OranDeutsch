@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
+#import "SelectAmountViewController.h"
 
 
 
@@ -42,6 +43,7 @@
 - (IBAction)amountSelectComplete:(UIStoryboardSegue *)segue;
 
 
+- (IBAction)toggleNotifications:(id)sender;
 
 
 - (IBAction)createNewDebt:(id)sender;

@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *datePaidLabel;
 @property (weak, nonatomic) IBOutlet UITextView *infomationField;
 
+- (IBAction)deleteDebt:(id)sender;
 - (IBAction)markUnpaid:(id)sender;
 @end

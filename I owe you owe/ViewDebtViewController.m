@@ -39,6 +39,7 @@
     }
     
     
+    
     self.payeeNameLabel.text = [self.debtDictionary objectForKey:@"name"];
     
     NSNumber *amount = [self.debtDictionary objectForKey:@"amount"];
@@ -56,8 +57,17 @@
     [dateFormatter setDateFormat:@"d. MMMM YYYY"];
     
     self.dateStartedLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
-    self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
     self.infomationTextField.text = [self.debtDictionary objectForKey:@"infomation"];
+    
+    if ([[self.debtDictionary objectForKey:@"sendNotification"] integerValue] == 1) {
+        
+        self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+        
+    }else{
+        
+        self.dateDueLabel.text = @"N/A";
+    }
+    
     
     
 }
@@ -85,5 +95,9 @@
 }
 
 - (IBAction)modifyDebt:(id)sender {
+    
+    [Debt createNotification:self.debtID];
+    
+    
 }
 @end

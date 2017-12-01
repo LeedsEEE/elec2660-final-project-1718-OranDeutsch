@@ -107,6 +107,14 @@
     
     [context save:nil];
     
+    if ([[debtInfo valueForKey:@"sendNotification"] integerValue] == 1) {
+    
+        [self createNotification:debtID];
+    
+    }else{
+        NSLog(@"user did not request notification");
+    }
+    
     return newDebt;
 
     
@@ -183,6 +191,9 @@
     debtDict[@"dateDue"] = debtInfo.dateDue;
     debtDict[@"datePaid"] = debtInfo.datePaid;
     debtDict[@"infomation"] = debtInfo.infomation;
+    debtDict[@"sendNotification"] = debtInfo.sendNotification;
+    
+    
     return debtDict;
 }
 
@@ -244,8 +255,96 @@
 }
 
 
++ (void)deleteDebtFromID: (int)DebtID{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSError *error;
+    Debt *debtEntity = nil;
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    request.predicate = [NSPredicate predicateWithFormat:@"debtID == %i",DebtID];
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    debtEntity = [fetchedObject objectAtIndex:0];
+    
+    [context deleteObject:debtEntity];
+    
+    [context save:nil];
+    
+}
+
+#pragma mark notification functions
+
++ (void)createNotification: (NSInteger)debtID{
+    
+    NSDictionary *tempDebt = [Debt ViewDebtFromId:debtID];
+    
+    //Origionial code sourced from stack obverflow. However, it is very similar to apple's own code found in their documentaiton
+    
+    UNMutableNotificationContent *objNotificationContent = [[UNMutableNotificationContent alloc] init];
+    NSString *amount = [Debt amountString:[tempDebt objectForKey:@"amount"]];
+    NSString *notificationBodyText = nil;
+    NSString *notificationIdentifier = [NSString stringWithFormat:@"%@", [tempDebt objectForKey:@"debtID"]];
+    
+    if ([[tempDebt objectForKey:@"IOweDebt"] integerValue] == 1) {
+        
+        
+        notificationBodyText = [NSString stringWithFormat:@"Debt to %@ of %@",[tempDebt objectForKey:@"name"], amount];
+        
+    }else{
+        
+        notificationBodyText = [NSString stringWithFormat:@"Debt from %@ of %@",[tempDebt objectForKey:@"name"], amount];
+        
+        
+    }
+    
+    
+    
+    objNotificationContent.title = [NSString localizedUserNotificationStringForKey:@"Debt Due!" arguments:nil];
+    objNotificationContent.body = [NSString localizedUserNotificationStringForKey:notificationBodyText arguments:nil];
+    objNotificationContent.sound = [UNNotificationSound defaultSound];
+    objNotificationContent.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
+    
+    
+    NSDateComponents *triggerDate = [[NSCalendar currentCalendar]
+                                     components:NSCalendarUnitYear +
+                                     NSCalendarUnitMonth + NSCalendarUnitDay +
+                                     NSCalendarUnitHour + NSCalendarUnitMinute +
+                                     NSCalendarUnitSecond fromDate:[tempDebt objectForKey:@"dateDue"]];
+    
+    UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:triggerDate repeats:NO];
+    
+    
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:notificationIdentifier
+                                                                          content:objNotificationContent
+                                                                          trigger:trigger];
+    
+    
+   
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"Local Notification created for : %@", [tempDebt objectForKey:@"dateDue"]);
+        }
+        else {
+            NSLog(@"Error : Local Notification failed");
+        }
+    }];
+    
+    NSLog(@"Error : Local Notification failed");
+    
+}
+
++ (void)deleteNotification: (NSInteger)debtID{
+    
+}
 
 
+
+
+#pragma mark supporting finctions
 
 + (NSString *)amountString: (NSNumber *)amount{
     
@@ -256,6 +355,8 @@
     return output;
     
 }
+
+
 
 
 @end

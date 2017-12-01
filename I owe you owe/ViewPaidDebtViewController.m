@@ -57,10 +57,17 @@
     [dateFormatter setDateFormat:@"d. MMMM YYYY"];
     
     self.dateStartedLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
-    self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+    
     self.datePaidLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"datePaid"]];
     
-    
+    if ([[self.debtDictionary objectForKey:@"sendNotification"] integerValue] == 1) {
+        
+        self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+        
+    }else{
+        
+        self.dateDueLabel.text = @"N/A";
+    }
     
     self.infomationField.text = [self.debtDictionary objectForKey:@"infomation"];
     
@@ -81,6 +88,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)deleteDebt:(id)sender {
+    
+    [Debt deleteDebtFromID:(int)self.debtID];
+    
+}
 
 - (IBAction)markUnpaid:(id)sender {
     

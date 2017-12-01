@@ -23,6 +23,7 @@
     
     self.amount = [NSNumber numberWithFloat:0];
     
+    self.amountLabel.text = [self showAmount];
     
 }
 
@@ -75,17 +76,8 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
-    float tempAmount = [self.amountPicker selectedRowInComponent:0] * 1000;
-    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:1] * 100;
-    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:2] * 10;
-    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:3] * 1;
-    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:5] * 0.1;
-    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:6] * 0.01;
-    
-    self.amount = [NSNumber numberWithFloat:tempAmount];
-    
-    self.amountLabel.text = [NSString stringWithFormat:@"£%.2f", tempAmount];
-   
+
+        self.amountLabel.text = [self showAmount];
 
 }
 
@@ -109,5 +101,21 @@
 
 }
 
+-(NSString *) showAmount {
+    
+    float tempAmount = [self.amountPicker selectedRowInComponent:0] * 1000;
+    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:1] * 100;
+    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:2] * 10;
+    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:3] * 1;
+    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:5] * 0.1;
+    tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:6] * 0.01;
+    
+    self.amount = [NSNumber numberWithFloat:tempAmount];
+    
+    NSString *amount = [NSString stringWithFormat:@"£%.2f", tempAmount];
+    
+    
+    return amount;
+}
 
 @end
