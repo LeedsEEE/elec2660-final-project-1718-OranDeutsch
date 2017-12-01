@@ -73,9 +73,6 @@
     
     NSNumber *amountVal = [[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
     
-    cell.textLabel.text = [[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    
-    
     
     
     
@@ -157,6 +154,11 @@
         
     }
 }
-
+- (IBAction)PastDebtDeletedOrSetUnpaid:(UIStoryboardSegue *)segue{
+    
+    
+    
+    
+}
 
 @end

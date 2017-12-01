@@ -82,4 +82,9 @@
 }
 */
 
+- (IBAction)markUnpaid:(id)sender {
+    
+    [Debt modifyIsPaidbyDebtID:self.debtID isPaid:0];
+    
+}
 @end

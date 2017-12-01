@@ -74,7 +74,7 @@
     [Payee AddPayeeFromDictionary:newPayee];
     [self.payeeTable reloadData];
     
-    self.payeeNameField.text = @"payeeSelected";
+    self.payeeNameField.text = nil;
     
     
 }

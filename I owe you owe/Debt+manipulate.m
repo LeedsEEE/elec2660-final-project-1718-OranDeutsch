@@ -10,7 +10,7 @@
 
 @implementation Debt (manipulate)
 
-+ (int)returnAmountOfDebts{
++ (int)returnNewDebtID{
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -80,10 +80,11 @@
     
     newDebt.payee = selectedPayee;
     
+    
     //assign new debt imported values
     
     float storedAmount = [[debtInfo valueForKey:@"amount"] floatValue];
-    int debtID = [self returnAmountOfDebts];
+    int debtID = [self returnNewDebtID];
     
     newDebt.dateDue = [debtInfo valueForKey:@"dateDue"];
     newDebt.dateStarted = [debtInfo valueForKey:@"dateStarted"];
@@ -170,6 +171,7 @@
     debtDict[@"name"] = tempPayee.name;
     debtDict[@"payeeID"] = tempPayee.payeeID;
     
+
     
     debtDict[@"amount"] = debtInfo.amount;
     debtDict[@"isPaid"] = debtInfo.isPaid;
@@ -217,7 +219,7 @@
     
 }
 
-+ (void)markDebtPaidFromID: (NSInteger)debtID{
++ (void)modifyIsPaidbyDebtID: (NSInteger)debtID isPaid:(BOOL)isPaid {
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
@@ -233,7 +235,7 @@
     
     debtEntity = [fetchedObject objectAtIndex:0];
     
-    debtEntity.isPaid = [NSNumber numberWithInt:1];
+    debtEntity.isPaid = [NSNumber numberWithBool:isPaid];
     
     debtEntity.datePaid = [NSDate date];
     
@@ -243,10 +245,7 @@
 
 
 
-+ (void)deleteDebtFromID: (int)DebtID{
-    
-    
-}
+
 
 + (NSString *)amountString: (NSNumber *)amount{
     

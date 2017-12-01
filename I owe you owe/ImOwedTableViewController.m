@@ -44,19 +44,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imowedcell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
     
-    
-    
-    
+
     
     
     NSNumber *amountVal = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
     
     
     cell.textLabel.text = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    cell.detailTextLabel.text = [Debt amountString:amountVal];;
     
+    cell.detailTextLabel.text = [Debt amountString:amountVal];;
     
     return cell;
 }

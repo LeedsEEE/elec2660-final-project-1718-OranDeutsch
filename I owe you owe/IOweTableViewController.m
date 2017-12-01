@@ -61,10 +61,8 @@
     
     NSNumber *amountVal = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
     
-    NSString *amount = [Debt amountString:amountVal];
-    
-    cell.textLabel.text = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    cell.detailTextLabel.text = amount;
+    cell.detailTextLabel.text = [Debt amountString:amountVal];
+
     
     return cell;
 }

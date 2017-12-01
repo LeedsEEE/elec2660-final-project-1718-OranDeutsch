@@ -102,6 +102,7 @@
     
     NSArray *payeeIDs = [context executeFetchRequest:request error:&error];
     
+    NSLog(@"existing payeeIDs%@",payeeIDs);
     
     NSMutableArray *results = [[NSMutableArray alloc]init];
     
@@ -110,12 +111,12 @@
     Payee *payeeEntity;
     for (payeeEntity in payeeIDs) {
         
-        [results addObject: [NSNumber numberWithInt:(int)payeeEntity.payeeID]];
+        [results addObject: [NSNumber numberWithLong:[payeeEntity.payeeID integerValue]]];
         
     }
     
     
-    while ([results containsObject:[NSNumber numberWithInt:(int)newID]]) {
+    while ([results containsObject:[NSNumber numberWithInt:newID]]) {
         newID++;
     }
     

@@ -13,7 +13,7 @@
 
 @interface Debt (manipulate)
 
-+ (int)returnAmountOfDebts;
++ (int)returnNewDebtID;
 
 + (Debt *) AddDebtFromDictionary:(NSDictionary *)debtInfo;
 
@@ -25,7 +25,9 @@
 
 + (void)deleteDebtFromID: (int)DebtID;
 
-+ (void)markDebtPaidFromID: (NSInteger)DebtID;
++ (void)modifyIsPaidbyDebtID: (NSInteger)debtID isPaid:(BOOL)newIsPaid;
+
+
 
 + (NSString *)amountString: (NSNumber *)amount;
 
