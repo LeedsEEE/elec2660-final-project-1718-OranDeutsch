@@ -85,6 +85,8 @@
     self.payeeNameField.text = nil;
     
     
+    
+    
 }
 
 - (IBAction)contactSelectComplete:(UIStoryboardSegue *)segue{
@@ -98,6 +100,10 @@
          
     [self.payeeTable reloadData];
     
+    
+    
 }
+
+
 
 @end

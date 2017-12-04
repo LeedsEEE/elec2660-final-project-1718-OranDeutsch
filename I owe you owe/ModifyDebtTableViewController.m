@@ -17,12 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"imported debtID of %ld", self.debtID);
+    //Picker view setup
     
     self.amountPicker.delegate = self;
     self.amountPicker.dataSource = self;
     
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
+    
     
     
     NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];
@@ -38,8 +39,14 @@
         
     }
     
-    self.amount = [self.debtDictionary objectForKey:@"amount"];
-    self.amountLabel.text = [self showAmount];
+    
+    self.amount = [self.debtDictionary objectForKey:@"amount"] ;
+    
+    
+    self.amountLabel.text = [Debt amountString:self.amount];
+    
+    
+    //NSLog(@"%@", importedAmount);
     
     //Set up date picker to current due date
     
@@ -270,6 +277,9 @@
 
 
 -(NSString *) showAmount {
+    
+    
+    //creates a value for amount from theinput on the picker view
     
     float tempAmount = [self.amountPicker selectedRowInComponent:0] * 1000;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:1] * 100;

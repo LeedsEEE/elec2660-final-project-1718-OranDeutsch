@@ -17,23 +17,48 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     
-    //Accesses core deta "Payee" entity and adds an object
+    //Checks through all other Payees to detect a duplicate
+    Payee *newPayee = nil;
     
-    Payee *newPayee = (Payee *)[NSEntityDescription insertNewObjectForEntityForName:@"Payee" inManagedObjectContext:context];
+    NSError *error = nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
+    request.predicate = [NSPredicate predicateWithFormat:@"name == %@",[payeeInfo valueForKey:@"name"]];
     
-    if ([payeeInfo valueForKey:@"payeeID"] == NULL) {
-        NSLog(@"null error");
+    NSUInteger duplicates = [context countForFetchRequest:request error:&error];
+    
+    if (duplicates == 0) {
+        
+        //Accesses core deta "Payee" entity and adds an object only if there are no other payees with the same name
+        
+        newPayee = (Payee *)[NSEntityDescription insertNewObjectForEntityForName:@"Payee" inManagedObjectContext:context];
+        
+        if ([payeeInfo valueForKey:@"payeeID"] == NULL) {
+            NSLog(@"null error");
+        }
+        
+        
+        newPayee.payeeID = [NSNumber numberWithInt:[Payee newPayeeID]];
+        newPayee.name = [payeeInfo valueForKey:@"name"];
+        
+        
+        
+        
+        [context save:nil];
+        
+        
+
+    }else{
+    
+        
+        
+        
     }
     
-    
-    newPayee.payeeID = [NSNumber numberWithInt:[Payee newPayeeID]];
-    newPayee.name = [payeeInfo valueForKey:@"name"];
-    
-    
-
-    [context save:nil];
+    //returns a value of nil if there is a duplicate
     
     return newPayee;
+
     
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DB70A821FD5EB3800CB57B4 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB70A811FD5EB3800CB57B4 /* Untitled.png */; };
+		3DB70A841FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB70A831FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png */; };
+		620219721FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 620219711FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png */; };
 		621A37DD1FCC6892005C4978 /* Settings+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37D61FCC6892005C4978 /* Settings+CoreDataClass.m */; };
 		621A37DE1FCC6892005C4978 /* Settings+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37D81FCC6892005C4978 /* Settings+CoreDataProperties.m */; };
 		621A37EC1FCC6FD8005C4978 /* SelectPayeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37EB1FCC6FD8005C4978 /* SelectPayeeViewController.m */; };
@@ -21,6 +24,16 @@
 		62867A301FC454BD00AED0FF /* IOweTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62867A2F1FC454BD00AED0FF /* IOweTableViewController.m */; };
 		62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62867A321FC454DF00AED0FF /* ImOwedTableViewController.m */; };
 		6290BEDA1FD0932700DDBA9D /* ViewPaidDebtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290BED91FD0932700DDBA9D /* ViewPaidDebtViewController.m */; };
+		6294C16A1FD5F27500A2B4EE /* icons8-money-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1691FD5F27500A2B4EE /* icons8-money-50.png */; };
+		6294C16D1FD5F38F00A2B4EE /* icons8-settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C16B1FD5F38F00A2B4EE /* icons8-settings-50.png */; };
+		6294C16E1FD5F38F00A2B4EE /* icons8-view-details-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C16C1FD5F38F00A2B4EE /* icons8-view-details-50.png */; };
+		6294C1711FD5F39900A2B4EE /* icons8-add-new-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C16F1FD5F39900A2B4EE /* icons8-add-new-50.png */; };
+		6294C1721FD5F39900A2B4EE /* icons8-exchange-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1701FD5F39900A2B4EE /* icons8-exchange-50.png */; };
+		6294C1771FD5F67A00A2B4EE /* icons8-money-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1731FD5F67A00A2B4EE /* icons8-money-40.png */; };
+		6294C1781FD5F67A00A2B4EE /* icons8-payment-history-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1741FD5F67A00A2B4EE /* icons8-payment-history-40.png */; };
+		6294C1791FD5F67A00A2B4EE /* icons8-settings-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1751FD5F67A00A2B4EE /* icons8-settings-40.png */; };
+		6294C17A1FD5F67A00A2B4EE /* icons8-exchange-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1761FD5F67A00A2B4EE /* icons8-exchange-40.png */; };
+		6294C17C1FD5F70600A2B4EE /* icons8-add-new-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C17B1FD5F70600A2B4EE /* icons8-add-new-40.png */; };
 		62B0A3D51FC4795E008C7A4A /* ViewDebtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */; };
 		62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */; };
 		62CE78D61FCDC32A00C9A905 /* Debt+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */; };
@@ -60,6 +73,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DB70A811FD5EB3800CB57B4 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		3DB70A831FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-12-04 at 20.56.50.png"; sourceTree = "<group>"; };
+		620219711FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pile_of_Coins_PNG_Picture.png; sourceTree = "<group>"; };
+		620219731FD5E1CF00F2DEFB /* Test App Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Test App Icon.png"; sourceTree = "<group>"; };
 		621A37D51FCC6892005C4978 /* Settings+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Settings+CoreDataClass.h"; path = "../Settings+CoreDataClass.h"; sourceTree = "<group>"; };
 		621A37D61FCC6892005C4978 /* Settings+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Settings+CoreDataClass.m"; path = "../Settings+CoreDataClass.m"; sourceTree = "<group>"; };
 		621A37D71FCC6892005C4978 /* Settings+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Settings+CoreDataProperties.h"; path = "../Settings+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -86,6 +103,16 @@
 		62867A321FC454DF00AED0FF /* ImOwedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImOwedTableViewController.m; sourceTree = "<group>"; };
 		6290BED81FD0932700DDBA9D /* ViewPaidDebtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPaidDebtViewController.h; sourceTree = "<group>"; };
 		6290BED91FD0932700DDBA9D /* ViewPaidDebtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPaidDebtViewController.m; sourceTree = "<group>"; };
+		6294C1691FD5F27500A2B4EE /* icons8-money-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-money-50.png"; sourceTree = "<group>"; };
+		6294C16B1FD5F38F00A2B4EE /* icons8-settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings-50.png"; sourceTree = "<group>"; };
+		6294C16C1FD5F38F00A2B4EE /* icons8-view-details-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-view-details-50.png"; sourceTree = "<group>"; };
+		6294C16F1FD5F39900A2B4EE /* icons8-add-new-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-add-new-50.png"; sourceTree = "<group>"; };
+		6294C1701FD5F39900A2B4EE /* icons8-exchange-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-exchange-50.png"; sourceTree = "<group>"; };
+		6294C1731FD5F67A00A2B4EE /* icons8-money-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-money-40.png"; sourceTree = "<group>"; };
+		6294C1741FD5F67A00A2B4EE /* icons8-payment-history-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-payment-history-40.png"; sourceTree = "<group>"; };
+		6294C1751FD5F67A00A2B4EE /* icons8-settings-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings-40.png"; sourceTree = "<group>"; };
+		6294C1761FD5F67A00A2B4EE /* icons8-exchange-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-exchange-40.png"; sourceTree = "<group>"; };
+		6294C17B1FD5F70600A2B4EE /* icons8-add-new-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-add-new-40.png"; sourceTree = "<group>"; };
 		62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewDebtViewController.h; sourceTree = "<group>"; };
 		62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDebtViewController.m; sourceTree = "<group>"; };
 		62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingDebtsViewController.h; sourceTree = "<group>"; };
@@ -189,6 +216,20 @@
 		62CE78DB1FCDCFBF00C9A905 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				6294C17B1FD5F70600A2B4EE /* icons8-add-new-40.png */,
+				6294C1731FD5F67A00A2B4EE /* icons8-money-40.png */,
+				6294C1741FD5F67A00A2B4EE /* icons8-payment-history-40.png */,
+				6294C1751FD5F67A00A2B4EE /* icons8-settings-40.png */,
+				6294C1761FD5F67A00A2B4EE /* icons8-exchange-40.png */,
+				6294C16F1FD5F39900A2B4EE /* icons8-add-new-50.png */,
+				6294C1701FD5F39900A2B4EE /* icons8-exchange-50.png */,
+				6294C16B1FD5F38F00A2B4EE /* icons8-settings-50.png */,
+				6294C16C1FD5F38F00A2B4EE /* icons8-view-details-50.png */,
+				6294C1691FD5F27500A2B4EE /* icons8-money-50.png */,
+				3DB70A831FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png */,
+				3DB70A811FD5EB3800CB57B4 /* Untitled.png */,
+				620219731FD5E1CF00F2DEFB /* Test App Icon.png */,
+				620219711FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -434,8 +475,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				620219721FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png in Resources */,
+				6294C1721FD5F39900A2B4EE /* icons8-exchange-50.png in Resources */,
+				6294C1791FD5F67A00A2B4EE /* icons8-settings-40.png in Resources */,
+				3DB70A841FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png in Resources */,
+				6294C16A1FD5F27500A2B4EE /* icons8-money-50.png in Resources */,
+				6294C1711FD5F39900A2B4EE /* icons8-add-new-50.png in Resources */,
 				62D4D8601FC4269500F6B1D4 /* LaunchScreen.storyboard in Resources */,
 				62D4D85D1FC4269500F6B1D4 /* Assets.xcassets in Resources */,
+				6294C16D1FD5F38F00A2B4EE /* icons8-settings-50.png in Resources */,
+				6294C17A1FD5F67A00A2B4EE /* icons8-exchange-40.png in Resources */,
+				6294C17C1FD5F70600A2B4EE /* icons8-add-new-40.png in Resources */,
+				6294C1771FD5F67A00A2B4EE /* icons8-money-40.png in Resources */,
+				3DB70A821FD5EB3800CB57B4 /* Untitled.png in Resources */,
+				6294C16E1FD5F38F00A2B4EE /* icons8-view-details-50.png in Resources */,
+				6294C1781FD5F67A00A2B4EE /* icons8-payment-history-40.png in Resources */,
 				62D4D85B1FC4269500F6B1D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

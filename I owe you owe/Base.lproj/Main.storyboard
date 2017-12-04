@@ -19,13 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Pile_of_Coins_PNG_Picture.png" translatesAutoresizingMaskIntoConstraints="NO" id="XpM-sm-EEJ">
+                                <frame key="frameInset" minX="16" minY="233" width="343" height="434"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3L-bW-y7n">
                                 <state key="normal" title="go to app"/>
                                 <connections>
                                     <action selector="goToApp:" destination="q1v-ag-8cI" eventType="touchUpInside" id="78y-bP-FkC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select your currency to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzZ-uM-0GG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select your currency to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzZ-uM-0GG">
                                 <frame key="frameInset" minX="74" minY="62" width="226" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -37,24 +40,29 @@
                                     <outlet property="delegate" destination="q1v-ag-8cI" id="acP-2H-1sW"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to &quot;I Owe you Owe&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-2w-Pfi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Welcome to &quot;I Owe you Owe&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-2w-Pfi">
+                                <frame key="frameInset" minX="24" minY="28" width="327" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="A7l-r8-cGU" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leading" id="8hC-DL-fwM"/>
                             <constraint firstItem="xzZ-uM-0GG" firstAttribute="top" secondItem="flc-2w-Pfi" secondAttribute="bottom" constant="8" id="IYK-K3-aab"/>
                             <constraint firstItem="flc-2w-Pfi" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" constant="8" id="LMM-au-v8A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="flc-2w-Pfi" secondAttribute="trailing" constant="8" id="NRf-ww-nUU"/>
+                            <constraint firstItem="EyF-yv-u99" firstAttribute="top" secondItem="XpM-sm-EEJ" secondAttribute="bottom" id="NYF-vR-NmW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g3L-bW-y7n" secondAttribute="trailing" constant="8" id="VfH-wa-twv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xzZ-uM-0GG" secondAttribute="trailing" constant="8" id="afs-uo-PeK"/>
+                            <constraint firstItem="XpM-sm-EEJ" firstAttribute="top" secondItem="xzZ-uM-0GG" secondAttribute="bottom" constant="150" id="bIh-fj-zNX"/>
                             <constraint firstItem="g3L-bW-y7n" firstAttribute="top" secondItem="A7l-r8-cGU" secondAttribute="bottom" constant="8" id="dSw-DO-L2J"/>
                             <constraint firstItem="g3L-bW-y7n" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" constant="8" id="hWu-Hv-658"/>
                             <constraint firstItem="flc-2w-Pfi" firstAttribute="top" secondItem="1Io-JM-kkh" secondAttribute="bottom" constant="8" id="ja2-XT-yYs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XpM-sm-EEJ" secondAttribute="trailing" id="nzM-1Z-Wcp"/>
                             <constraint firstAttribute="trailing" secondItem="A7l-r8-cGU" secondAttribute="trailing" id="pFa-Vk-ndG"/>
+                            <constraint firstItem="XpM-sm-EEJ" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" id="rpB-KE-1FX"/>
                             <constraint firstItem="EyF-yv-u99" firstAttribute="top" secondItem="g3L-bW-y7n" secondAttribute="bottom" constant="8" id="wkQ-72-QO5"/>
                             <constraint firstItem="xzZ-uM-0GG" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" constant="8" id="x7C-a9-G1q"/>
                         </constraints>
@@ -66,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28W-YO-Cv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3089" y="1017"/>
+            <point key="canvasLocation" x="-3090.4000000000001" y="1016.9415292353824"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7eF-XO-GRo">
@@ -120,7 +128,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imowedcell" textLabel="yj8-ma-Y0K" detailTextLabel="u2e-4f-izr" style="IBUITableViewCellStyleValue1" id="0NM-4L-S35">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NM-4L-S35" id="7Gr-bw-Hed">
                                             <frame key="frameInset" width="276" height="43"/>
@@ -156,7 +164,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iowecell" textLabel="vUT-ql-5sc" detailTextLabel="ocS-hM-mR9" style="IBUITableViewCellStyleValue1" id="vPU-Uj-d6P">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPU-Uj-d6P" id="Xpj-3C-0Vy">
                                             <frame key="frameInset" width="276" height="43"/>
@@ -189,7 +197,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sz2-dq-aSF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="2PP-IC-KcD"/>
                             <constraint firstItem="sz2-dq-aSF" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="31E-kJ-ksn"/>
@@ -208,7 +216,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="sz2-dq-aSF" secondAttribute="bottom" constant="8" id="w7W-Cy-ekL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="View Debts" image="icons8-money-40.png" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="IOweTable" destination="Y6A-cA-Hpb" id="GHf-TU-aOM"/>
                         <outlet property="ImOwedTable" destination="sz2-dq-aSF" id="dbI-TL-4zq"/>
@@ -301,7 +309,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZCJ-xs-ctB" firstAttribute="top" secondItem="LMj-IJ-PTP" secondAttribute="bottom" constant="8" id="1Ed-AJ-Wrh"/>
                             <constraint firstItem="66e-IK-kCg" firstAttribute="top" secondItem="ZCJ-xs-ctB" secondAttribute="bottom" constant="8" id="30E-fj-nPP"/>
@@ -367,7 +375,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BGY-NT-SoP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="paidDebt" textLabel="IeZ-QB-7OA" detailTextLabel="8KQ-jc-Jqv" style="IBUITableViewCellStyleValue1" id="EKv-jF-fFL">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
@@ -402,7 +412,7 @@
                             <outlet property="delegate" destination="iSd-Xx-yEm" id="UOQ-rL-kmA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Debt History" id="Jm3-Ow-juf"/>
+                    <tabBarItem key="tabBarItem" title="Debt History" image="icons8-payment-history-40.png" id="Jm3-Ow-juf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQO-Ps-cx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +460,7 @@
                             <outlet property="delegate" destination="zis-QO-c9s" id="XDE-zm-Hep"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" id="3ed-xW-9W4"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="icons8-settings-40.png" id="3ed-xW-9W4"/>
                     <connections>
                         <outlet property="currencyPicker" destination="uA7-zH-MhN" id="nIg-wb-3Hx"/>
                     </connections>
@@ -681,7 +691,7 @@
                             <outlet property="delegate" destination="lkZ-Zf-HXh" id="nPM-fr-5qB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="New Debt" id="lgP-gx-hY0"/>
+                    <tabBarItem key="tabBarItem" title="New Debt" image="icons8-add-new-40.png" id="lgP-gx-hY0"/>
                     <connections>
                         <outlet property="ImOwedSwitch" destination="hfs-Du-AcE" id="4sD-c0-0zg"/>
                         <outlet property="amountLabel" destination="bHa-7W-gr4" id="27K-Dc-MIZ"/>
@@ -730,7 +740,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="payee" textLabel="cjf-fL-dRb" style="IBUITableViewCellStyleDefault" id="cTI-1X-OOM">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cTI-1X-OOM" id="eXy-PT-wlL">
                                             <frame key="frameInset" width="310" height="43"/>
@@ -831,8 +841,8 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="iSd-Xx-yEm" kind="relationship" relationship="viewControllers" id="SMZ-VZ-Pxq"/>
-                        <segue destination="zis-QO-c9s" kind="relationship" relationship="viewControllers" id="UrT-zS-kNo"/>
-                        <segue destination="lkZ-Zf-HXh" kind="relationship" relationship="viewControllers" id="FL3-uJ-HsJ"/>
+                        <segue destination="lkZ-Zf-HXh" kind="relationship" relationship="viewControllers" id="hgf-8W-Krf"/>
+                        <segue destination="zis-QO-c9s" kind="relationship" relationship="viewControllers" id="6mC-Ma-XB0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -932,7 +942,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="H6M-es-Mhh" secondAttribute="trailing" id="02v-55-zgW"/>
                             <constraint firstItem="LPS-ZR-orf" firstAttribute="leading" secondItem="QBM-Gl-MBU" secondAttribute="leadingMargin" id="2dT-pK-qcQ"/>
@@ -1199,7 +1209,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Pile_of_Coins_PNG_Picture.png" width="600" height="391"/>
+        <image name="icons8-add-new-40.png" width="40" height="40"/>
+        <image name="icons8-money-40.png" width="40" height="40"/>
+        <image name="icons8-payment-history-40.png" width="40" height="40"/>
+        <image name="icons8-settings-40.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9fT-q3-26Q"/>

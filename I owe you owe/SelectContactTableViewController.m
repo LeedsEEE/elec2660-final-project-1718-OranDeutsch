@@ -104,8 +104,7 @@
     
     
     
-    [Payee AddPayeeFromDictionary:newPayee];
-    
+    Payee *tempPayee = [Payee AddPayeeFromDictionary:newPayee];
     
     
     

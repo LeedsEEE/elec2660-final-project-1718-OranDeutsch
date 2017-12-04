@@ -318,7 +318,7 @@
     objNotificationContent.title = [NSString localizedUserNotificationStringForKey:@"Debt Due!" arguments:nil];
     objNotificationContent.body = [NSString localizedUserNotificationStringForKey:notificationBodyText arguments:nil];
     objNotificationContent.sound = [UNNotificationSound defaultSound];
-    objNotificationContent.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
+    objNotificationContent.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber]);
     
     
     NSDateComponents *triggerDate = [[NSCalendar currentCalendar]
