@@ -1,15 +1,15 @@
 //
-//  SettingsViewController.h
+//  SettingsTableViewController.h
 //  I owe you owe
 //
-//  Created by Oran Deutsch [el16od] on 21/11/2017.
+//  Created by Oran Deutsch [el16od] on 04/12/2017.
 //  Copyright © 2017 Oran Deutsch [el16od]. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Settings+manipulate.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *currencyNames;
 @property (nonatomic, strong) NSArray *currencyLogos;
