@@ -10,4 +10,6 @@
 
 @interface WelcomeViewController : UIViewController
 
+- (IBAction)goToApp:(id)sender;
+
 @end
