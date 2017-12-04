@@ -19,9 +19,8 @@
     
     [self.tabBarController setTitle:@"Settings"];
     
+    self.currencyData = [Settings returnCurrencies];
     
-    self.currencyLogos = @[@"£",        @"$",           @"€",       @"¥",   @"¥"];
-    self.currencyNames = @[@"Pound",    @"US Dollar",   @"Euro",    @"Yen", @"Yuan "];
     
     
 }
@@ -49,7 +48,8 @@
 (NSInteger)component{
     NSInteger rows;
     
-    rows = [self.currencyLogos count];
+    rows = [self.currencyData count];
+    
     
     
     return rows;
@@ -63,10 +63,15 @@
             forComponent:(NSInteger)component{
     
     
+    Currency *tempCurrency = [self.currencyData objectAtIndex:row];
+    
+    
     
     NSString *rowvalue = [NSString stringWithFormat:@"%@ (%@)",
-                          [self.currencyNames objectAtIndex:row],
-                          [self.currencyLogos objectAtIndex:row]];
+                          tempCurrency.name,
+                          tempCurrency.symbol];
+    
+    
     
     return rowvalue;
     
@@ -76,12 +81,10 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
+    Currency *tempCurrency = [self.currencyData objectAtIndex:row];
     
-    self.tempSettings.currency = [self.currencyLogos objectAtIndex:row];
     
-    NSLog(@"selected currency = %@ or %@", self.tempSettings.currency, [self.currencyLogos objectAtIndex:row]);
-    
-    [Settings updateCurrency:[self.currencyLogos objectAtIndex:row]];
+    [Settings updateCurrency:tempCurrency.symbol];
     
     
     

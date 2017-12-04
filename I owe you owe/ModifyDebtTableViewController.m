@@ -39,13 +39,9 @@
     }
     
     self.amount = [self.debtDictionary objectForKey:@"amount"];
+    self.amountLabel.text = [self showAmount];
     
     //Set up date picker to current due date
-    
-    
-    
-
-    //Set up amount picker to current value
     
     
     if ([[self.debtDictionary objectForKey:@"sendNotification"]integerValue] == 1) {
@@ -62,6 +58,13 @@
         
         
     }
+    
+
+    //Set up amount picker to current value
+    
+    //As I needed to split up the float into a series of singular integers I had to convert the 2 decimal place float into a string, make sure it had 7 figures displayed and then seperate each value.
+    
+    //This is to prevent the user having to enter their value again even if they have no intentions to modify it
     
     
     for (int i = 0; i < 7; i++) {
@@ -102,7 +105,7 @@
         
     }
     
-    //Set up infomation field to existing values
+    //Set up infomation field to existing value
     
     [self.infomationField setText:[self.debtDictionary objectForKey:@"infomation"]];
 

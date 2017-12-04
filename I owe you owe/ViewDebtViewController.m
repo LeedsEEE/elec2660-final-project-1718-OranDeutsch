@@ -26,6 +26,12 @@
     
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [self loadData];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,7 +60,10 @@
 - (IBAction)modificationComplete:(UIStoryboardSegue *)segue{
     
         [self loadData];
+        [super viewDidLoad];
     
+    
+    NSLog(@"%@", self.debtDictionary);
     
     
 }

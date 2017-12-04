@@ -11,10 +11,9 @@
 
 @interface SettingsTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *currencyNames;
-@property (nonatomic, strong) NSArray *currencyLogos;
 
 @property (nonatomic, strong) Settings *tempSettings;
+@property (nonatomic, strong) NSMutableArray *currencyData;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *currencyPicker;
 

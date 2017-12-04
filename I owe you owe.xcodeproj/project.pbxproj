@@ -14,6 +14,7 @@
 		621A37F81FCC86FD005C4978 /* Payee+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F11FCC86FD005C4978 /* Payee+CoreDataClass.m */; };
 		621A37F91FCC86FD005C4978 /* Payee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */; };
 		622412BF1FD587BC00373611 /* ModifyDebtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */; };
+		6264116B1FD5C3B200F1D8E3 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264116A1FD5C3B200F1D8E3 /* Currency.m */; };
 		6268F3F61FD1C76300168A7A /* SelectContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6268F3F51FD1C76300168A7A /* SelectContactTableViewController.m */; };
 		6268F3F91FD1CA6800168A7A /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268F3F81FD1CA6800168A7A /* Contacts.framework */; };
 		6268F3FB1FD1CA6C00168A7A /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268F3FA1FD1CA6C00168A7A /* ContactsUI.framework */; };
@@ -73,6 +74,8 @@
 		621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payee+CoreDataProperties.m"; sourceTree = "<group>"; };
 		622412BD1FD587BC00373611 /* ModifyDebtTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyDebtTableViewController.h; sourceTree = "<group>"; };
 		622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyDebtTableViewController.m; sourceTree = "<group>"; };
+		626411691FD5C3B200F1D8E3 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
+		6264116A1FD5C3B200F1D8E3 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		6268F3F41FD1C76300168A7A /* SelectContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactTableViewController.h; sourceTree = "<group>"; };
 		6268F3F51FD1C76300168A7A /* SelectContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectContactTableViewController.m; sourceTree = "<group>"; };
 		6268F3F81FD1CA6800168A7A /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -318,6 +321,8 @@
 				621A37D81FCC6892005C4978 /* Settings+CoreDataProperties.m */,
 				62E9E5361FCC17A200670472 /* Settings+manipulate.h */,
 				62E9E5371FCC17A200670472 /* Settings+manipulate.m */,
+				626411691FD5C3B200F1D8E3 /* Currency.h */,
+				6264116A1FD5C3B200F1D8E3 /* Currency.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				621A37DE1FCC6892005C4978 /* Settings+CoreDataProperties.m in Sources */,
 				62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */,
 				621A37F81FCC86FD005C4978 /* Payee+CoreDataClass.m in Sources */,
+				6264116B1FD5C3B200F1D8E3 /* Currency.m in Sources */,
 				62E9E5321FCC172F00670472 /* Debt+manipulate.m in Sources */,
 				62E9E5351FCC177500670472 /* Payee+manipulate.m in Sources */,
 				62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */,

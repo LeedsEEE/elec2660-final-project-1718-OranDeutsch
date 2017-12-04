@@ -8,11 +8,19 @@
 
 #import "Settings+CoreDataClass.h"
 #import "AppDelegate.h"
+#import "Currency.h"
 
 @interface Settings (manipulate)
+
+
+@property (weak, nonatomic) NSMutableArray *Currencies;
+
++ (NSMutableArray *)returnCurrencies;
 
 + (void)updateCurrency: (NSString *)newCurrency;
 
 + (NSDictionary *) returnSettings;
+
++ (BOOL)firstTimeLoad;
 
 @end

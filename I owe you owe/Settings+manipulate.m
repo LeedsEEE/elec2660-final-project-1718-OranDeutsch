@@ -10,6 +10,9 @@
 
 @implementation Settings (manipulate)
 
+
+
+
 + (void)updateCurrency: (NSString *)newCurrency{
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -77,6 +80,68 @@
     
     return returnSettings;
     
+}
+
++ (NSMutableArray *)returnCurrencies{
+    
+    
+    //The currency infomation is placed into a small DataModel to keep consistency throughout the whole app
+    
+    
+    NSMutableArray *Currencies = [NSMutableArray array];
+    
+    Currency *pound = [[Currency alloc] init];
+    pound.name = @"Pound";
+    pound.symbol = @"£";
+    
+    Currency *dollar = [[Currency alloc] init];
+    dollar.name = @"Dollar";
+    dollar.symbol = @"$";
+    
+    Currency *euro = [[Currency alloc] init];
+    euro.name = @"Euro";
+    euro.symbol = @"€";
+    
+    Currency *yen = [[Currency alloc] init];
+    yen.name = @"Yen";
+    yen.symbol = @"¥";
+    
+    Currency *yuan = [[Currency alloc] init];
+    yuan.name = @"Yuan";
+    yuan.symbol = @"¥";
+    
+    [Currencies addObject:pound];  //
+    [Currencies addObject:dollar]; //
+    [Currencies addObject:euro];   //
+    [Currencies addObject:yen];    //
+    [Currencies addObject:yuan];   //
+    
+    
+    
+    return Currencies;
+    
+}
+
++ (BOOL)firstTimeLoad{
+    
+    BOOL firstTime = nil;
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSError *error;
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Settings"];
+    NSUInteger newID = [context countForFetchRequest:request error:&error];
+    
+    if (newID > 0) {
+        firstTime = NO;
+    }else{
+        firstTime = YES;
+    }
+    
+    
+    return firstTime;
 }
 
 
