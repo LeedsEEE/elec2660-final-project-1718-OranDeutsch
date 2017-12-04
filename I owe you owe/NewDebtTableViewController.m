@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
     
     self.amountPicker.delegate = self;
     self.amountPicker.dataSource = self;
@@ -26,6 +27,13 @@
     self.amountLabel.text = [self showAmount];
 
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tabBarController setTitle:@"New Debt"];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

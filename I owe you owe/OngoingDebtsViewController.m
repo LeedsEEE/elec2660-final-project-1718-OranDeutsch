@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
+    
     self.iOweTableViewController = [[IOweTableViewController alloc] init];
     self.imOwedTableViewController = [[ImOwedTableViewController alloc] init];
     
@@ -33,7 +35,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+     [self.tabBarController setTitle:@"Unpaid Debts"];
     
     [self.IOweTable reloadData];
     [self.ImOwedTable reloadData];

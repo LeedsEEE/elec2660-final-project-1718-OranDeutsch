@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    [self.tabBarController setTitle:@"Settings"];
     
     
     self.currencyLogos = @[@"£",        @"$",           @"€",       @"¥",   @"¥"];
@@ -25,6 +25,13 @@
     
     
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tabBarController setTitle:@"Settings"];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,7 +51,6 @@
     
     rows = [self.currencyLogos count];
     
-    NSLog(@"amount of rows = %ld",rows);
     
     return rows;
     

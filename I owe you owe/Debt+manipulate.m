@@ -179,12 +179,14 @@
     debtDict[@"name"] = tempPayee.name;
     debtDict[@"payeeID"] = tempPayee.payeeID;
     
-
     
+ 
+
+    debtDict[@"payee"] = debtInfo.payee;
     debtDict[@"amount"] = debtInfo.amount;
     debtDict[@"isPaid"] = debtInfo.isPaid;
-    debtDict[@"ImOwedDebt"] = debtInfo.imOwedDebt;
-    debtDict[@"IOweDebt"] = debtInfo.iOweDebt;
+    debtDict[@"imOwedDebt"] = debtInfo.imOwedDebt;
+    debtDict[@"iOweDebt"] = debtInfo.iOweDebt;
     debtDict[@"debtID"] = debtInfo.debtID;
     
     debtDict[@"dateStarted"] = debtInfo.dateStarted;
@@ -250,6 +252,15 @@
     
     debtEntity.datePaid = [NSDate date];
     
+    if ([debtEntity.isPaid integerValue] == 1) {
+        [self deleteNotification: debtID];
+        
+    }else if ([debtEntity.sendNotification integerValue] == 1){
+        
+        [self createNotification: debtID];
+        
+    }
+    
     [context save:nil];
     
 }
@@ -268,6 +279,8 @@
     NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
     
     debtEntity = [fetchedObject objectAtIndex:0];
+    
+    [self deleteNotification:DebtID];
     
     [context deleteObject:debtEntity];
     
@@ -333,11 +346,22 @@
         }
     }];
     
-    NSLog(@"Error : Local Notification failed");
     
 }
 
 + (void)deleteNotification: (NSInteger)debtID{
+    
+    
+    //Found and modified from stackoverflow
+    //https://stackoverflow.com/questions/43773383/how-cancel-local-single-notification-in-objective-c
+    
+    NSDictionary *tempDebt = [Debt ViewDebtFromId:debtID];
+    NSString *notificationIdentifier = [NSString stringWithFormat:@"%@", [tempDebt objectForKey:@"debtID"]];
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    NSArray *array = [NSArray arrayWithObjects:notificationIdentifier, nil];
+    [center removePendingNotificationRequestsWithIdentifiers:array];
+    
     
 }
 

@@ -19,16 +19,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadData];
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)deleteDebt:(id)sender {
+    
+    [Debt deleteDebtFromID:(int)self.debtID];
+    
+}
+
+- (IBAction)markUnpaid:(id)sender {
+    
+    [Debt modifyIsPaidbyDebtID:self.debtID isPaid:0];
+    
+}
+
+-(void)loadData {
     
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
-
-    
-    NSLog(@"%@",self.debtDictionary);
     
     NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];
     
-    if ([[self.debtDictionary objectForKey:@"IOweDebt"] integerValue] == 1) {
+    if ([[self.debtDictionary objectForKey:@"iOweDebt"] integerValue] == 1) {
         
         self.titleLabel.text = [NSString stringWithFormat:@"Debt to %@",firstName];
         
@@ -70,34 +100,8 @@
     }
     
     self.infomationField.text = [self.debtDictionary objectForKey:@"infomation"];
+
     
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)deleteDebt:(id)sender {
-    
-    [Debt deleteDebtFromID:(int)self.debtID];
-    
-}
-
-- (IBAction)markUnpaid:(id)sender {
-    
-    [Debt modifyIsPaidbyDebtID:self.debtID isPaid:0];
     
 }
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SelectPayeeTableViewController.h"
-#import "NewDebtViewController.h"
+#import "NewDebtTableViewController.h"
 
 
 

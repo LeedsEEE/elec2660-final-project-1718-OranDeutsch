@@ -44,7 +44,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    NewDebtViewController *destinationViewController = [segue destinationViewController];
+    NewDebtTableViewController *destinationViewController = [segue destinationViewController];
     
     NSIndexPath *indexPath = [self.payeeTable indexPathForSelectedRow];
 

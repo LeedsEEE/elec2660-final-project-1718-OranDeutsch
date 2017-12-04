@@ -19,22 +19,72 @@
     [super viewDidLoad];
     
     
+    [self loadData];
     
+    
+    
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    ModifyDebtTableViewController *destinationViewController = [segue destinationViewController];
+    
+    
+    
+    if ([[segue identifier] isEqualToString:@"modifyDebtSegue"]) {
+        
+        
+        destinationViewController.debtID = self.debtID;
+        
+        
+    }
+}
+
+
+- (IBAction)modificationComplete:(UIStoryboardSegue *)segue{
+    
+        [self loadData];
+    
+    
+    
+}
+
+- (IBAction)repayDebt:(id)sender {
+
+    [Debt modifyIsPaidbyDebtID:self.debtID isPaid:1];
+     
+     
+}
+
+- (IBAction)modifyDebt:(id)sender {
+    
+    
+}
+
+-(void) loadData {
     
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
-    NSLog(@"%@",self.debtDictionary);
-    
     NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];
     
-    if ([[self.debtDictionary objectForKey:@"IOweDebt"] integerValue] == 1) {
+    if ([[self.debtDictionary objectForKey:@"iOweDebt"] integerValue] == 1) {
         
         self.titleLabel.text = [NSString stringWithFormat:@"Debt to %@",firstName];
         
     }else{
         
         self.titleLabel.text = [NSString stringWithFormat:@"Debt from %@",firstName];
-
+        
         
     }
     
@@ -59,44 +109,15 @@
     self.dateStartedLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateStarted"]];
     self.infomationTextField.text = [self.debtDictionary objectForKey:@"infomation"];
     
+    self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+    
     if ([[self.debtDictionary objectForKey:@"sendNotification"] integerValue] == 1) {
-        
-        self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
         
     }else{
         
         self.dateDueLabel.text = @"N/A";
     }
-    
-    
-    
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)repayDebt:(id)sender {
-
-    [Debt modifyIsPaidbyDebtID:self.debtID isPaid:1];
-     
-     
-}
-
-- (IBAction)modifyDebt:(id)sender {
-    
-    [Debt createNotification:self.debtID];
     
     
 }

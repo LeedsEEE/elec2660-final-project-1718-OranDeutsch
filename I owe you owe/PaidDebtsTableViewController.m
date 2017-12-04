@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@", self.paidDebts);
+    
  
     
     self.tableView.delegate = self;
@@ -28,6 +28,7 @@
     [super viewWillAppear:animated];
     
     [self.tableView reloadData];
+    [self.tabBarController setTitle:@"Paid Debts"];
     
     
 }
@@ -76,7 +77,7 @@
     
     
     
-    if ([[[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"ImOwedDebt"]  integerValue] == 1) {
+    if ([[[self.paidDebts objectAtIndex:indexPath.row]objectForKey:@"imOwedDebt"]  integerValue] == 1) {
         
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Owed Me %@",[Debt amountString:amountVal]];
         cell.detailTextLabel.textColor = [UIColor redColor];
