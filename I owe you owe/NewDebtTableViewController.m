@@ -110,8 +110,72 @@
     
     NSLog(@"new debt button pressed");
     
+    self.dueDate = self.datePicker.date;
+    
+    if ([self.descriptionTextField.text  isEqual: @""]) {
+        self.descriptionTextField.text = @"No description given";
+    }
+    
+    //disable due date from being recorded if user does not want a notification
+    
+    if (self.notificationSwitch.on == 0) {
+        self.dueDate = [NSDate date];
+    }
+    
+    
+#pragma mark invalid entry checking
+    
+    @try {
+        
+        
+        NSDictionary *newDebt = @{@"payee" : self.payeeName,
+                                  @"payeeID" : self.payeeID,
+                                  @"amount": self.amount,
+                                  @"isPaid": [NSNumber numberWithBool:0],
+                                  @"debtID": [NSNumber numberWithInt:-1],
+                                  @"dateStarted": [NSDate date],
+                                  @"dateDue" : self.dueDate,
+                                  @"infomation": self.descriptionTextField.text,
+                                  @"imOwedDebt" : [NSNumber numberWithInt:self.ImOwedSwitch.on],
+                                  @"iOweDebt" : [NSNumber numberWithInt:!(self.ImOwedSwitch.on)],
+                                  @"sendNotification" : [NSNumber numberWithInt:(self.notificationSwitch.on)]};
+        
+        
+        
+        
+        NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
+        
+        NSLog(@"%@", log);
+    }
+    
+    @catch (NSException *exception) {
+        
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        
+    }
+    
+    
+    
 }
 - (IBAction)toggleNotifications:(id)sender {
+    
+    if (self.notificationSwitch.on == 1) {
+        
+        self.datePicker.enabled = 1;
+        self.datePicker.alpha = 1;
+        
+        
+    }else{
+        
+        self.datePicker.enabled = 0;
+        self.datePicker.alpha = 0.4;
+        
+    }
+    
 }
 
 
