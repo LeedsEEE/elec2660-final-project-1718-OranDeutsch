@@ -20,6 +20,8 @@
     
     self.SelectPayeeTableController = [[SelectPayeeTableViewController alloc] init];
     
+    self.payeeNameField.delegate = self;
+    
     self.payeeTable.dataSource = self.SelectPayeeTableController;
     self.payeeTable.delegate = self.SelectPayeeTableController;
     

@@ -23,7 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)payeeEntityToDictonary:(Debt *)payee;
 
-+ (Payee *) AddPayeeFromDictionary:(NSDictionary *)debtInfo;
++ (Payee *)AddPayeeFromDictionary:(NSDictionary *)debtInfo;
+
++ (void)deletePayeeFromID:(NSInteger)payeeID;
+
++ (BOOL)payeeHasDebts: (Payee *)payee;
 
 @end
 

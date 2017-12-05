@@ -69,6 +69,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 
 - (void)makeToast:(NSString *)message {
     [self makeToast:message duration:[CSToastManager defaultDuration] position:[CSToastManager defaultPosition] style:nil];
+    
 }
 
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)duration position:(id)position {
@@ -83,6 +84,8 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)duration position:(id)position title:(NSString *)title image:(UIImage *)image style:(CSToastStyle *)style completion:(void(^)(BOOL didTap))completion {
     UIView *toast = [self toastViewForMessage:message title:title image:image style:style];
     [self showToast:toast duration:duration position:position completion:completion];
+    
+    
 }
 
 #pragma mark - Show Toast Methods

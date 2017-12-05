@@ -7,7 +7,7 @@
 //
 
 #import "Payee+CoreDataClass.h"
-#import "Debt+CoreDataProperties.h"
+
 @implementation Payee
 
 + (Payee *) AddPayeeFromDictionary:(NSDictionary *)payeeInfo{
@@ -64,7 +64,7 @@
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     NSError *error;
     
-    Payee *payees = nil;
+    Payee *payeeEntity = nil;
     
     //create a new fetch request of all objects in payee entity
     
@@ -82,12 +82,15 @@
     
     NSMutableArray *results = [[NSMutableArray alloc]init];
     
-    for (payees in fetchedPayees) {
+    for (payeeEntity in fetchedPayees) {
         
         NSMutableDictionary *tempPayeeDict = [[NSMutableDictionary alloc] init];
         
-        tempPayeeDict[@"name"] = payees.name;
-        tempPayeeDict[@"payeeID"] = payees.payeeID;
+        tempPayeeDict[@"payee"] = payeeEntity;
+        
+        
+        tempPayeeDict[@"name"] = payeeEntity.name;
+        tempPayeeDict[@"payeeID"] = payeeEntity.payeeID;
         
         
         [results addObject: tempPayeeDict];
@@ -115,6 +118,11 @@
     
     NSUInteger newID = [context countForFetchRequest:request error:&error];
     
+    //As an unselected tableview would output a selected row of "0" if there is no selected row I have to make sure a payee with ID of 0 would never exist
+    
+    if (newID == 0) {
+        newID++;
+    }
     
     //loads up an array to check that generated payee ID value is unique, adds 1 until it is
     
@@ -158,5 +166,69 @@
     payeeDict = nil;
 }
 
+
++ (void)deletePayeeFromID: (NSInteger)payeeID{
+    
+    
+    //Appdelegate methods to import context
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    //empty objects defined
+    
+    NSError *error;
+    Payee *payeeEtity = nil;
+    
+    //request condiction based on debtID
+    
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
+    request.predicate = [NSPredicate predicateWithFormat:@"payeeID == %i",payeeID];
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    //As there are no repeat debtIDs it calls the item at index 0
+    
+    payeeEtity = [fetchedObject objectAtIndex:0];
+    
+    //deletes called debt
+    
+    [context deleteObject:payeeEtity];
+    
+    [context save:nil];
+    
+}
+
++ (BOOL)payeeHasDebts: (Payee *)payee{
+    
+    //This code uses elements of HuxTek's youtube tutorial series
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSError *error;
+    
+    //create a new fetch request of all objects in payee entity
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    request.predicate = [NSPredicate predicateWithFormat:@"payee == %@",payee];
+    
+    //counts the amount of debts the payee has, if they have 1 or more then return yes, otherwise send NO
+    
+    NSUInteger newID = [context countForFetchRequest:request error:&error];
+
+    BOOL hasDebts;
+    
+    if (newID ==0) {
+        hasDebts = NO;
+    }else{
+        hasDebts = YES;
+    }
+    
+    
+    return hasDebts;
+}
 
 @end

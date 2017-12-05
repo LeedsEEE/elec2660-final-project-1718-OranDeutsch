@@ -13,6 +13,10 @@
 
 @property (strong, nonatomic) NSArray *payeeArray;
 
+@property int selectedRow;
+
 +(void)refresh;
+
+
 
 @end

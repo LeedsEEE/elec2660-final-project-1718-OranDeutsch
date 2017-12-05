@@ -29,7 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)ViewDebtFromId: (NSInteger)debtID;
 
-+ (void)deleteDebtFromID: (int)DebtID;
++ (void)deleteDebtFromID:(int)DebtID;
+
++ (void)deleteDebtsFromPayee: (Payee *)payee;
 
 + (void)modifyIsPaidbyDebtID: (NSInteger)debtID isPaid:(BOOL)newIsPaid;
 
@@ -37,8 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)deleteNotification: (NSInteger)debtID;
 
-
 + (NSString *)amountString: (NSNumber *)amount;
+
++ (BOOL)payeeHasDebts: (Payee *)payee;
 
 @end
 

@@ -17,9 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Calls existing settings and changes the title to match the current view
+    
     [self.tabBarController setTitle:@"Settings"];
     
     self.currencyData = [Settings returnCurrencies];
+    
+    
+    self.SelectPayeeTableController = [[SelectPayeeTableViewController alloc] init];
+    
+    self.payeeTable.dataSource = self.SelectPayeeTableController;
+    self.payeeTable.delegate = self.SelectPayeeTableController;
+    
     
     
     
@@ -28,6 +37,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tabBarController setTitle:@"Settings"];
+    [self.payeeTable reloadData];
     
 }
 
@@ -48,6 +58,8 @@
 (NSInteger)component{
     NSInteger rows;
     
+    //Makes the amount of rows in the pickerview equal to the amount of currencies stored
+    
     rows = [self.currencyData count];
     
     
@@ -62,6 +74,7 @@
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component{
     
+    //populates each section of the picker view with the currency name and symbol
     
     Currency *tempCurrency = [self.currencyData objectAtIndex:row];
     
@@ -81,6 +94,8 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
+    //updates the users currency of choice selected
+    
     Currency *tempCurrency = [self.currencyData objectAtIndex:row];
     
     
@@ -93,40 +108,6 @@
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -136,4 +117,94 @@
 }
 */
 
+- (IBAction)deletePayee:(id)sender {
+    
+    //UIAlert code sourced and changed from https://stackoverflow.com/questions/24190277/writing-handler-for-uialertaction
+    
+    
+    
+    NSIndexPath *indexPath = [self.payeeTable indexPathForSelectedRow];
+    NSArray *tempPayeeArray = [Payee returnPayees];
+    
+    
+    
+    if (indexPath.row == 0) {
+        
+        //call toast libary to give the user visual feedback that the payee is deleted
+        
+        [self.view makeToast:@"No Payee Selected"
+                    duration:3.0
+                    position:CSToastPositionTop];
+        
+    }else{
+    
+        Payee *tempPayee = [[tempPayeeArray objectAtIndex:indexPath.row]objectForKey:@"payee"];
+    
+        //if the payee has existing debts the user is warned that the debts would need to be deleted, they have the option to cancel still
+    
+    
+    
+    
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            
+            //if the user does have existing debts then after being alerted of this the user can accept and the view has to call a method to delete all the payees debts
+            
+            [Debt deleteDebtsFromPayee:tempPayee];
+            [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+            [self.payeeTable reloadData];
+            
+            
+            //call toast libary to give the user visual feedback that the payee is deleted
+            
+            [self.view makeToast:@"Payee Deleted"
+                        duration:3.0
+                        position:CSToastPositionTop];
+            
+        
+        }]];
+        
+        //add cancel button that does nothing
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        }]];
+    
+    
+    
+    
+    
+    
+        if ([Payee payeeHasDebts:tempPayee] == YES) {
+        
+            [self presentViewController:alertController animated:YES completion:nil];
+        
+        }else{
+        
+            [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+            [self.payeeTable reloadData];
+            
+            //call toast libary to give the user visual feedback that the payee is deleted
+            
+            [self.view makeToast:@"Payee Deleted"
+                        duration:3.0
+                        position:CSToastPositionTop];
+            
+        
+        
+        }
+        
+
+        
+    
+    }
+    
+    
+    
+}
+
+- (IBAction)deleteAll:(id)sender {
+    
+   
+}
 @end

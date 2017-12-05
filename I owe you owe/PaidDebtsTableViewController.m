@@ -22,6 +22,9 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -144,10 +147,12 @@
     
     if ([[segue identifier] isEqualToString:@"paidDebtSegue"]) {
         
+        //Calls the debt ID at the row selected by the user to be passed over the segue
+        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        NSArray *tempDebt = [Debt returnDebts:1 owed:0];
-        
+        NSArray *tempDebt = [self loadData];
+    
         NSInteger segueDebtID = [[[tempDebt objectAtIndex:indexPath.row] objectForKey:@"debtID"] integerValue];
         
         destinationViewController.debtID = segueDebtID;

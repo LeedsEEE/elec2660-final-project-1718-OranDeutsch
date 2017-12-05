@@ -19,17 +19,23 @@
     [super viewDidLoad];
    
     
+    //set up datasources and delegate for relevant objects
+    
     self.amountPicker.delegate = self;
     self.amountPicker.dataSource = self;
     
     self.amount = [NSNumber numberWithFloat:0];
     
+    self.descriptionTextField.delegate = self;
     self.amountLabel.text = [self showAmount];
 
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    //set title to change when view shows
+    
     [self.tabBarController setTitle:@"New Debt"];
     
 }
@@ -44,12 +50,16 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     
+    //as I am working to 6 significant figures and a decimal place I need 7 components
+    
     return 7;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:
 (NSInteger)component{
     NSInteger rows;
+    
+    //sets 10 rows for ever component except the decimal place component at 4
     
     if (component == 4) {
         rows = 1;
@@ -67,7 +77,7 @@
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component{
     
-    
+    //sets the rows to a value from 0 to 9 other than the decimal place component
     
     NSString *rowvalue = [NSString stringWithFormat:@"%i",(int)row];
     
@@ -83,6 +93,8 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
+    
+    //sets the amount lavvel to a function which turns the picker view into a amount float and then into a string with the currency symbol
     
     self.amountLabel.text = [self showAmount];
     
@@ -112,10 +124,12 @@
     
 }
 
+#pragma mark Savedebt
 
 
 - (IBAction)saveDebt:(id)sender {
     
+    //conditions data inputs to avoid errors
     
     self.dueDate = self.datePicker.date;
     
@@ -131,6 +145,8 @@
     
     
 #pragma mark invalid entry checking
+    
+    //try catch used to detect errors inputing data into a dictionary
     
     @try {
         
@@ -166,6 +182,7 @@
     
     @catch (NSException *exception) {
         
+        //uses a UI alert controller
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
@@ -180,6 +197,9 @@
         
 }
 - (IBAction)toggleNotifications:(id)sender {
+    
+    //fades out the date picker when the user disables notifications
+    
     
     if (self.notificationSwitch.on == 1) {
         
@@ -199,6 +219,9 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
+    //closes the keyboard when the user types "enter"
+    
+    
     [textField resignFirstResponder];
     
     return YES;
@@ -211,6 +234,8 @@
 
 -(NSString *) showAmount {
     
+    //takes each element of the pickerview and multiplies it by its respective order of magnitude
+    
     float tempAmount = [self.amountPicker selectedRowInComponent:0] * 1000;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:1] * 100;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:2] * 10;
@@ -218,9 +243,14 @@
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:5] * 0.1;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:6] * 0.01;
     
+    
+    //Sets the amount value and then calls the Debt method to create a string with the users selected currency
+    
     self.amount = [NSNumber numberWithFloat:tempAmount];
     
-    NSString *amount = [NSString stringWithFormat:@"£%.2f", tempAmount];
+    
+    
+    NSString *amount = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
     
     
     return amount;

@@ -267,21 +267,69 @@
 
 + (void)deleteDebtFromID: (int)DebtID{
     
+    
+    //Appdelegate methods to import context
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    //empty objects defined
+    
     NSError *error;
     Debt *debtEntity = nil;
+    
+    //request condiction based on debtID
+    
+    
     request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
     request.predicate = [NSPredicate predicateWithFormat:@"debtID == %i",DebtID];
     
     NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
     
+    //As there are no repeat debtIDs it calls the item at index 0
+    
     debtEntity = [fetchedObject objectAtIndex:0];
     
     [self deleteNotification:DebtID];
     
+    //deletes called debt
+    
     [context deleteObject:debtEntity];
+    
+    [context save:nil];
+    
+}
+
++ (void)deleteDebtsFromPayee: (Payee *)payee{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    
+    //empty objects defined
+    
+    
+    NSError *error;
+    Debt *debtEntity = nil;
+    
+    
+    //request condiction based on debtID
+    
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    request.predicate = [NSPredicate predicateWithFormat:@"payee == %@",payee];
+    
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    
+    for (debtEntity in fetchedObject) {
+        
+        [context deleteObject:debtEntity];
+        
+    }
     
     [context save:nil];
     
@@ -378,5 +426,7 @@
     return output;
     
 }
+
+
 
 @end
