@@ -142,7 +142,7 @@
     ViewPaidDebtViewController *destinationViewController = [segue destinationViewController];
     
     
-    
+    //Calls the debt ID
     
     
     if ([[segue identifier] isEqualToString:@"paidDebtSegue"]) {

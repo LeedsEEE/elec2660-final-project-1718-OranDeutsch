@@ -30,6 +30,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    //Dismisses the view if the app already has an object in the settings entity
+    
     if ([Settings firstTimeLoad] == YES) {
         
     }else{
@@ -37,10 +39,17 @@
     }
     
     
+    //since the picker starts at row 0
+    
+    Currency *tempCurrency = [self.currencyData objectAtIndex:0];
+    [Settings updateCurrency:tempCurrency.symbol];
+    
     
 }
 
 - (IBAction)goToApp:(id)sender {
+    
+    //Allows the user to proceed to the app but only when they have selected a currency
     
     if ([Settings firstTimeLoad] == YES) {
         
@@ -101,9 +110,9 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
+    //updates selcted currency when user picks a currency in the pickerview
+    
     Currency *tempCurrency = [self.currencyData objectAtIndex:row];
-    
-    
     [Settings updateCurrency:tempCurrency.symbol];
     
     

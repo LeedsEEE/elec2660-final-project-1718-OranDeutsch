@@ -57,8 +57,13 @@
 
 -(void)loadData {
     
+    
+    //Modifies all the elements to match the imported debt
+    
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
+    
+    //Displays a dynamic title
     
     NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];
     
@@ -82,6 +87,8 @@
     
     //conversion method found on stack overflow by user : Adam Richardson
     //https://stackoverflow.com/questions/37117129/ios-convert-a-nsdate-object-into-a-string-to-get-the-current-time
+    
+    //to display the date a NSDateformatter is used
     
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

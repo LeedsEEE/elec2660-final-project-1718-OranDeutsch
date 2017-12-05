@@ -35,6 +35,9 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    
+    //When the view appears the title is updated and the table for payees is refreshed
+    
     [super viewWillAppear:animated];
     [self.tabBarController setTitle:@"Settings"];
     [self.payeeTable reloadData];
