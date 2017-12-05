@@ -118,6 +118,34 @@
     
 }
 
++ (void)deleteAllSettings{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    //empty objects defined
+    
+    NSError *error;
+    Settings *settingsEntity = nil;
+    
+    //request condiction based on PayeeID
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Settings"];
+    
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    for (settingsEntity in fetchedObject) {
+        
+        [context deleteObject:settingsEntity];
+        
+    }
+    
+    [context save:nil];
+
+}
+
+
 + (BOOL)firstTimeLoad{
     
     BOOL firstTime = nil;

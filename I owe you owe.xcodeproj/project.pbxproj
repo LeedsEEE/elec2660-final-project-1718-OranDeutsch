@@ -18,6 +18,9 @@
 		621A37F91FCC86FD005C4978 /* Payee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */; };
 		622412BF1FD587BC00373611 /* ModifyDebtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */; };
 		623A62FD1FD6B6F9009D56F7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 623A62FC1FD6B6F9009D56F7 /* UIView+Toast.m */; };
+		625574331FD747060082783F /* welcome screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 625574321FD747060082783F /* welcome screen.png */; };
+		625574351FD748B10082783F /* app icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 625574341FD748B10082783F /* app icon 2.png */; };
+		625574371FD74A950082783F /* app background.png in Resources */ = {isa = PBXBuildFile; fileRef = 625574361FD74A950082783F /* app background.png */; };
 		6264116B1FD5C3B200F1D8E3 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264116A1FD5C3B200F1D8E3 /* Currency.m */; };
 		6268F3F61FD1C76300168A7A /* SelectContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6268F3F51FD1C76300168A7A /* SelectContactTableViewController.m */; };
 		6268F3F91FD1CA6800168A7A /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268F3F81FD1CA6800168A7A /* Contacts.framework */; };
@@ -107,6 +110,9 @@
 		623CE7281FD6E73200163841 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I owe you owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623CE7291FD6E73200163841 /* I owe you oweTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		625574321FD747060082783F /* welcome screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome screen.png"; sourceTree = "<group>"; };
+		625574341FD748B10082783F /* app icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon 2.png"; sourceTree = "<group>"; };
+		625574361FD74A950082783F /* app background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app background.png"; sourceTree = "<group>"; };
 		626411691FD5C3B200F1D8E3 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		6264116A1FD5C3B200F1D8E3 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		6268F3F41FD1C76300168A7A /* SelectContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactTableViewController.h; sourceTree = "<group>"; };
@@ -236,9 +242,12 @@
 			name = "Table View Controllers";
 			sourceTree = "<group>";
 		};
-		62CE78DB1FCDCFBF00C9A905 /* icons */ = {
+		62CE78DB1FCDCFBF00C9A905 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				625574361FD74A950082783F /* app background.png */,
+				625574341FD748B10082783F /* app icon 2.png */,
+				625574321FD747060082783F /* welcome screen.png */,
 				6294C17B1FD5F70600A2B4EE /* icons8-add-new-40.png */,
 				6294C1731FD5F67A00A2B4EE /* icons8-money-40.png */,
 				6294C1741FD5F67A00A2B4EE /* icons8-payment-history-40.png */,
@@ -254,7 +263,7 @@
 				620219731FD5E1CF00F2DEFB /* Test App Icon.png */,
 				620219711FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png */,
 			);
-			name = icons;
+			name = Images;
 			sourceTree = "<group>";
 		};
 		62D4D8411FC4269500F6B1D4 = {
@@ -275,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				62D4D8591FC4269500F6B1D4 /* Main.storyboard */,
+				62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */,
 				62D0ED051FD55055008FF355 /* SettingsTableViewController.h */,
 				62D0ED061FD55055008FF355 /* SettingsTableViewController.m */,
 				62DEF97D1FD171420071ECFA /* WelcomeViewController.h */,
@@ -294,11 +304,10 @@
 				62D98B981FD5573E00F24774 /* NewDebtTableViewController.h */,
 				62D98B991FD5573E00F24774 /* NewDebtTableViewController.m */,
 				623A62FE1FD6B71D009D56F7 /* ToastLibary */,
-				62CE78DB1FCDCFBF00C9A905 /* icons */,
+				62CE78DB1FCDCFBF00C9A905 /* Images */,
 				6262BD191FCD7618008C4D02 /* new debt add-on controllers */,
 				62E9E50D1FCC0F2300670472 /* CoreData files */,
 				62867A341FC454E600AED0FF /* Table View Controllers */,
-				62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */,
 				62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */,
 				62D4D8611FC4269500F6B1D4 /* Info.plist */,
 				623A62F71FD6B4A1009D56F7 /* MBProgressHUD */,
@@ -490,13 +499,16 @@
 				620219721FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png in Resources */,
 				6294C1721FD5F39900A2B4EE /* icons8-exchange-50.png in Resources */,
 				6294C1791FD5F67A00A2B4EE /* icons8-settings-40.png in Resources */,
+				625574351FD748B10082783F /* app icon 2.png in Resources */,
 				3DB70A841FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png in Resources */,
 				6294C16A1FD5F27500A2B4EE /* icons8-money-50.png in Resources */,
+				625574371FD74A950082783F /* app background.png in Resources */,
 				6294C1711FD5F39900A2B4EE /* icons8-add-new-50.png in Resources */,
 				62D4D8601FC4269500F6B1D4 /* LaunchScreen.storyboard in Resources */,
 				6294C17A1FD5F67A00A2B4EE /* icons8-exchange-40.png in Resources */,
 				62D4D85D1FC4269500F6B1D4 /* Assets.xcassets in Resources */,
 				6294C16D1FD5F38F00A2B4EE /* icons8-settings-50.png in Resources */,
+				625574331FD747060082783F /* welcome screen.png in Resources */,
 				6294C17C1FD5F70600A2B4EE /* icons8-add-new-40.png in Resources */,
 				6294C1771FD5F67A00A2B4EE /* icons8-money-40.png in Resources */,
 				3DB70A821FD5EB3800CB57B4 /* Untitled.png in Resources */,

@@ -119,7 +119,7 @@
 
 - (IBAction)deletePayee:(id)sender {
     
-    //UIAlert code sourced and changed from https://stackoverflow.com/questions/24190277/writing-handler-for-uialertaction
+    //UIAlertController code sourced and changed from https://stackoverflow.com/questions/24190277/writing-handler-for-uialertaction
     
     
     
@@ -128,7 +128,7 @@
     
     
     
-    if (indexPath.row == 0) {
+
         
         //call toast libary to give the user visual feedback that the payee is deleted
         
@@ -136,7 +136,7 @@
                     duration:3.0
                     position:CSToastPositionTop];
         
-    }else{
+
     
         Payee *tempPayee = [[tempPayeeArray objectAtIndex:indexPath.row]objectForKey:@"payee"];
     
@@ -145,54 +145,54 @@
     
     
     
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
             
             //if the user does have existing debts then after being alerted of this the user can accept and the view has to call a method to delete all the payees debts
             
-            [Debt deleteDebtsFromPayee:tempPayee];
-            [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
-            [self.payeeTable reloadData];
+        [Debt deleteDebtsFromPayee:tempPayee];
+        [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+        [self.payeeTable reloadData];
             
             
             //call toast libary to give the user visual feedback that the payee is deleted
             
-            [self.view makeToast:@"Payee Deleted"
-                        duration:3.0
-                        position:CSToastPositionTop];
-            
+        [self.view makeToast:@"Payee Deleted"
+                    duration:3.0
+                    position:CSToastPositionTop];
         
-        }]];
+        
+    }]];
         
         //add cancel button that does nothing
         
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
     
     
     
     
     
     
-        if ([Payee payeeHasDebts:tempPayee] == YES) {
+    if ([Payee payeeHasDebts:tempPayee] == YES) {
         
-            [self presentViewController:alertController animated:YES completion:nil];
+        [self presentViewController:alertController animated:YES completion:nil];
         
-        }else{
+    }else{
         
-            [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
-            [self.payeeTable reloadData];
+        [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+        [self.payeeTable reloadData];
             
             //call toast libary to give the user visual feedback that the payee is deleted
             
-            [self.view makeToast:@"Payee Deleted"
-                        duration:3.0
-                        position:CSToastPositionTop];
+        [self.view makeToast:@"Payee Deleted"
+                    duration:3.0
+                    position:CSToastPositionTop];
             
         
         
-        }
+        
         
 
         
@@ -205,6 +205,35 @@
 
 - (IBAction)deleteAll:(id)sender {
     
-   
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:@"EVERYTHING WILL BE DELETED THIS IS NON-REVERSIBLE " preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        //Calls all delete functions, they occupy seperate try catch statements incase the user uses this with empty core data entities
+        
+        @try{
+            [Debt deleteAllDebts];
+        }
+        @catch (NSException *exception){}
+        
+        @try{
+            [Payee deleteAllPayees];
+        }
+        @catch (NSException *exception){}
+        
+        @try{
+            [Settings deleteAllSettings];
+        }
+        @catch (NSException *exception){}
+        
+        
+    }]];
+    
+    //add cancel button that does nothing
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+
+    [self presentViewController:alertController animated:YES completion:nil];
+
 }
 @end

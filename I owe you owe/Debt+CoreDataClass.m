@@ -335,6 +335,32 @@
     
 }
 
++ (void)deleteAllDebts{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    //empty objects defined
+    
+    NSError *error;
+    Debt *debtEntity = nil;
+    
+    //request condiction based on debtID
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
+    
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    for (debtEntity in fetchedObject) {
+        
+        [context deleteObject:debtEntity];
+        
+    }
+    
+    [context save:nil];
+}
+
 #pragma mark notification functions
 
 + (void)createNotification: (NSInteger)debtID{

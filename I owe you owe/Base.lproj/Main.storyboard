@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pile_of_Coins_PNG_Picture.png" translatesAutoresizingMaskIntoConstraints="NO" id="XpM-sm-EEJ"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app background.png" translatesAutoresizingMaskIntoConstraints="NO" id="3gt-8L-jbY"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3L-bW-y7n">
                                 <state key="normal" title="go to app"/>
                                 <connections>
@@ -28,10 +28,10 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your currency to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzZ-uM-0GG">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1BX-v0-Xyy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="jae-kD-Ful"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7l-r8-cGU">
@@ -40,35 +40,26 @@
                                     <outlet property="delegate" destination="q1v-ag-8cI" id="acP-2H-1sW"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to &quot;I Owe you Owe&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-2w-Pfi">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="cBm-Ay-X1j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="A7l-r8-cGU" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leading" id="8hC-DL-fwM"/>
-                            <constraint firstItem="xzZ-uM-0GG" firstAttribute="top" secondItem="flc-2w-Pfi" secondAttribute="bottom" constant="8" id="IYK-K3-aab"/>
-                            <constraint firstItem="flc-2w-Pfi" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" constant="8" id="LMM-au-v8A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="flc-2w-Pfi" secondAttribute="trailing" constant="8" id="NRf-ww-nUU"/>
-                            <constraint firstItem="EyF-yv-u99" firstAttribute="top" secondItem="XpM-sm-EEJ" secondAttribute="bottom" id="NYF-vR-NmW"/>
+                            <constraint firstItem="3gt-8L-jbY" firstAttribute="width" secondItem="U7b-5Y-FmW" secondAttribute="width" id="RO5-Au-MaI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g3L-bW-y7n" secondAttribute="trailing" constant="8" id="VfH-wa-twv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xzZ-uM-0GG" secondAttribute="trailing" constant="8" id="afs-uo-PeK"/>
-                            <constraint firstItem="XpM-sm-EEJ" firstAttribute="top" secondItem="xzZ-uM-0GG" secondAttribute="bottom" constant="150" id="bIh-fj-zNX"/>
+                            <constraint firstItem="3gt-8L-jbY" firstAttribute="centerY" secondItem="U7b-5Y-FmW" secondAttribute="centerY" id="b0q-gK-edb"/>
                             <constraint firstItem="g3L-bW-y7n" firstAttribute="top" secondItem="A7l-r8-cGU" secondAttribute="bottom" constant="8" id="dSw-DO-L2J"/>
+                            <constraint firstItem="3gt-8L-jbY" firstAttribute="height" secondItem="U7b-5Y-FmW" secondAttribute="height" id="eqP-df-ff4"/>
                             <constraint firstItem="g3L-bW-y7n" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" constant="8" id="hWu-Hv-658"/>
-                            <constraint firstItem="flc-2w-Pfi" firstAttribute="top" secondItem="1Io-JM-kkh" secondAttribute="bottom" constant="8" id="ja2-XT-yYs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XpM-sm-EEJ" secondAttribute="trailing" id="nzM-1Z-Wcp"/>
+                            <constraint firstItem="xzZ-uM-0GG" firstAttribute="top" secondItem="1Io-JM-kkh" secondAttribute="bottom" constant="50" id="kSA-hk-W0q"/>
                             <constraint firstAttribute="trailing" secondItem="A7l-r8-cGU" secondAttribute="trailing" id="pFa-Vk-ndG"/>
-                            <constraint firstItem="XpM-sm-EEJ" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" id="rpB-KE-1FX"/>
                             <constraint firstItem="EyF-yv-u99" firstAttribute="top" secondItem="g3L-bW-y7n" secondAttribute="bottom" constant="8" id="wkQ-72-QO5"/>
+                            <constraint firstItem="3gt-8L-jbY" firstAttribute="centerX" secondItem="U7b-5Y-FmW" secondAttribute="centerX" id="wqh-wm-mbu"/>
                             <constraint firstItem="xzZ-uM-0GG" firstAttribute="leading" secondItem="U7b-5Y-FmW" secondAttribute="leadingMargin" constant="8" id="x7C-a9-G1q"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="currencyPicker" destination="A7l-r8-cGU" id="SFv-9t-mSb"/>
                         <segue destination="5sM-6a-mso" kind="show" identifier="Proceed" animates="NO" id="lkP-0E-sz4"/>
@@ -76,13 +67,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28W-YO-Cv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3090.4000000000001" y="1016.9415292353824"/>
+            <point key="canvasLocation" x="-2554.4000000000001" y="1249.9250374812596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7eF-XO-GRo">
             <objects>
                 <navigationController id="5sM-6a-mso" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YlZ-e9-yTj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YlZ-e9-yTj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -96,7 +87,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZM-57-zrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2210" y="1017"/>
+            <point key="canvasLocation" x="-1487" y="1250"/>
         </scene>
         <!--Ongoing Debts-->
         <scene sceneID="hNz-n2-bh7">
@@ -473,6 +464,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="deleteAll:" destination="zis-QO-c9s" eventType="touchUpInside" id="md1-C6-8Sd"/>
+                                                        <segue destination="q1v-ag-8cI" kind="show" identifier="" id="aiU-oY-Hpw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -499,7 +491,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="payee" textLabel="YNg-Gg-C2m" style="IBUITableViewCellStyleDefault" id="hLe-yh-yVL">
-                                                            <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                                            <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hLe-yh-yVL" id="LuL-hn-jlT">
                                                                 <frame key="frameInset" width="336" height="43"/>
@@ -555,7 +547,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5v-q8-W36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="1969.5652173913045"/>
+            <point key="canvasLocation" x="748" y="2006"/>
         </scene>
         <!--New Debt-->
         <scene sceneID="ZFr-9o-3Wb">
@@ -935,7 +927,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1327" y="1017"/>
+            <point key="canvasLocation" x="-1487" y="2006"/>
         </scene>
         <!--View Paid Debt-->
         <scene sceneID="CJF-WI-e8g">
@@ -1297,13 +1289,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Pile_of_Coins_PNG_Picture.png" width="600" height="391"/>
+        <image name="app background.png" width="1080" height="1920"/>
         <image name="icons8-add-new-40.png" width="40" height="40"/>
         <image name="icons8-money-40.png" width="40" height="40"/>
         <image name="icons8-payment-history-40.png" width="40" height="40"/>
         <image name="icons8-settings-40.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aiU-oY-Hpw"/>
         <segue reference="9fT-q3-26Q"/>
     </inferredMetricsTieBreakers>
 </document>

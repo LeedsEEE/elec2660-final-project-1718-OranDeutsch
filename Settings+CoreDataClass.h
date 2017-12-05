@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *) returnSettings;
 
++ (void)deleteAllSettings;
+
 + (BOOL)firstTimeLoad;
 
 @end

@@ -121,7 +121,7 @@
     //As an unselected tableview would output a selected row of "0" if there is no selected row I have to make sure a payee with ID of 0 would never exist
     
     if (newID == 0) {
-        newID++;
+        newID = 1;
     }
     
     //loads up an array to check that generated payee ID value is unique, adds 1 until it is
@@ -199,6 +199,32 @@
     
     [context save:nil];
     
+}
+
++ (void)deleteAllPayees{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    //empty objects defined
+    
+    NSError *error;
+    Payee *payeeEntity = nil;
+    
+    //request condiction based on PayeeID
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
+    
+    
+    NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
+    
+    for (payeeEntity in fetchedObject) {
+        
+        [context deleteObject:payeeEntity];
+        
+    }
+    
+    [context save:nil];
 }
 
 + (BOOL)payeeHasDebts: (Payee *)payee{
