@@ -102,9 +102,9 @@
                                @"payeeID" : [NSNumber numberWithInt:payeeID]};
     
     
+    [Payee AddPayeeFromDictionary:newPayee];
     
-    
-    Payee *tempPayee = [Payee AddPayeeFromDictionary:newPayee];
+
     
     
     
@@ -125,7 +125,7 @@
     
     CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     NSError *error;
-    BOOL success = [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * __nonnull contact, BOOL * __nonnull stop) {
+    [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * __nonnull contact, BOOL * __nonnull stop) {
         if (error) {
             NSLog(@"error fetching contacts %@", error);
         }else{

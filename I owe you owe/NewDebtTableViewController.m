@@ -8,7 +8,8 @@
 
 #import "NewDebtTableViewController.h"
 
-@interface NewDebtTableViewController ()  <UIPickerViewDelegate , UIPickerViewDataSource>
+
+@interface NewDebtTableViewController ()  <UIPickerViewDelegate , UIPickerViewDataSource, UITextFieldDelegate>
 
 @end
 
@@ -16,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
    
     
     self.amountPicker.delegate = self;
@@ -154,6 +154,15 @@
         NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
         
         NSLog(@"%@", log);
+        
+        
+        //Uses the toast libary to give the user visual feedback that the debt has been entered into the system
+        
+        [self.view makeToast:@"New Debt Created"];
+        
+        //Calls a function to bring the view to its default position
+        
+        [self resetView];
     }
     
     @catch (NSException *exception) {
@@ -166,8 +175,10 @@
         
     }
     
+
     
     
+        
 }
 - (IBAction)toggleNotifications:(id)sender {
     
@@ -183,9 +194,21 @@
         self.datePicker.alpha = 0.4;
         
     }
+}
+
+#pragma mark Text field Delegate Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
     
 }
 
+
+
+#pragma mark internal methods
 
 -(NSString *) showAmount {
     
@@ -202,6 +225,35 @@
     
     
     return amount;
+}
+
+-(void) resetView {
+    
+    //reset amount picker
+    
+    for (int i; i < 7; i++) {
+        
+        [self.amountPicker selectRow:0 inComponent:i animated:YES];
+        
+    }
+    
+    //reset date picker to current date
+    
+    [self.datePicker setDate:[NSDate date]];
+    
+    //reset notification switch back to enable
+    
+    [self.notificationSwitch setOn:YES];
+    
+    //update labels to match
+    
+    self.amountLabel.text = [self showAmount];
+    self.payeeName = nil;
+    self.payeeID = nil;
+    
+    self.payeeLabel.text = @"Select Payee";
+    
+    
 }
 
 @end

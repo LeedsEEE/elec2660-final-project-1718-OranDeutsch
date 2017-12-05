@@ -43,11 +43,15 @@
     
     [Debt deleteDebtFromID:(int)self.debtID];
     
+
+    
 }
 
 - (IBAction)markUnpaid:(id)sender {
     
     [Debt modifyIsPaidbyDebtID:self.debtID isPaid:0];
+    
+
     
 }
 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
 #import "ModifyDebtTableViewController.h"
+#import "appDelegate.h"
+#import "UIView+Toast.h"
 
 
 @interface ViewDebtViewController : UIViewController

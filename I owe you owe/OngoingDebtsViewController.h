@@ -10,7 +10,7 @@
 #import "IOweTableViewController.h"
 #import "ImOwedTableViewController.h"
 #import "ViewDebtViewController.h"
-#import "ViewDebtViewController.h"
+#import "UIView+Toast.h"
 
 @interface OngoingDebtsViewController : UIViewController
 

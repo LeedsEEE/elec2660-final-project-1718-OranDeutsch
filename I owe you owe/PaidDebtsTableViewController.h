@@ -10,6 +10,7 @@
 #import "Debt+manipulate.h"
 #import "ViewPaidDebtViewController.h"
 
+
 @interface PaidDebtsTableViewController : UITableViewController
 
 @property (nonatomic, weak) NSArray *paidDebts;

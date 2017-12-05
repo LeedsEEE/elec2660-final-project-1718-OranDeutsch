@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
+#import "UIView+Toast.h"
 
 @interface ViewPaidDebtViewController : UIViewController
 

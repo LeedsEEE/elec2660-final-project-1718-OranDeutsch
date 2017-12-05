@@ -28,7 +28,13 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     
+    @try{
     [self loadData];
+    }
+    @catch(NSException *exception){
+        
+        
+    }
     
 }
 
@@ -59,11 +65,12 @@
 
 - (IBAction)modificationComplete:(UIStoryboardSegue *)segue{
     
-        [self loadData];
-        [super viewDidLoad];
+    [self loadData];
+    [super viewDidLoad];
     
+    //Calls toast libary
     
-    NSLog(@"%@", self.debtDictionary);
+    [self.view makeToast:@"Debt Edited"];
     
     
 }
@@ -71,8 +78,8 @@
 - (IBAction)repayDebt:(id)sender {
 
     [Debt modifyIsPaidbyDebtID:self.debtID isPaid:1];
-     
-     
+    
+    
 }
 
 - (IBAction)modifyDebt:(id)sender {

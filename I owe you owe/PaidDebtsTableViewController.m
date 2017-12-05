@@ -155,10 +155,14 @@
         
     }
 }
-- (IBAction)PastDebtDeletedOrSetUnpaid:(UIStoryboardSegue *)segue{
+- (IBAction)debtDeletedSegue:(UIStoryboardSegue *)segue{
+        [super viewDidLoad];
     
     
-    
+}
+
+- (IBAction)debtMarkedUnpaidSegue:(UIStoryboardSegue *)segue{
+        [super viewDidLoad];
     
 }
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
- #include <math.h>
+#import "UIView+Toast.h"
 
 @interface ModifyDebtTableViewController : UITableViewController
 
@@ -31,5 +31,6 @@
 
 - (IBAction)saveChanges:(id)sender;
 - (IBAction)toggleNotification:(id)sender;
+
 
 @end

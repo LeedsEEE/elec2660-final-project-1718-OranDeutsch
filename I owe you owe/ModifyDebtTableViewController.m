@@ -8,7 +8,7 @@
 
 #import "ModifyDebtTableViewController.h"
 
-@interface ModifyDebtTableViewController () <UIPickerViewDelegate , UIPickerViewDataSource>
+@interface ModifyDebtTableViewController () <UIPickerViewDelegate , UIPickerViewDataSource, UITextFieldDelegate>
 
 @end
 
@@ -21,6 +21,8 @@
     
     self.amountPicker.delegate = self;
     self.amountPicker.dataSource = self;
+    
+    self.infomationField.delegate = self;
     
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
@@ -168,6 +170,7 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
+    //
     
     self.amountLabel.text = [self showAmount];
     
@@ -212,7 +215,7 @@
     
 #pragma mark invalid entry checking
     
-    NSLog(@"%@", self.debtDictionary);
+    
     
     
     @try {
@@ -234,8 +237,8 @@
         NSLog(@"creating new debt from : %@", newDebt);
         [Debt deleteDebtFromID:(int)self.debtID];
         [Debt AddDebtFromDictionary:newDebt];
-
         
+
     
     }
     
@@ -258,6 +261,7 @@
 
 - (IBAction)toggleNotification:(id)sender {
     
+    // fades the pickerview out when the user does not want the app to produce a reminder notification
     
     if (self.notificationSwitch.on == 1) {
         
@@ -274,6 +278,19 @@
     
     
 }
+
+
+
+#pragma mark Text field Delegate Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
+
 
 
 -(NSString *) showAmount {

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Debt+manipulate.h"
+#import "appDelegate.h"
+#import "UIView+Toast.h"
+
+
 
 
 @interface NewDebtTableViewController : UITableViewController
@@ -24,6 +28,8 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *notificationSwitch;
 - (IBAction)toggleNotifications:(id)sender;
+
+
 
 
 @property (strong, nonatomic) NSString *payeeName;

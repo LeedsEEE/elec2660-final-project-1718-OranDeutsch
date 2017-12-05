@@ -94,8 +94,10 @@
 
 - (IBAction)debtRepayed:(UIStoryboardSegue *)segue{
     
+    [super viewDidLoad];
     
-    
+
+
     
 }
 

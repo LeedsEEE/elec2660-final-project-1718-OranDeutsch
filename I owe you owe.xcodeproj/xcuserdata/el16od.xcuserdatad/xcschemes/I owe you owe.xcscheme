@@ -20,6 +20,34 @@
                ReferencedContainer = "container:I owe you owe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "623A62AB1FD6A749009D56F7"
+               BuildableName = "RaisinToastTests.xctest"
+               BlueprintName = "RaisinToastTests"
+               ReferencedContainer = "container:I owe you owe.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "623A62E11FD6AFE9009D56F7"
+               BuildableName = "RasinToastTests.xctest"
+               BlueprintName = "RasinToastTests"
+               ReferencedContainer = "container:I owe you owe.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

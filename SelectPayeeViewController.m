@@ -9,7 +9,7 @@
 #import "SelectPayeeViewController.h"
 
 
-@interface SelectPayeeViewController ()
+@interface SelectPayeeViewController () <UITextFieldDelegate>
 
 @end
 
@@ -82,6 +82,10 @@
     [Payee AddPayeeFromDictionary:newPayee];
     [self.payeeTable reloadData];
     
+    //Calls toast libary for user feedback
+    
+    [self.view makeToast:[NSString stringWithFormat:@"%@ added to payees",[newPayee objectForKey:@"name"]]];
+    
     self.payeeNameField.text = nil;
     
     
@@ -101,6 +105,16 @@
     [self.payeeTable reloadData];
     
     
+    
+}
+
+#pragma mark Text field Delegate Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
     
 }
 
