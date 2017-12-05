@@ -21,6 +21,7 @@
     [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
                           completionHandler:^(BOOL granted, NSError * _Nullable error) {
                               if (!error) {
+                                  
                                   NSLog(@"request succeeded!");
 
                               }

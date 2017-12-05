@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Debt+manipulate.h"
+#import "Debt+CoreDataClass.h"
 #import "appDelegate.h"
 #import "UIView+Toast.h"
 

@@ -8,10 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "Currency.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Settings : NSManagedObject
+
++ (NSMutableArray *)returnCurrencies;
+
++ (void)updateCurrency: (NSString *)newCurrency;
+
++ (NSDictionary *) returnSettings;
+
++ (BOOL)firstTimeLoad;
 
 @end
 

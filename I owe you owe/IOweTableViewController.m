@@ -43,7 +43,6 @@
     
     self.IOweDebts = [Debt returnDebts:0 owed:0];
     
-    NSLog(@"%@", [self IOweDebts].description);
     
     int numberOfRows;
     

@@ -127,7 +127,9 @@
     NSError *error;
     [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * __nonnull contact, BOOL * __nonnull stop) {
         if (error) {
+            
             NSLog(@"error fetching contacts %@", error);
+            
         }else{
             NSString *newContact = [NSString stringWithFormat:@"%@ %@",contact.givenName,contact.familyName];
             

@@ -48,7 +48,7 @@
     self.amountLabel.text = [Debt amountString:self.amount];
     
     
-    //NSLog(@"%@", importedAmount);
+
     
     //Set up date picker to current due date
     
@@ -199,7 +199,6 @@
 
 - (IBAction)saveChanges:(id)sender {
     
-    NSLog(@"new debt button pressed");
     
     self.dueDate = self.datePicker.date;
     
@@ -235,6 +234,7 @@
         
         
         NSLog(@"creating new debt from : %@", newDebt);
+        
         [Debt deleteDebtFromID:(int)self.debtID];
         [Debt AddDebtFromDictionary:newDebt];
         

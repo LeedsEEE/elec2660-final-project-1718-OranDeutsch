@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Payee+manipulate.h"
+#import "Payee+CoreDataClass.h"
 #import <ContactsUI/ContactsUI.h>
 
 

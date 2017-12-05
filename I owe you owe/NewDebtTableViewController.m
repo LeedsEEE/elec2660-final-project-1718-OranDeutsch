@@ -116,7 +116,6 @@
 
 - (IBAction)saveDebt:(id)sender {
     
-    NSLog(@"new debt button pressed");
     
     self.dueDate = self.datePicker.date;
     
@@ -153,7 +152,7 @@
         
         NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
         
-        NSLog(@"%@", log);
+        NSLog(@"Creating new debt from dictionary : %@", log);
         
         
         //Uses the toast libary to give the user visual feedback that the debt has been entered into the system

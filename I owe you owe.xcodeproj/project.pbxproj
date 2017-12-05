@@ -51,26 +51,9 @@
 		62D98B9A1FD5573E00F24774 /* NewDebtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D98B991FD5573E00F24774 /* NewDebtTableViewController.m */; };
 		62DEF97F1FD171420071ECFA /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DEF97E1FD171420071ECFA /* WelcomeViewController.m */; };
 		62E9E50B1FCC0F0000670472 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62E9E5091FCC0F0000670472 /* CoreData.xcdatamodeld */; };
-		62E9E5321FCC172F00670472 /* Debt+manipulate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E9E5311FCC172F00670472 /* Debt+manipulate.m */; };
-		62E9E5351FCC177500670472 /* Payee+manipulate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E9E5341FCC177500670472 /* Payee+manipulate.m */; };
-		62E9E5381FCC17A200670472 /* Settings+manipulate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E9E5371FCC17A200670472 /* Settings+manipulate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		623A62B01FD6A749009D56F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62D4D8421FC4269500F6B1D4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 62D4D8491FC4269500F6B1D4;
-			remoteInfo = "I owe you owe";
-		};
-		623A62E61FD6AFE9009D56F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62D4D8421FC4269500F6B1D4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 62D4D8491FC4269500F6B1D4;
-			remoteInfo = "I owe you owe";
-		};
 		62D4D8671FC4269500F6B1D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 62D4D8421FC4269500F6B1D4 /* Project object */;
@@ -119,12 +102,11 @@
 		621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payee+CoreDataProperties.m"; sourceTree = "<group>"; };
 		622412BD1FD587BC00373611 /* ModifyDebtTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyDebtTableViewController.h; sourceTree = "<group>"; };
 		622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyDebtTableViewController.m; sourceTree = "<group>"; };
-		623A62A41FD6A749009D56F7 /* RaisinToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RaisinToast.framework; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/RaisinToast.framework"; sourceTree = "<absolute>"; };
-		623A62AC1FD6A749009D56F7 /* RaisinToastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RaisinToastTests.xctest; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/RaisinToastTests.xctest"; sourceTree = "<absolute>"; };
-		623A62DA1FD6AFE9009D56F7 /* RasinToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RasinToast.framework; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/RasinToast.framework"; sourceTree = "<absolute>"; };
-		623A62E21FD6AFE9009D56F7 /* RasinToastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RasinToastTests.xctest; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/RasinToastTests.xctest"; sourceTree = "<absolute>"; };
 		623A62FB1FD6B6F9009D56F7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		623A62FC1FD6B6F9009D56F7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		623CE7281FD6E73200163841 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I owe you owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		623CE7291FD6E73200163841 /* I owe you oweTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		626411691FD5C3B200F1D8E3 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		6264116A1FD5C3B200F1D8E3 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		6268F3F41FD1C76300168A7A /* SelectContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactTableViewController.h; sourceTree = "<group>"; };
@@ -155,12 +137,10 @@
 		62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataClass.m"; sourceTree = "<group>"; };
 		62CE78D41FCDC32A00C9A905 /* Debt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debt+CoreDataProperties.h"; sourceTree = "<group>"; };
 		62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+CoreDataProperties.m"; sourceTree = "<group>"; };
-		62CE78D81FCDC39700C9A905 /* Debt+manipulate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Debt+manipulate.h"; sourceTree = "<group>"; };
 		62D0ED051FD55055008FF355 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		62D0ED061FD55055008FF355 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		62D2F86F1FCF44410013CDBC /* PaidDebtsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaidDebtsTableViewController.h; sourceTree = "<group>"; };
 		62D2F8701FCF44410013CDBC /* PaidDebtsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaidDebtsTableViewController.m; sourceTree = "<group>"; };
-		62D4D84A1FC4269500F6B1D4 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "I owe you owe.app"; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/I owe you owe.app"; sourceTree = "<absolute>"; };
 		62D4D84E1FC4269500F6B1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62D4D8501FC4269500F6B1D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62D4D8511FC4269500F6B1D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -168,10 +148,8 @@
 		62D4D85C1FC4269500F6B1D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62D4D85F1FC4269500F6B1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62D4D8611FC4269500F6B1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62D4D8661FC4269500F6B1D4 /* I owe you oweTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "I owe you oweTests.xctest"; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/I owe you oweTests.xctest"; sourceTree = "<absolute>"; };
 		62D4D86A1FC4269500F6B1D4 /* I_owe_you_oweTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I_owe_you_oweTests.m; sourceTree = "<group>"; };
 		62D4D86C1FC4269500F6B1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62D4D8711FC4269500F6B1D4 /* I owe you oweUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "I owe you oweUITests.xctest"; path = "/Volumes/NO NAME/03:12:17/I owe you owe/build/Debug-iphoneos/I owe you oweUITests.xctest"; sourceTree = "<absolute>"; };
 		62D4D8751FC4269500F6B1D4 /* I_owe_you_oweUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I_owe_you_oweUITests.m; sourceTree = "<group>"; };
 		62D4D8771FC4269500F6B1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62D98B981FD5573E00F24774 /* NewDebtTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDebtTableViewController.h; sourceTree = "<group>"; };
@@ -180,42 +158,9 @@
 		62DEF97E1FD171420071ECFA /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		62E9E50A1FCC0F0000670472 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		62E9E50E1FCC155F00670472 /* I owe you owe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "I owe you owe-Bridging-Header.h"; sourceTree = "<group>"; };
-		62E9E5311FCC172F00670472 /* Debt+manipulate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Debt+manipulate.m"; sourceTree = "<group>"; };
-		62E9E5331FCC177500670472 /* Payee+manipulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Payee+manipulate.h"; sourceTree = "<group>"; };
-		62E9E5341FCC177500670472 /* Payee+manipulate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Payee+manipulate.m"; sourceTree = "<group>"; };
-		62E9E5361FCC17A200670472 /* Settings+manipulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Settings+manipulate.h"; sourceTree = "<group>"; };
-		62E9E5371FCC17A200670472 /* Settings+manipulate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Settings+manipulate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		623A62A01FD6A749009D56F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62A91FD6A749009D56F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62D61FD6AFE9009D56F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62DF1FD6AFE9009D56F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		62D4D8471FC4269500F6B1D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +265,9 @@
 				62D4D8741FC4269500F6B1D4 /* I owe you oweUITests */,
 				62E9E50E1FCC155F00670472 /* I owe you owe-Bridging-Header.h */,
 				6268F3F71FD1CA6800168A7A /* Frameworks */,
+				623CE7281FD6E73200163841 /* I owe you owe.app */,
+				623CE7291FD6E73200163841 /* I owe you oweTests.xctest */,
+				623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -403,8 +351,6 @@
 				62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */,
 				62CE78D41FCDC32A00C9A905 /* Debt+CoreDataProperties.h */,
 				62CE78D51FCDC32A00C9A905 /* Debt+CoreDataProperties.m */,
-				62CE78D81FCDC39700C9A905 /* Debt+manipulate.h */,
-				62E9E5311FCC172F00670472 /* Debt+manipulate.m */,
 			);
 			name = Debt;
 			sourceTree = "<group>";
@@ -416,8 +362,6 @@
 				621A37F11FCC86FD005C4978 /* Payee+CoreDataClass.m */,
 				621A37F21FCC86FD005C4978 /* Payee+CoreDataProperties.h */,
 				621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */,
-				62E9E5331FCC177500670472 /* Payee+manipulate.h */,
-				62E9E5341FCC177500670472 /* Payee+manipulate.m */,
 			);
 			name = Payee;
 			sourceTree = "<group>";
@@ -429,8 +373,6 @@
 				621A37D61FCC6892005C4978 /* Settings+CoreDataClass.m */,
 				621A37D71FCC6892005C4978 /* Settings+CoreDataProperties.h */,
 				621A37D81FCC6892005C4978 /* Settings+CoreDataProperties.m */,
-				62E9E5361FCC17A200670472 /* Settings+manipulate.h */,
-				62E9E5371FCC17A200670472 /* Settings+manipulate.m */,
 				626411691FD5C3B200F1D8E3 /* Currency.h */,
 				6264116A1FD5C3B200F1D8E3 /* Currency.m */,
 			);
@@ -439,96 +381,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		623A62A11FD6A749009D56F7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62D71FD6AFE9009D56F7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		623A62A31FD6A749009D56F7 /* RaisinToast */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 623A62BF1FD6A749009D56F7 /* Build configuration list for PBXNativeTarget "RaisinToast" */;
-			buildPhases = (
-				623A629F1FD6A749009D56F7 /* Sources */,
-				623A62A01FD6A749009D56F7 /* Frameworks */,
-				623A62A11FD6A749009D56F7 /* Headers */,
-				623A62A21FD6A749009D56F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RaisinToast;
-			productName = RaisinToast;
-			productReference = 623A62A41FD6A749009D56F7 /* RaisinToast.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		623A62AB1FD6A749009D56F7 /* RaisinToastTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 623A62C11FD6A749009D56F7 /* Build configuration list for PBXNativeTarget "RaisinToastTests" */;
-			buildPhases = (
-				623A62A81FD6A749009D56F7 /* Sources */,
-				623A62A91FD6A749009D56F7 /* Frameworks */,
-				623A62AA1FD6A749009D56F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				623A62B11FD6A749009D56F7 /* PBXTargetDependency */,
-			);
-			name = RaisinToastTests;
-			productName = RaisinToastTests;
-			productReference = 623A62AC1FD6A749009D56F7 /* RaisinToastTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		623A62D91FD6AFE9009D56F7 /* RasinToast */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 623A62F51FD6AFE9009D56F7 /* Build configuration list for PBXNativeTarget "RasinToast" */;
-			buildPhases = (
-				623A62D51FD6AFE9009D56F7 /* Sources */,
-				623A62D61FD6AFE9009D56F7 /* Frameworks */,
-				623A62D71FD6AFE9009D56F7 /* Headers */,
-				623A62D81FD6AFE9009D56F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RasinToast;
-			productName = RasinToast;
-			productReference = 623A62DA1FD6AFE9009D56F7 /* RasinToast.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		623A62E11FD6AFE9009D56F7 /* RasinToastTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 623A62F61FD6AFE9009D56F7 /* Build configuration list for PBXNativeTarget "RasinToastTests" */;
-			buildPhases = (
-				623A62DE1FD6AFE9009D56F7 /* Sources */,
-				623A62DF1FD6AFE9009D56F7 /* Frameworks */,
-				623A62E01FD6AFE9009D56F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				623A62E71FD6AFE9009D56F7 /* PBXTargetDependency */,
-			);
-			name = RasinToastTests;
-			productName = RasinToastTests;
-			productReference = 623A62E21FD6AFE9009D56F7 /* RasinToastTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		62D4D8491FC4269500F6B1D4 /* I owe you owe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62D4D87A1FC4269500F6B1D4 /* Build configuration list for PBXNativeTarget "I owe you owe" */;
@@ -544,7 +397,7 @@
 			);
 			name = "I owe you owe";
 			productName = "I owe you owe";
-			productReference = 62D4D84A1FC4269500F6B1D4 /* I owe you owe.app */;
+			productReference = 623CE7281FD6E73200163841 /* I owe you owe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		62D4D8651FC4269500F6B1D4 /* I owe you oweTests */ = {
@@ -562,7 +415,7 @@
 			);
 			name = "I owe you oweTests";
 			productName = "I owe you oweTests";
-			productReference = 62D4D8661FC4269500F6B1D4 /* I owe you oweTests.xctest */;
+			productReference = 623CE7291FD6E73200163841 /* I owe you oweTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		62D4D8701FC4269500F6B1D4 /* I owe you oweUITests */ = {
@@ -580,7 +433,7 @@
 			);
 			name = "I owe you oweUITests";
 			productName = "I owe you oweUITests";
-			productReference = 62D4D8711FC4269500F6B1D4 /* I owe you oweUITests.xctest */;
+			productReference = 623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -592,24 +445,6 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Oran Deutsch [el16od]";
 				TargetAttributes = {
-					623A62A31FD6A749009D56F7 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-					};
-					623A62AB1FD6A749009D56F7 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 62D4D8491FC4269500F6B1D4;
-					};
-					623A62D91FD6AFE9009D56F7 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-					};
-					623A62E11FD6AFE9009D56F7 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 62D4D8491FC4269500F6B1D4;
-					};
 					62D4D8491FC4269500F6B1D4 = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0800;
@@ -643,43 +478,11 @@
 				62D4D8491FC4269500F6B1D4 /* I owe you owe */,
 				62D4D8651FC4269500F6B1D4 /* I owe you oweTests */,
 				62D4D8701FC4269500F6B1D4 /* I owe you oweUITests */,
-				623A62A31FD6A749009D56F7 /* RaisinToast */,
-				623A62AB1FD6A749009D56F7 /* RaisinToastTests */,
-				623A62D91FD6AFE9009D56F7 /* RasinToast */,
-				623A62E11FD6AFE9009D56F7 /* RasinToastTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		623A62A21FD6A749009D56F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62AA1FD6A749009D56F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62D81FD6AFE9009D56F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62E01FD6AFE9009D56F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		62D4D8481FC4269500F6B1D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -720,34 +523,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		623A629F1FD6A749009D56F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62A81FD6A749009D56F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62D51FD6AFE9009D56F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		623A62DE1FD6AFE9009D56F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		62D4D8461FC4269500F6B1D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -764,8 +539,6 @@
 				62D4D8521FC4269500F6B1D4 /* AppDelegate.m in Sources */,
 				621A37F81FCC86FD005C4978 /* Payee+CoreDataClass.m in Sources */,
 				6264116B1FD5C3B200F1D8E3 /* Currency.m in Sources */,
-				62E9E5321FCC172F00670472 /* Debt+manipulate.m in Sources */,
-				62E9E5351FCC177500670472 /* Payee+manipulate.m in Sources */,
 				62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */,
 				62D0ED071FD55055008FF355 /* SettingsTableViewController.m in Sources */,
 				62D98B9A1FD5573E00F24774 /* NewDebtTableViewController.m in Sources */,
@@ -775,7 +548,6 @@
 				62DEF97F1FD171420071ECFA /* WelcomeViewController.m in Sources */,
 				621A37DD1FCC6892005C4978 /* Settings+CoreDataClass.m in Sources */,
 				62D4D84F1FC4269500F6B1D4 /* main.m in Sources */,
-				62E9E5381FCC17A200670472 /* Settings+manipulate.m in Sources */,
 				621A37EC1FCC6FD8005C4978 /* SelectPayeeViewController.m in Sources */,
 				62B0A3D51FC4795E008C7A4A /* ViewDebtViewController.m in Sources */,
 				62867A301FC454BD00AED0FF /* IOweTableViewController.m in Sources */,
@@ -801,16 +573,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		623A62B11FD6A749009D56F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 62D4D8491FC4269500F6B1D4 /* I owe you owe */;
-			targetProxy = 623A62B01FD6A749009D56F7 /* PBXContainerItemProxy */;
-		};
-		623A62E71FD6AFE9009D56F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 62D4D8491FC4269500F6B1D4 /* I owe you owe */;
-			targetProxy = 623A62E61FD6AFE9009D56F7 /* PBXContainerItemProxy */;
-		};
 		62D4D8681FC4269500F6B1D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 62D4D8491FC4269500F6B1D4 /* I owe you owe */;
@@ -843,129 +605,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		623A62BB1FD6A749009D56F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RaisinToast/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RaisinToast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		623A62BC1FD6A749009D56F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RaisinToast/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RaisinToast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		623A62BD1FD6A749009D56F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RaisinToastTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RaisinToastTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/I owe you owe.app/I owe you owe";
-			};
-			name = Debug;
-		};
-		623A62BE1FD6A749009D56F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RaisinToastTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RaisinToastTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/I owe you owe.app/I owe you owe";
-			};
-			name = Release;
-		};
-		623A62F11FD6AFE9009D56F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RasinToast/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RasinToast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		623A62F21FD6AFE9009D56F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RasinToast/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RasinToast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		623A62F31FD6AFE9009D56F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RasinToastTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/I owe you owe.app/I owe you owe";
-			};
-			name = Debug;
-		};
-		623A62F41FD6AFE9009D56F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"INFOPLIST_FILE[sdk=*]" = "";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Raizlabs.RasinToastTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/I owe you owe.app/I owe you owe";
-			};
-			name = Release;
-		};
 		62D4D8781FC4269500F6B1D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1134,40 +773,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		623A62BF1FD6A749009D56F7 /* Build configuration list for PBXNativeTarget "RaisinToast" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				623A62BB1FD6A749009D56F7 /* Debug */,
-				623A62BC1FD6A749009D56F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		623A62C11FD6A749009D56F7 /* Build configuration list for PBXNativeTarget "RaisinToastTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				623A62BD1FD6A749009D56F7 /* Debug */,
-				623A62BE1FD6A749009D56F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		623A62F51FD6AFE9009D56F7 /* Build configuration list for PBXNativeTarget "RasinToast" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				623A62F11FD6AFE9009D56F7 /* Debug */,
-				623A62F21FD6AFE9009D56F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		623A62F61FD6AFE9009D56F7 /* Build configuration list for PBXNativeTarget "RasinToastTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				623A62F31FD6AFE9009D56F7 /* Debug */,
-				623A62F41FD6AFE9009D56F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		62D4D8451FC4269500F6B1D4 /* Build configuration list for PBXProject "I owe you owe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

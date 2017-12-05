@@ -48,7 +48,6 @@
     
     NSIndexPath *indexPath = [self.payeeTable indexPathForSelectedRow];
 
-    NSLog(@"row selected = %i", (int)indexPath.row);
     
     if ([[segue identifier] isEqualToString:@"payeeSelected"]) {
     

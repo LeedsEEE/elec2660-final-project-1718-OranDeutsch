@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Settings+manipulate.h"
+#import "Settings+CoreDataClass.h"
 
 
 //Background image sourced from https://gallery.yopriceville.com/Free-Clipart-Pictures/Money-PNG/Pile_of_Coins_PNG_Picture#.WiWehWX-1sY

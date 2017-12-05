@@ -87,8 +87,6 @@
     
     Currency *tempCurrency = [self.currencyData objectAtIndex:row];
     
-    NSLog(@"%@",tempCurrency);
-    
     NSString *rowvalue = [NSString stringWithFormat:@"%@ (%@)",
                           tempCurrency.name,
                           tempCurrency.symbol];

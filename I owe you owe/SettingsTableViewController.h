@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Settings+manipulate.h"
+#import "Settings+CoreDataClass.h"
 
 @interface SettingsTableViewController : UITableViewController
 

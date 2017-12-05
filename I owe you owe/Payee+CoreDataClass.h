@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import <UIKit/UIKit.h>
 
 @class Debt;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Payee : NSManagedObject
+
++ (NSArray *) returnPayees;
+
++ (int)newPayeeID;
+
++ (NSDictionary *)payeeEntityToDictonary:(Debt *)payee;
+
++ (Payee *) AddPayeeFromDictionary:(NSDictionary *)debtInfo;
 
 @end
 
