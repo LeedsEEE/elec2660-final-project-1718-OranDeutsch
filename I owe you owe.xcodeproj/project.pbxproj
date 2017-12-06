@@ -214,6 +214,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		621835581FD864A800B65B62 /* Inital View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				62DEF97D1FD171420071ECFA /* WelcomeViewController.h */,
+				62DEF97E1FD171420071ECFA /* WelcomeViewController.m */,
+				62044EFD1FD7FF4B00524E59 /* InitalViewViewController.h */,
+				62044EFE1FD7FF4B00524E59 /* InitalViewViewController.m */,
+			);
+			name = "Inital View Controllers";
+			sourceTree = "<group>";
+		};
 		623A62F71FD6B4A1009D56F7 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +239,7 @@
 				623A62FC1FD6B6F9009D56F7 /* UIView+Toast.m */,
 			);
 			name = ToastLibary;
+			path = "I owe you owe";
 			sourceTree = "<group>";
 		};
 		6262BD191FCD7618008C4D02 /* new debt add-on controllers */ = {
@@ -307,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				62D4D84C1FC4269500F6B1D4 /* I owe you owe */,
+				623A62FE1FD6B71D009D56F7 /* ToastLibary */,
 				62D4D8691FC4269500F6B1D4 /* I owe you oweTests */,
 				62D4D8741FC4269500F6B1D4 /* I owe you oweUITests */,
 				62E9E50E1FCC155F00670472 /* I owe you owe-Bridging-Header.h */,
@@ -324,25 +337,21 @@
 				62D4D8511FC4269500F6B1D4 /* AppDelegate.m */,
 				62D4D8591FC4269500F6B1D4 /* Main.storyboard */,
 				62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */,
-				62044EFD1FD7FF4B00524E59 /* InitalViewViewController.h */,
-				62044EFE1FD7FF4B00524E59 /* InitalViewViewController.m */,
-				62D0ED051FD55055008FF355 /* SettingsTableViewController.h */,
-				62D0ED061FD55055008FF355 /* SettingsTableViewController.m */,
-				62DEF97D1FD171420071ECFA /* WelcomeViewController.h */,
-				62DEF97E1FD171420071ECFA /* WelcomeViewController.m */,
+				62D98B981FD5573E00F24774 /* NewDebtTableViewController.h */,
+				62D98B991FD5573E00F24774 /* NewDebtTableViewController.m */,
+				62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */,
+				62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */,
 				6290BED81FD0932700DDBA9D /* ViewPaidDebtViewController.h */,
 				6290BED91FD0932700DDBA9D /* ViewPaidDebtViewController.m */,
+				62D0ED051FD55055008FF355 /* SettingsTableViewController.h */,
+				62D0ED061FD55055008FF355 /* SettingsTableViewController.m */,
 				62D2F86F1FCF44410013CDBC /* PaidDebtsTableViewController.h */,
 				62D2F8701FCF44410013CDBC /* PaidDebtsTableViewController.m */,
 				62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */,
 				62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */,
-				62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */,
-				62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */,
 				622412BD1FD587BC00373611 /* ModifyDebtTableViewController.h */,
 				622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */,
-				62D98B981FD5573E00F24774 /* NewDebtTableViewController.h */,
-				62D98B991FD5573E00F24774 /* NewDebtTableViewController.m */,
-				623A62FE1FD6B71D009D56F7 /* ToastLibary */,
+				621835581FD864A800B65B62 /* Inital View Controllers */,
 				62CE78DB1FCDCFBF00C9A905 /* Images */,
 				629A2E311FD81FFC006F8CD3 /* AppIcons */,
 				6262BD191FCD7618008C4D02 /* new debt add-on controllers */,

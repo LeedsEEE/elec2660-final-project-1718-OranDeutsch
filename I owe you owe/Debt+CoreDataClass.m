@@ -12,7 +12,11 @@
 
 @implementation Debt
 
+#pragma mark return value methods
+
 + (int)returnNewDebtID{
+    
+    //Standard app delegate decleration
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -32,6 +36,7 @@
     NSArray *debtIDs = [context executeFetchRequest:request error:&error];
     NSMutableArray *results = [[NSMutableArray alloc]init];
     
+    //creats an array of debt entities
     
     
     Debt *debtEntity;
@@ -41,6 +46,7 @@
         
     }
     
+    //Runs a while loop that changes the debtID if it had a duplicate and ends once the ID is unique
     
     while ([results containsObject:[NSNumber numberWithInt:(int)newID]]) {
         newID++;
@@ -68,10 +74,12 @@
     NSFetchRequest *payeeRequest = [[NSFetchRequest alloc] init];
     payeeRequest = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
     
-    
+    //A predicate is ran to call the payee with the payeeID passed in debtinfo, this is to attach the object to the debt so it can be found based on payee
     
     payeeRequest.predicate = [NSPredicate predicateWithFormat:@"payeeID == %@", [debtInfo valueForKey:@"payeeID"]];
     selectedPayee = [[context executeFetchRequest:payeeRequest error:&error]objectAtIndex:0];
+    
+    //Inserts the object into the core data stack
     
     newDebt = [NSEntityDescription insertNewObjectForEntityForName:@"Debt" inManagedObjectContext:context];
     
@@ -106,6 +114,8 @@
     
     
     [context save:nil];
+    
+    //calls the internal notification methods to create a notification based on infomation of the newly created debt if the user requested a notification
     
     if ([[debtInfo valueForKey:@"sendNotification"] integerValue] == 1) {
         
@@ -155,7 +165,7 @@
     NSArray *fetchedObject = [context executeFetchRequest:request  error:&error];
     
     
-    
+    //Runs a loop that adds each object to an array in the form of a dictionary to be passed through
     
     NSMutableArray *results = [[NSMutableArray alloc]init];
     
@@ -172,6 +182,8 @@
 
 
 + (NSDictionary *)debtToDictionary:(Debt *)debtInfo{
+    
+    //To avoid nil errors I used dictionaries whenever I called data in a view controller, my dictionary used the exact same names as the names in me debt entity
     
     NSMutableDictionary *debtDict = [[NSMutableDictionary alloc] init];
     
@@ -215,12 +227,16 @@
     NSError *error;
     Debt *debtEntity = nil;
     
+    //Predicates the request to only return debt objects with matching ID
+    
     request = [NSFetchRequest fetchRequestWithEntityName:@"Debt"];
     request.predicate = [NSPredicate predicateWithFormat:@"debtID == %i",debtID];
     
     NSArray *fetchedObject = [context executeFetchRequest:request error:&error];
     
     NSMutableArray *results = [[NSMutableArray alloc]init];
+    
+    
     
     for (debtEntity in fetchedObject) {
         
@@ -232,6 +248,8 @@
     
     
 }
+
+#pragma mark Edit or delete debt methods
 
 + (void)modifyIsPaidbyDebtID: (NSInteger)debtID isPaid:(BOOL)isPaid {
     

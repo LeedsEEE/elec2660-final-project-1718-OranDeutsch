@@ -126,37 +126,29 @@
     
     
     
+    //to get infomation on the
     NSIndexPath *indexPath = [self.payeeTable indexPathForSelectedRow];
     NSArray *tempPayeeArray = [Payee returnPayees];
     
-    
-    
-
-        
-        //call toast libary to give the user visual feedback that the payee is deleted
-        
-        [self.view makeToast:@"No Payee Selected"
-                    duration:3.0
-                    position:CSToastPositionTop];
         
 
     
-        Payee *tempPayee = [[tempPayeeArray objectAtIndex:indexPath.row]objectForKey:@"payee"];
+    Payee *tempPayee = [[tempPayeeArray objectAtIndex:indexPath.row]objectForKey:@"payee"];
     
         //if the payee has existing debts the user is warned that the debts would need to be deleted, they have the option to cancel still
     
     
     
     
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
             
             //if the user does have existing debts then after being alerted of this the user can accept and the view has to call a method to delete all the payees debts
             
-        [Debt deleteDebtsFromPayee:tempPayee];
-        [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
-        [self.payeeTable reloadData];
+    [Debt deleteDebtsFromPayee:tempPayee];
+    [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+    [self.payeeTable reloadData];
             
             
             //call toast libary to give the user visual feedback that the payee is deleted
