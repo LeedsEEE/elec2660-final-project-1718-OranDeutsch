@@ -26,6 +26,10 @@
     
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
+    //disable the user from selected a date below the current date for notifications
+    
+    self.datePicker.minimumDate = [NSDate date];
+    
     
     
     NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];

@@ -16,6 +16,10 @@
 @interface SettingsTableViewController : UITableViewController
 
 
+
+//Imports the same table view datasource/delegate as the "select payee" as they both display the same infomation
+
+
 @property (strong, nonatomic) UITableViewController *SelectPayeeTableController;
 
 - (IBAction)deleteAll:(id)sender;

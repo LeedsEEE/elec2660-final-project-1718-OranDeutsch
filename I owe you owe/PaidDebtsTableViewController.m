@@ -160,6 +160,10 @@
         
     }
 }
+
+#pragma mark exit segues
+
+
 - (IBAction)debtDeletedSegue:(UIStoryboardSegue *)segue{
         [super viewDidLoad];
     

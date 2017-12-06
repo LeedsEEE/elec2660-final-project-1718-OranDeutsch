@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //calls a dedicated method to call the data from my core data class and populate the view with all the infomation relevent to the user
+    
     [self loadData];
     
 }
@@ -38,6 +40,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark exit segues
 
 - (IBAction)deleteDebt:(id)sender {
     
@@ -101,13 +106,17 @@
     
     self.datePaidLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"datePaid"]];
     
+    //only presents the date due if the debt has one, otherwise just says N/A and fades out slightly
+    
     if ([[self.debtDictionary objectForKey:@"sendNotification"] integerValue] == 1) {
         
         self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+        self.dateDueLabel.alpha = 1;
         
     }else{
         
         self.dateDueLabel.text = @"N/A";
+        self.dateDueLabel.alpha = 0.4;
     }
     
     self.infomationField.text = [self.debtDictionary objectForKey:@"infomation"];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5sM-6a-mso">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y8j-QK-jyx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,6 +7,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Inital View View Controller-->
+        <scene sceneID="Za2-Fi-hGS">
+            <objects>
+                <viewController storyboardIdentifier="InitalViewViewController" id="Y8j-QK-jyx" customClass="InitalViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qti-uF-WIS"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1l-DB-Onp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ixt-5m-SZf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jby-57-N99"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jby-57-N99" firstAttribute="centerX" secondItem="ixt-5m-SZf" secondAttribute="centerX" id="Xwd-rZ-odQ"/>
+                            <constraint firstItem="Jby-57-N99" firstAttribute="width" secondItem="ixt-5m-SZf" secondAttribute="width" id="gMo-0O-1HS"/>
+                            <constraint firstItem="Jby-57-N99" firstAttribute="centerY" secondItem="ixt-5m-SZf" secondAttribute="centerY" id="oyA-Ih-wpk"/>
+                            <constraint firstItem="Jby-57-N99" firstAttribute="height" secondItem="ixt-5m-SZf" secondAttribute="height" id="rTF-0Z-1di"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="q1v-ag-8cI" kind="show" identifier="firstTimeRunSegue" animates="NO" id="jzi-aS-4Cl"/>
+                        <segue destination="5sM-6a-mso" kind="show" identifier="notFirstTimeRunSegue" id="5wD-qr-n0I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FgU-Mk-H0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2554" y="394"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="8pQ-85-g2c">
             <objects>
@@ -121,7 +154,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imowedcell" textLabel="yj8-ma-Y0K" detailTextLabel="u2e-4f-izr" style="IBUITableViewCellStyleValue1" id="0NM-4L-S35">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NM-4L-S35" id="7Gr-bw-Hed">
                                             <frame key="frameInset" width="276" height="43"/>
@@ -157,7 +190,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iowecell" textLabel="vUT-ql-5sc" detailTextLabel="ocS-hM-mR9" style="IBUITableViewCellStyleValue1" id="vPU-Uj-d6P">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPU-Uj-d6P" id="Xpj-3C-0Vy">
                                             <frame key="frameInset" width="276" height="43"/>
@@ -213,9 +246,6 @@
                     <connections>
                         <outlet property="IOweTable" destination="Y6A-cA-Hpb" id="GHf-TU-aOM"/>
                         <outlet property="ImOwedTable" destination="sz2-dq-aSF" id="dbI-TL-4zq"/>
-                        <segue destination="q1v-ag-8cI" kind="popoverPresentation" identifier="firstTimeRunSegue" popoverAnchorView="tsR-hK-woN" id="aew-iS-8mH">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -418,7 +448,7 @@
         <scene sceneID="JIu-DQ-Ibq">
             <objects>
                 <tableViewController title="Settings" id="zis-QO-c9s" customClass="SettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Z4Y-Xw-8ND">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Z4Y-Xw-8ND">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -464,7 +494,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="deleteAll:" destination="zis-QO-c9s" eventType="touchUpInside" id="md1-C6-8Sd"/>
-                                                        <segue destination="q1v-ag-8cI" kind="show" identifier="" id="aiU-oY-Hpw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -553,7 +582,7 @@
         <scene sceneID="ZFr-9o-3Wb">
             <objects>
                 <tableViewController title="New Debt" id="lkZ-Zf-HXh" customClass="NewDebtTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5gM-qk-D5W">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5gM-qk-D5W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -567,6 +596,11 @@
                                             <frame key="frameInset" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkU-uq-Uj3">
+                                                    <connections>
+                                                        <segue destination="Jpn-Da-ibD" kind="show" id="iZO-Ek-EKe"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Payee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-JJ-e9C">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -575,13 +609,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yEh-JJ-e9C" firstAttribute="leading" secondItem="HQl-Pz-3pe" secondAttribute="leadingMargin" id="1bz-7g-hsF"/>
+                                                <constraint firstItem="IkU-uq-Uj3" firstAttribute="centerX" secondItem="HQl-Pz-3pe" secondAttribute="centerX" id="4gU-rq-89F"/>
+                                                <constraint firstItem="IkU-uq-Uj3" firstAttribute="centerY" secondItem="HQl-Pz-3pe" secondAttribute="centerY" id="Pdh-68-1h2"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="yEh-JJ-e9C" secondAttribute="bottom" constant="3" id="TA0-38-Vtp"/>
                                                 <constraint firstItem="yEh-JJ-e9C" firstAttribute="top" secondItem="HQl-Pz-3pe" secondAttribute="topMargin" constant="4" id="VNc-ja-EgG"/>
+                                                <constraint firstItem="IkU-uq-Uj3" firstAttribute="height" secondItem="HQl-Pz-3pe" secondAttribute="height" id="bKG-Fj-0Pe"/>
+                                                <constraint firstItem="IkU-uq-Uj3" firstAttribute="width" secondItem="HQl-Pz-3pe" secondAttribute="width" id="cJ7-8b-EgC"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Jpn-Da-ibD" kind="show" id="wAK-Uf-inN"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1090,7 +1125,7 @@
         <scene sceneID="ofJ-2Q-vwO">
             <objects>
                 <tableViewController title="Modify Debt" id="tx7-Xc-t9C" customClass="ModifyDebtTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Cec-pP-DhM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Cec-pP-DhM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1204,6 +1239,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="534075850.23714101">
                                                         <!--2017-12-04 10:24:10 +0000-->
                                                     </date>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="-975675600">
+                                                        <!--1970-01-31 11:00:00 +0000-->
+                                                    </date>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -1296,7 +1334,7 @@
         <image name="icons8-settings-40.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aiU-oY-Hpw"/>
         <segue reference="9fT-q3-26Q"/>
+        <segue reference="5wD-qr-n0I"/>
     </inferredMetricsTieBreakers>
 </document>

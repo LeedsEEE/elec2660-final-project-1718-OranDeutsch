@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //sets up a currency pickerview based on the currency array stored in the settings class based on the Currency object I created
+    
     self.currencyData = [Settings returnCurrencies];
     
     self.currencyPicker.delegate = self;

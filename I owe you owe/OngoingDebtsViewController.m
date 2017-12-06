@@ -18,9 +18,15 @@
     [super viewDidLoad];
     
    
+    //This view presents all debts the user has to other people and all the debts others have to them
+    
+    //To have two seperate tables the code has two seperate controllers which are imported
+    
     
     self.iOweTableViewController = [[IOweTableViewController alloc] init];
     self.imOwedTableViewController = [[ImOwedTableViewController alloc] init];
+    
+    //Both tables are given seperate delegates and seperate dataviews
     
     self.IOweTable.delegate = self.iOweTableViewController;
     self.ImOwedTable.delegate = self.imOwedTableViewController;
@@ -36,12 +42,8 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    //since this is the first view to load, if this is the first time the app is run then the user is set to the welcome screen
-    if ([Settings firstTimeLoad] == YES) {
-        [self performSegueWithIdentifier:@"firstTimeRunSegue" sender:self];
-        
-    }
-    
+
+    //Resets the tables when the view appears as the data they read could have changed
     
     [self.tabBarController setTitle:@"Unpaid Debts"];
     
@@ -62,6 +64,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     
+    //if the user selects a debt then the debtID is found and sent, two segues are used as both tables are populated with different arrays which need calling depending on segue the app is following
     
     ViewDebtViewController *destinationViewController = [segue destinationViewController];
     

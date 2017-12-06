@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)amountString: (NSNumber *)amount;
 
-+ (BOOL)payeeHasDebts: (Payee *)payee;
+
 
 @end
 

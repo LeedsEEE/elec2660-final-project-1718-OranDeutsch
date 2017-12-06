@@ -28,7 +28,12 @@
     
     self.descriptionTextField.delegate = self;
     self.amountLabel.text = [self showAmount];
-
+    
+    //disable the user from selected a date below the current date for notifications
+    
+    self.datePicker.minimumDate = [NSDate date];
+    
+    [self resetView];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -270,9 +275,12 @@
     
     [self.datePicker setDate:[NSDate date]];
     
-    //reset notification switch back to enable
+    //reset notification switch back to disabled
     
-    [self.notificationSwitch setOn:YES];
+    [self.notificationSwitch setOn:NO];
+    
+    self.datePicker.enabled = 0;
+    self.datePicker.alpha = 0.4;
     
     //update labels to match
     

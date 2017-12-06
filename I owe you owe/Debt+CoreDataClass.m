@@ -8,6 +8,8 @@
 
 #import "Debt+CoreDataClass.h"
 #import "Payee+CoreDataProperties.h"
+
+
 @implementation Debt
 
 + (int)returnNewDebtID{

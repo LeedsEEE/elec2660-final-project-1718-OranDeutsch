@@ -10,6 +10,7 @@
 		3DB70A821FD5EB3800CB57B4 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB70A811FD5EB3800CB57B4 /* Untitled.png */; };
 		3DB70A841FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB70A831FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png */; };
 		620219721FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 620219711FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png */; };
+		62044EFF1FD7FF4B00524E59 /* InitalViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62044EFE1FD7FF4B00524E59 /* InitalViewViewController.m */; };
 		621A37DD1FCC6892005C4978 /* Settings+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37D61FCC6892005C4978 /* Settings+CoreDataClass.m */; };
 		621A37DE1FCC6892005C4978 /* Settings+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37D81FCC6892005C4978 /* Settings+CoreDataProperties.m */; };
 		621A37EC1FCC6FD8005C4978 /* SelectPayeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37EB1FCC6FD8005C4978 /* SelectPayeeViewController.m */; };
@@ -91,6 +92,8 @@
 		3DB70A831FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-12-04 at 20.56.50.png"; sourceTree = "<group>"; };
 		620219711FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pile_of_Coins_PNG_Picture.png; sourceTree = "<group>"; };
 		620219731FD5E1CF00F2DEFB /* Test App Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Test App Icon.png"; sourceTree = "<group>"; };
+		62044EFD1FD7FF4B00524E59 /* InitalViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitalViewViewController.h; sourceTree = "<group>"; };
+		62044EFE1FD7FF4B00524E59 /* InitalViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitalViewViewController.m; sourceTree = "<group>"; };
 		621A37D51FCC6892005C4978 /* Settings+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Settings+CoreDataClass.h"; path = "../Settings+CoreDataClass.h"; sourceTree = "<group>"; };
 		621A37D61FCC6892005C4978 /* Settings+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Settings+CoreDataClass.m"; path = "../Settings+CoreDataClass.m"; sourceTree = "<group>"; };
 		621A37D71FCC6892005C4978 /* Settings+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Settings+CoreDataProperties.h"; path = "../Settings+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -283,8 +286,12 @@
 		62D4D84C1FC4269500F6B1D4 /* I owe you owe */ = {
 			isa = PBXGroup;
 			children = (
+				62D4D8501FC4269500F6B1D4 /* AppDelegate.h */,
+				62D4D8511FC4269500F6B1D4 /* AppDelegate.m */,
 				62D4D8591FC4269500F6B1D4 /* Main.storyboard */,
 				62D4D85E1FC4269500F6B1D4 /* LaunchScreen.storyboard */,
+				62044EFD1FD7FF4B00524E59 /* InitalViewViewController.h */,
+				62044EFE1FD7FF4B00524E59 /* InitalViewViewController.m */,
 				62D0ED051FD55055008FF355 /* SettingsTableViewController.h */,
 				62D0ED061FD55055008FF355 /* SettingsTableViewController.m */,
 				62DEF97D1FD171420071ECFA /* WelcomeViewController.h */,
@@ -293,8 +300,6 @@
 				6290BED91FD0932700DDBA9D /* ViewPaidDebtViewController.m */,
 				62D2F86F1FCF44410013CDBC /* PaidDebtsTableViewController.h */,
 				62D2F8701FCF44410013CDBC /* PaidDebtsTableViewController.m */,
-				62D4D8501FC4269500F6B1D4 /* AppDelegate.h */,
-				62D4D8511FC4269500F6B1D4 /* AppDelegate.m */,
 				62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */,
 				62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */,
 				62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */,
@@ -554,6 +559,7 @@
 				62867A331FC454DF00AED0FF /* ImOwedTableViewController.m in Sources */,
 				62D0ED071FD55055008FF355 /* SettingsTableViewController.m in Sources */,
 				62D98B9A1FD5573E00F24774 /* NewDebtTableViewController.m in Sources */,
+				62044EFF1FD7FF4B00524E59 /* InitalViewViewController.m in Sources */,
 				621A37F91FCC86FD005C4978 /* Payee+CoreDataProperties.m in Sources */,
 				6268F3F61FD1C76300168A7A /* SelectContactTableViewController.m in Sources */,
 				6290BEDA1FD0932700DDBA9D /* ViewPaidDebtViewController.m in Sources */,

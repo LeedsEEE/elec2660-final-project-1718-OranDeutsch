@@ -28,11 +28,12 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     
+    //Does not display the data to the user if there is an error, this is legacy code when I was suffering from nill erros but remains as it is very useful for troubleshooting
+    
     @try{
     [self loadData];
     }
     @catch(NSException *exception){
-        
         
     }
     
@@ -48,6 +49,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    //If the user wants to modify the debt the debtID is passed forward for the modify screen to import it in
     
     ModifyDebtTableViewController *destinationViewController = [segue destinationViewController];
     
@@ -76,6 +78,8 @@
 }
 
 - (IBAction)repayDebt:(id)sender {
+    
+    //Calls debt method to change the "isPaid" value of called object
 
     [Debt modifyIsPaidbyDebtID:self.debtID isPaid:1];
     
@@ -84,10 +88,15 @@
 
 - (IBAction)modifyDebt:(id)sender {
     
-    
 }
 
 -(void) loadData {
+    
+    //Populates all the UIOjects with infomation for the user
+    
+    
+    
+    //Calls the viewDebtFromId method to get a dictionary of infomation about the specific debt entry
     
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
@@ -127,11 +136,17 @@
     
     self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
     
+    //only shows the due date if the user wants a notification to be sent for the app, otherwise reads N/A and fades out the label
+    
     if ([[self.debtDictionary objectForKey:@"sendNotification"] integerValue] == 1) {
+        
+        self.dateDueLabel.text = [dateFormatter stringFromDate:[self.debtDictionary objectForKey:@"dateDue"]];
+        self.dateDueLabel.alpha = 1;
         
     }else{
         
         self.dateDueLabel.text = @"N/A";
+        self.dateDueLabel.alpha = 0.4;
     }
 
     

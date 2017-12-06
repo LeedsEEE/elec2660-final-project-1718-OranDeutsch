@@ -228,6 +228,15 @@
         }
         @catch (NSException *exception){}
         
+        //The user is then sent to the welcome screen as the app now has lost its basic settings data
+        
+        //I used present view controller as a segue would result in navigation bars persisting
+        
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"InitalViewViewController"];
+        [self presentViewController:vc animated:YES completion:nil];
+        
         
     }]];
     
