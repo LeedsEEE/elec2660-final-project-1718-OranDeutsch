@@ -39,6 +39,15 @@
 		6294C1791FD5F67A00A2B4EE /* icons8-settings-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1751FD5F67A00A2B4EE /* icons8-settings-40.png */; };
 		6294C17A1FD5F67A00A2B4EE /* icons8-exchange-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C1761FD5F67A00A2B4EE /* icons8-exchange-40.png */; };
 		6294C17C1FD5F70600A2B4EE /* icons8-add-new-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294C17B1FD5F70600A2B4EE /* icons8-add-new-40.png */; };
+		629A2E361FD82294006F8CD3 /* 60pt 3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E321FD82294006F8CD3 /* 60pt 3x.png */; };
+		629A2E371FD82294006F8CD3 /* 60pt x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E331FD82294006F8CD3 /* 60pt x2.png */; };
+		629A2E381FD82294006F8CD3 /* 76pt x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E341FD82294006F8CD3 /* 76pt x2.png */; };
+		629A2E391FD82294006F8CD3 /* 83pt x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E351FD82294006F8CD3 /* 83pt x2.png */; };
+		629A2E3B1FD82301006F8CD3 /* 40pt x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E3A1FD82301006F8CD3 /* 40pt x2.png */; };
+		629A2E3E1FD82360006F8CD3 /* 20pt x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E3C1FD82360006F8CD3 /* 20pt x2.png */; };
+		629A2E3F1FD82360006F8CD3 /* 20pt x3.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E3D1FD82360006F8CD3 /* 20pt x3.png */; };
+		629A2E421FD82413006F8CD3 /* 29pt x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E401FD82413006F8CD3 /* 29pt x2.png */; };
+		629A2E431FD82413006F8CD3 /* 29pt x3.png in Resources */ = {isa = PBXBuildFile; fileRef = 629A2E411FD82413006F8CD3 /* 29pt x3.png */; };
 		62B0A3D51FC4795E008C7A4A /* ViewDebtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */; };
 		62BFF2921FC44719006B10C6 /* OngoingDebtsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFF2911FC44719006B10C6 /* OngoingDebtsViewController.m */; };
 		62CE78D61FCDC32A00C9A905 /* Debt+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE78D31FCDC32A00C9A905 /* Debt+CoreDataClass.m */; };
@@ -138,6 +147,15 @@
 		6294C1751FD5F67A00A2B4EE /* icons8-settings-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings-40.png"; sourceTree = "<group>"; };
 		6294C1761FD5F67A00A2B4EE /* icons8-exchange-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-exchange-40.png"; sourceTree = "<group>"; };
 		6294C17B1FD5F70600A2B4EE /* icons8-add-new-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-add-new-40.png"; sourceTree = "<group>"; };
+		629A2E321FD82294006F8CD3 /* 60pt 3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60pt 3x.png"; sourceTree = "<group>"; };
+		629A2E331FD82294006F8CD3 /* 60pt x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60pt x2.png"; sourceTree = "<group>"; };
+		629A2E341FD82294006F8CD3 /* 76pt x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76pt x2.png"; sourceTree = "<group>"; };
+		629A2E351FD82294006F8CD3 /* 83pt x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83pt x2.png"; sourceTree = "<group>"; };
+		629A2E3A1FD82301006F8CD3 /* 40pt x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40pt x2.png"; sourceTree = "<group>"; };
+		629A2E3C1FD82360006F8CD3 /* 20pt x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20pt x2.png"; sourceTree = "<group>"; };
+		629A2E3D1FD82360006F8CD3 /* 20pt x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20pt x3.png"; sourceTree = "<group>"; };
+		629A2E401FD82413006F8CD3 /* 29pt x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29pt x2.png"; sourceTree = "<group>"; };
+		629A2E411FD82413006F8CD3 /* 29pt x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29pt x3.png"; sourceTree = "<group>"; };
 		62B0A3D31FC4795E008C7A4A /* ViewDebtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewDebtViewController.h; sourceTree = "<group>"; };
 		62B0A3D41FC4795E008C7A4A /* ViewDebtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDebtViewController.m; sourceTree = "<group>"; };
 		62BFF2901FC44719006B10C6 /* OngoingDebtsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingDebtsViewController.h; sourceTree = "<group>"; };
@@ -245,6 +263,22 @@
 			name = "Table View Controllers";
 			sourceTree = "<group>";
 		};
+		629A2E311FD81FFC006F8CD3 /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				629A2E401FD82413006F8CD3 /* 29pt x2.png */,
+				629A2E411FD82413006F8CD3 /* 29pt x3.png */,
+				629A2E3C1FD82360006F8CD3 /* 20pt x2.png */,
+				629A2E3D1FD82360006F8CD3 /* 20pt x3.png */,
+				629A2E3A1FD82301006F8CD3 /* 40pt x2.png */,
+				629A2E321FD82294006F8CD3 /* 60pt 3x.png */,
+				629A2E331FD82294006F8CD3 /* 60pt x2.png */,
+				629A2E341FD82294006F8CD3 /* 76pt x2.png */,
+				629A2E351FD82294006F8CD3 /* 83pt x2.png */,
+			);
+			name = AppIcons;
+			sourceTree = "<group>";
+		};
 		62CE78DB1FCDCFBF00C9A905 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +344,7 @@
 				62D98B991FD5573E00F24774 /* NewDebtTableViewController.m */,
 				623A62FE1FD6B71D009D56F7 /* ToastLibary */,
 				62CE78DB1FCDCFBF00C9A905 /* Images */,
+				629A2E311FD81FFC006F8CD3 /* AppIcons */,
 				6262BD191FCD7618008C4D02 /* new debt add-on controllers */,
 				62E9E50D1FCC0F2300670472 /* CoreData files */,
 				62867A341FC454E600AED0FF /* Table View Controllers */,
@@ -504,6 +539,9 @@
 				620219721FD5D62F00F2DEFB /* Pile_of_Coins_PNG_Picture.png in Resources */,
 				6294C1721FD5F39900A2B4EE /* icons8-exchange-50.png in Resources */,
 				6294C1791FD5F67A00A2B4EE /* icons8-settings-40.png in Resources */,
+				629A2E381FD82294006F8CD3 /* 76pt x2.png in Resources */,
+				629A2E361FD82294006F8CD3 /* 60pt 3x.png in Resources */,
+				629A2E3F1FD82360006F8CD3 /* 20pt x3.png in Resources */,
 				625574351FD748B10082783F /* app icon 2.png in Resources */,
 				3DB70A841FD5EE9400CB57B4 /* Screen Shot 2017-12-04 at 20.56.50.png in Resources */,
 				6294C16A1FD5F27500A2B4EE /* icons8-money-50.png in Resources */,
@@ -513,11 +551,17 @@
 				6294C17A1FD5F67A00A2B4EE /* icons8-exchange-40.png in Resources */,
 				62D4D85D1FC4269500F6B1D4 /* Assets.xcassets in Resources */,
 				6294C16D1FD5F38F00A2B4EE /* icons8-settings-50.png in Resources */,
+				629A2E421FD82413006F8CD3 /* 29pt x2.png in Resources */,
 				625574331FD747060082783F /* welcome screen.png in Resources */,
+				629A2E3E1FD82360006F8CD3 /* 20pt x2.png in Resources */,
+				629A2E371FD82294006F8CD3 /* 60pt x2.png in Resources */,
+				629A2E3B1FD82301006F8CD3 /* 40pt x2.png in Resources */,
+				629A2E431FD82413006F8CD3 /* 29pt x3.png in Resources */,
 				6294C17C1FD5F70600A2B4EE /* icons8-add-new-40.png in Resources */,
 				6294C1771FD5F67A00A2B4EE /* icons8-money-40.png in Resources */,
 				3DB70A821FD5EB3800CB57B4 /* Untitled.png in Resources */,
 				6294C16E1FD5F38F00A2B4EE /* icons8-view-details-50.png in Resources */,
+				629A2E391FD82294006F8CD3 /* 83pt x2.png in Resources */,
 				6294C1781FD5F67A00A2B4EE /* icons8-payment-history-40.png in Resources */,
 				62D4D85B1FC4269500F6B1D4 /* Main.storyboard in Resources */,
 			);

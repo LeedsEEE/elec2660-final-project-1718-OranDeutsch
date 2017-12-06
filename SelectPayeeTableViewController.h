@@ -15,7 +15,6 @@
 
 @property int selectedRow;
 
-+(void)refresh;
 
 
 
