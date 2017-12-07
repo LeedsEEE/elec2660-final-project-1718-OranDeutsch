@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSMutableArray *)returnCurrencies;
 
-+ (void)updateCurrency: (NSString *)newCurrency;
++ (void)updateCurrency: (NSInteger)currencyID;
 
 + (NSDictionary *) returnSettings;
 

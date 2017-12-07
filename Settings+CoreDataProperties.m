@@ -15,5 +15,6 @@
 }
 
 @dynamic currency;
+@dynamic currencyID;
 
 @end

@@ -99,10 +99,8 @@
     
     //updates the users currency of choice selected
     
-    Currency *tempCurrency = [self.currencyData objectAtIndex:row];
     
-    
-    [Settings updateCurrency:tempCurrency.symbol];
+    [Settings updateCurrency:row];
     
     
     

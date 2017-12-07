@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<Settings *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *currency;
+@property (nullable, nonatomic, copy) NSNumber *currencyID;
+
 
 @end
 

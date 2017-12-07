@@ -42,9 +42,7 @@
     
     
     //since the picker starts at row 0
-    
-    Currency *tempCurrency = [self.currencyData objectAtIndex:0];
-    [Settings updateCurrency:tempCurrency.symbol];
+    [Settings updateCurrency:0];
     
     
 }
@@ -113,9 +111,7 @@
        inComponent:(NSInteger)component{
     
     //updates selcted currency when user picks a currency in the pickerview
-    
-    Currency *tempCurrency = [self.currencyData objectAtIndex:row];
-    [Settings updateCurrency:tempCurrency.symbol];
+    [Settings updateCurrency:row];
     
     
     

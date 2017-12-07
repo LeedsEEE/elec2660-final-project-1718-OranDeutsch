@@ -10,7 +10,7 @@
 
 @implementation Settings
 
-+ (void)updateCurrency: (NSString *)newCurrency{
++ (void)updateCurrency: (NSInteger)currencyID{
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
@@ -35,8 +35,12 @@
         
         
     }
+    NSArray *currencies = [self returnCurrencies];
+    Currency *tempCurrency = [currencies objectAtIndex:currencyID];
     
-    CurrentSettings.currency = newCurrency;
+    
+    CurrentSettings.currency = tempCurrency.symbol;
+    CurrentSettings.currencyID = [NSNumber numberWithInt: (int32_t)currencyID];
     
     
     [context save:nil];
@@ -78,45 +82,6 @@
     
 }
 
-+ (NSMutableArray *)returnCurrencies{
-    
-    
-    //The currency infomation is placed into a small DataModel to keep consistency throughout the whole app
-    
-    
-    NSMutableArray *Currencies = [NSMutableArray array];
-    
-    Currency *pound = [[Currency alloc] init];
-    pound.name = @"Pound";
-    pound.symbol = @"£";
-    
-    Currency *dollar = [[Currency alloc] init];
-    dollar.name = @"Dollar";
-    dollar.symbol = @"$";
-    
-    Currency *euro = [[Currency alloc] init];
-    euro.name = @"Euro";
-    euro.symbol = @"€";
-    
-    Currency *yen = [[Currency alloc] init];
-    yen.name = @"Yen";
-    yen.symbol = @"¥";
-    
-    Currency *yuan = [[Currency alloc] init];
-    yuan.name = @"Yuan";
-    yuan.symbol = @"¥";
-    
-    [Currencies addObject:pound];  //
-    [Currencies addObject:dollar]; //
-    [Currencies addObject:euro];   //
-    [Currencies addObject:yen];    //
-    [Currencies addObject:yuan];   //
-    
-    
-    
-    return Currencies;
-    
-}
 
 + (void)deleteAllSettings{
     
@@ -166,6 +131,51 @@
     
     
     return firstTime;
+}
+
++ (NSMutableArray *)returnCurrencies{
+    
+    
+    //The currency infomation is placed into a small DataModel to keep consistency throughout the whole app
+    
+    
+    NSMutableArray *Currencies = [NSMutableArray array];
+    
+    Currency *pound = [[Currency alloc] init];
+    pound.name = @"GBP";
+    pound.symbol = @"£";
+    
+    Currency *dollar = [[Currency alloc] init];
+    dollar.name = @"USD";
+    dollar.symbol = @"$";
+    
+    Currency *euro = [[Currency alloc] init];
+    euro.name = @"EUR";
+    euro.symbol = @"€";
+    
+    Currency *yen = [[Currency alloc] init];
+    yen.name = @"JPY";
+    yen.symbol = @"¥";
+    
+    Currency *yuan = [[Currency alloc] init];
+    yuan.name = @"RMB";
+    yuan.symbol = @"¥";
+    
+    Currency *ruble = [[Currency alloc] init];
+    ruble.name = @"RUB";
+    ruble.symbol = @"₽";
+    
+    [Currencies addObject:pound];   //index0
+    [Currencies addObject:dollar];  //index1
+    [Currencies addObject:euro];    //index2
+    [Currencies addObject:yen];     //index3
+    [Currencies addObject:yuan];    //index4
+    [Currencies addObject:ruble];   //index5
+    
+    
+    
+    return Currencies;
+    
 }
 
 
