@@ -33,7 +33,10 @@
     self.IOweTable.dataSource = self.iOweTableViewController;
     self.ImOwedTable.dataSource = self.imOwedTableViewController;
     
+    //prevents the top and bottom bars from covering table view data
     
+    self.navigationController.navigationBar.translucent = NO;
+    self.tabBarController.tabBar.translucent = NO;
     
     
 }
@@ -42,6 +45,16 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    
+    //Gives the user some visual feedback that there is no data to display
+    
+    if (([self.IOweTable numberOfRowsInSection:0] == 0) && ([self.ImOwedTable numberOfRowsInSection:0] == 0)) {
+        
+        [self.view makeToast:@"No debts to display"];
+        
+        
+        NSLog(@"no debts");
+    }
 
     //Resets the tables when the view appears as the data they read could have changed
     
@@ -49,6 +62,9 @@
     
     [self.IOweTable reloadData];
     [self.ImOwedTable reloadData];
+    
+    
+
     
     
 }

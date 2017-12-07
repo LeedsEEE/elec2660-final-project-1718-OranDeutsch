@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
-               BuildableName = "I owe you owe.app"
+               BuildableName = "I Owe You Owe.app"
                BlueprintName = "I owe you owe"
                ReferencedContainer = "container:I owe you owe.xcodeproj">
             </BuildableReference>
@@ -81,7 +81,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
-            BuildableName = "I owe you owe.app"
+            BuildableName = "I Owe You Owe.app"
             BlueprintName = "I owe you owe"
             ReferencedContainer = "container:I owe you owe.xcodeproj">
          </BuildableReference>
@@ -104,7 +104,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
-            BuildableName = "I owe you owe.app"
+            BuildableName = "I Owe You Owe.app"
             BlueprintName = "I owe you owe"
             ReferencedContainer = "container:I owe you owe.xcodeproj">
          </BuildableReference>
@@ -123,7 +123,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62D4D8491FC4269500F6B1D4"
-            BuildableName = "I owe you owe.app"
+            BuildableName = "I Owe You Owe.app"
             BlueprintName = "I owe you owe"
             ReferencedContainer = "container:I owe you owe.xcodeproj">
          </BuildableReference>

@@ -33,6 +33,14 @@
     [self.tableView reloadData];
     [self.tabBarController setTitle:@"Paid Debts"];
     
+    //Gives the user some visual feedback that there is no data to display
+    
+    if ([self.tableView numberOfRowsInSection:0] == 0) {
+        
+        [self.view makeToast:@"No paid debts to display"];
+        
+    }
+    
     
 }
 

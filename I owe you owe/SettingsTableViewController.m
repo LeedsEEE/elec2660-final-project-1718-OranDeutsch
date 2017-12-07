@@ -135,41 +135,42 @@
     NSIndexPath *indexPath = [self.payeeTable indexPathForSelectedRow];
     NSArray *tempPayeeArray = [Payee returnPayees];
     
+    if ([tempPayeeArray count] == 0) {
         
-
-    
-    Payee *tempPayee = [[tempPayeeArray objectAtIndex:indexPath.row]objectForKey:@"payee"];
-    
-        //if the payee has existing debts the user is warned that the debts would need to be deleted, they have the option to cancel still
+        [self.view makeToast:@"No Payees to delete"];
+        
+    }else{
     
     
+        Payee *tempPayee = [[tempPayeeArray objectAtIndex:indexPath.row]objectForKey:@"payee"];
+    
+            //if the payee has existing debts the user is warned that the debts would need to be deleted, they have the option to cancel still
     
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    
+    
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Payee has saved debts, deleting the payee will remove their debts" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
             
             //if the user does have existing debts then after being alerted of this the user can accept and the view has to call a method to delete all the payees debts
             
-    [Debt deleteDebtsFromPayee:tempPayee];
-    [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
-    [self.payeeTable reloadData];
+            [Debt deleteDebtsFromPayee:tempPayee];
+            [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+            [self.payeeTable reloadData];
             
             
             //call toast libary to give the user visual feedback that the payee is deleted
             
-        [self.view makeToast:@"Payee Deleted"
-                    duration:3.0
-                    position:CSToastPositionTop];
+            [self.view makeToast:@"Payee Deleted"];
         
         
+        }]];
+        
+        //add cancel button that does nothing other than close the alert
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     }]];
-        
-        //add cancel button that does nothing
-        
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    }]];
-    
     
     
     
@@ -179,16 +180,16 @@
         
         [self presentViewController:alertController animated:YES completion:nil];
         
-    }else{
+        }else{
         
-        [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
-        [self.payeeTable reloadData];
+            [Payee deletePayeeFromID:[tempPayee.payeeID integerValue]];
+            [self.payeeTable reloadData];
             
             //call toast libary to give the user visual feedback that the payee is deleted
             
-        [self.view makeToast:@"Payee Deleted"
-                    duration:3.0
-                    position:CSToastPositionTop];
+            [self.view makeToast:@"Payee Deleted"
+                        duration:3.0
+                        position:CSToastPositionTop];
             
         
         
@@ -197,9 +198,8 @@
 
         
     
+        }
     }
-    
-    
     
 }
 
