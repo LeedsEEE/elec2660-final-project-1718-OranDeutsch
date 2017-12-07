@@ -73,23 +73,9 @@
 
 - (IBAction)payeeFromTextField:(id)sender {
     
-    NSString *payeeName = self.payeeNameField.text;
-    int payeeID = [Payee newPayeeID];
+    [self.payeeNameField resignFirstResponder];
     
-    NSDictionary *newPayee = @{@"name" : payeeName,
-                               @"payeeID" : [NSNumber numberWithInt:payeeID]};
-    
-    
-    
-    
-    [Payee AddPayeeFromDictionary:newPayee];
-    [self.payeeTable reloadData];
-    
-    //Calls toast libary for user feedback
-    
-    [self.view makeToast:[NSString stringWithFormat:@"%@ added to payees",[newPayee objectForKey:@"name"]]];
-    
-    self.payeeNameField.text = nil;
+    [self createNewPayee];
     
     
     
@@ -104,7 +90,9 @@
 
 
 - (IBAction)importPayeeFromContacts:(id)sender {
-         
+    
+    [self.payeeNameField resignFirstResponder];
+    
     [self.payeeTable reloadData];
     
     
@@ -115,12 +103,47 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    [textField resignFirstResponder];
+    [self.payeeNameField resignFirstResponder];
+    
+    [self createNewPayee];
     
     return YES;
     
 }
 
-
+-(void) createNewPayee {
+    
+    
+    
+    NSString *payeeName = self.payeeNameField.text;
+    
+    if (payeeName.length < 2) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Invalid Name" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    }else{
+    
+        int payeeID = [Payee newPayeeID];
+    
+        NSDictionary *newPayee = @{@"name" : payeeName,
+                                   @"payeeID" : [NSNumber numberWithInt:payeeID]};
+    
+    
+    
+    
+        [Payee AddPayeeFromDictionary:newPayee];
+        [self.payeeTable reloadData];
+    
+        //Calls toast libary for user feedback
+    
+        [self.view makeToast:[NSString stringWithFormat:@"%@ added to payees",[newPayee objectForKey:@"name"]]];
+    
+        self.payeeNameField.text = nil;
+    }
+    
+    
+}
 
 @end

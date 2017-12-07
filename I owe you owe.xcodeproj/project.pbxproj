@@ -119,7 +119,7 @@
 		622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyDebtTableViewController.m; sourceTree = "<group>"; };
 		623A62FB1FD6B6F9009D56F7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		623A62FC1FD6B6F9009D56F7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		623CE7281FD6E73200163841 /* I owe you owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I owe you owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		623CE7281FD6E73200163841 /* I Owe You Owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I Owe You Owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623CE7291FD6E73200163841 /* I owe you oweTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		625574321FD747060082783F /* welcome screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome screen.png"; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				62D4D8741FC4269500F6B1D4 /* I owe you oweUITests */,
 				62E9E50E1FCC155F00670472 /* I owe you owe-Bridging-Header.h */,
 				6268F3F71FD1CA6800168A7A /* Frameworks */,
-				623CE7281FD6E73200163841 /* I owe you owe.app */,
+				623CE7281FD6E73200163841 /* I Owe You Owe.app */,
 				623CE7291FD6E73200163841 /* I owe you oweTests.xctest */,
 				623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */,
 			);
@@ -455,7 +455,7 @@
 			);
 			name = "I owe you owe";
 			productName = "I owe you owe";
-			productReference = 623CE7281FD6E73200163841 /* I owe you owe.app */;
+			productReference = 623CE7281FD6E73200163841 /* I Owe You Owe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		62D4D8651FC4269500F6B1D4 /* I owe you oweTests */ = {
@@ -774,7 +774,7 @@
 				INFOPLIST_FILE = "I owe you owe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leeds.I-owe-you-owe";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "I Owe You Owe";
 				SWIFT_OBJC_BRIDGING_HEADER = "I owe you owe-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -789,7 +789,7 @@
 				INFOPLIST_FILE = "I owe you owe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leeds.I-owe-you-owe";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "I Owe You Owe";
 				SWIFT_OBJC_BRIDGING_HEADER = "I owe you owe-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

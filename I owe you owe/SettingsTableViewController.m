@@ -32,6 +32,8 @@
     
     
     
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -41,6 +43,11 @@
     [super viewWillAppear:animated];
     [self.tabBarController setTitle:@"Settings"];
     [self.payeeTable reloadData];
+    
+    //sets the picker view to the users currently selected currency
+    
+    NSDictionary *tempSettings = [Settings returnSettings];
+    [self.currencyPicker selectRow:[[tempSettings objectForKey:@"currencyID"] integerValue] inComponent:0 animated:YES];
     
 }
 

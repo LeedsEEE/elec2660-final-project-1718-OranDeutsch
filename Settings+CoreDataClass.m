@@ -76,6 +76,7 @@
     importedsettings = [fetchedSettings objectAtIndex:0];
     
     returnSettings[@"currency"] = importedsettings.currency;
+    returnSettings[@"currencyID"] = importedsettings.currencyID;
     
     
     return returnSettings;
@@ -113,7 +114,11 @@
 
 + (BOOL)firstTimeLoad{
     
-    BOOL firstTime = nil;
+    //Returns YES or NO in a BOOL if this is the first time the app has been run
+    
+    //this is done with a count fetch request on the Settings enetity, if the entitiy returns 0 then the settings has not been setup yet meaning the app has not been ran yet
+    
+    BOOL firstTime = NO;
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;

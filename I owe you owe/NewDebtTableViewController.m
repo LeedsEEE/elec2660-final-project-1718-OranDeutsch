@@ -49,6 +49,8 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    //Updates the amount label incase the currency has been changed when the user was on a different view
+    
     self.amountLabel.text = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
 }
 
@@ -207,6 +209,8 @@
 
     }else{
         
+        //Sends UI alert informing the user they have entered a debt with a value of 0
+        
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter an amount greater than 0" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -278,7 +282,9 @@
     
     //reset amount picker
     
-    for (int i; i < 7; i++) {
+    self.amount = [NSNumber numberWithFloat:0.0];
+    
+    for (int i = 0; i < 7; i++) {
         
         [self.amountPicker selectRow:0 inComponent:i animated:YES];
         
@@ -305,5 +311,6 @@
     
     
 }
+
 
 @end
