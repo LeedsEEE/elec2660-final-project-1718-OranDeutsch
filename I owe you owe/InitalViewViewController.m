@@ -33,11 +33,9 @@
     [super viewDidAppear:animated];
     
     //since this is the first view to load, if this is the first time the app is run then the user is set to the welcome screen
-    
     if ([Settings firstTimeLoad] == YES) {
         [self performSegueWithIdentifier:@"firstTimeRunSegue" sender:self];
         NSLog(@"program has been run with empty data");
-        
     }else{
         [self performSegueWithIdentifier:@"notFirstTimeRunSegue" sender:self];
         NSLog(@"program will proceed");

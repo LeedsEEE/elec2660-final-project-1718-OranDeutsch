@@ -20,9 +20,7 @@
     [super viewDidLoad];
     
     //sets up a currency pickerview based on the currency array stored in the settings class based on the Currency object I created
-    
     self.currencyData = [Settings returnCurrencies];
-    
     self.currencyPicker.delegate = self;
     self.currencyPicker.dataSource = self;
     
@@ -33,13 +31,10 @@
     [super viewDidAppear:animated];
     
     //Dismisses the view if the app already has an object in the settings entity
-    
     if ([Settings firstTimeLoad] == YES) {
-        
     }else{
         [self proceed];
     }
-    
     
     //since the picker starts at row 0
     [Settings updateCurrency:0];
@@ -50,9 +45,7 @@
 - (IBAction)goToApp:(id)sender {
     
     //Allows the user to proceed to the app but only when they have selected a currency
-    
     if ([Settings firstTimeLoad] == YES) {
-        
     }else{
         [self proceed];
     }
@@ -62,6 +55,7 @@
 
 -(void) proceed {
     
+    //Forces the user to follow a segue to go to the app
     [self performSegueWithIdentifier:@"Proceed" sender:self];
     
 }
@@ -71,7 +65,6 @@
 #pragma mark - Picker View Data Source Methods
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    
     return 1;
 }
 
@@ -79,10 +72,8 @@
 (NSInteger)component{
     NSInteger rows;
     
+    //Sets amount of rows to amount of currency entities
     rows = [self.currencyData count];
-    
-    
-    
     return rows;
     
 }
@@ -93,15 +84,11 @@
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component{
     
-    
+    //Loads the selected currency and creates a string of its name and symbol to appear in the pickerview
     Currency *tempCurrency = [self.currencyData objectAtIndex:row];
-    
     NSString *rowvalue = [NSString stringWithFormat:@"%@ (%@)",
                           tempCurrency.name,
                           tempCurrency.symbol];
-    
-    
-    
     return rowvalue;
     
 }

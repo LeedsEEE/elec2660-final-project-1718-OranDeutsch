@@ -37,39 +37,24 @@
     
     //Formats the title string depending on if the debt is to or from the payee
     if ([[self.debtDictionary objectForKey:@"IOweDebt"] integerValue] == 1) {
-        
         self.titleLabel.text = [NSString stringWithFormat:@"Debt to %@",firstName];
-        
     }else{
-        
         self.titleLabel.text = [NSString stringWithFormat:@"Debt from %@",firstName];
-        
         
     }
     
-    
     //Assigns the amount label to the value of the debt being modified
     self.amountLabel.text = [Debt amountString:[self.debtDictionary objectForKey:@"amount"]];
-    
-    
 
     
     //Set up date picker to current due date, if there is no due data as the user has disabled notifications then the datw picker is disabled and faded out
-    
-    
     if ([[self.debtDictionary objectForKey:@"sendNotification"]integerValue] == 1) {
-        
         [self.notificationSwitch setOn:1];
         [self.datePicker setDate:[self.debtDictionary objectForKey:@"dateDue"]];
-        
-        
     }else{
-        
         [self.notificationSwitch setOn:0];
         self.datePicker.enabled = 0;
         self.datePicker.alpha = 0.4;
-        
-        
     }
     
 
@@ -78,47 +63,31 @@
     //As I needed to split up the float into a series of singular integers I had to convert the 2 decimal place float into a string, make sure it had 7 figures displayed and then seperate each value.
     
     //This is to prevent the user having to enter their value again even if they have no intentions to modify it
-    
-    
     for (int i = 0; i < 7; i++) {
-        
         NSString *amountString = [NSString stringWithFormat:@"%.2f", [self.amount floatValue]];
         int stringLength = (int)[amountString length];
         
         while (stringLength < 7) {
             //loops so the string will be in the formalt XXXX.XX, for example 32.2 will become 0032.20 or conversion will result in an invaid output
-            
             amountString = [NSString stringWithFormat:@"0%@", amountString];
             stringLength = (int)[amountString length];
         }
         
-        
         if (i != 4)  {
-            
             NSString *singleChar = [amountString substringWithRange:NSMakeRange(i, 1)]; //Makes a new string of just one number
             NSInteger row = [singleChar intValue]; //turns that character into a integer of equal value
             [self.amountPicker selectRow:row inComponent:i animated:YES]; //uses that integer to select the amount picker row
-            
         }else if (i == 4) {
-            
             //Component 4 contains the decimal place so it will always be on row 0 because it only has one row
-            
             [self.amountPicker selectRow:0 inComponent:i animated:YES];
         }
-        
-        
-        
-
         [self showAmount];
         
         
     }
     
     //Set up infomation field to existing value
-    
     [self.infomationField setText:[self.debtDictionary objectForKey:@"infomation"]];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,14 +99,15 @@
 #pragma mark - Picker View Data Source Methods
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    
     return 7;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:
 (NSInteger)component{
+    
     NSInteger rows;
     
+    //All components have values 0 - 9 except component 4 which serves as a decimal point
     if (component == 4) {
         rows = 1;
     } else {
@@ -154,10 +124,10 @@
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component{
     
-    
-    
+    //sets the title for each row to be a integer from 0 to 9
     NSString *rowvalue = [NSString stringWithFormat:@"%i",(int)row];
     
+    //sets the 4th component to be a decimal place
     if (component == 4) {
         rowvalue = @".";
     }
@@ -243,7 +213,7 @@
     
     @catch (NSException *exception) {
         
-        
+        //displays an alert to the user if there was an error creating the debt, this is almost always because the user did not select an essential entry in the new debt form
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -261,21 +231,13 @@
 - (IBAction)toggleNotification:(id)sender {
     
     // fades the pickerview out when the user does not want the app to produce a reminder notification
-    
     if (self.notificationSwitch.on == 1) {
-        
         self.datePicker.enabled = 1;
         self.datePicker.alpha = 1;
-        
-        
     }else{
-        
         self.datePicker.enabled = 0;
         self.datePicker.alpha = 0.4;
-        
     }
-    
-    
 }
 
 
@@ -308,7 +270,6 @@
     
     //the amount stored in the viewcontroller is then updated to match the value calculated from the picker view
     self.amount = [NSNumber numberWithFloat:tempAmount];
-    
     NSString *amount = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
     
     

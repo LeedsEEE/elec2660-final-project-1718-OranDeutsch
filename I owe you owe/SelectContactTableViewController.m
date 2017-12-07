@@ -34,10 +34,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    //Calls the internal "load contacts" method into an array of names, uses the size to determine the amount of rows
     self.contactNames = [self loadContacts];
-    
     int rows = (int)[self.contactNames count];
-    
     return rows;
 }
 
@@ -45,10 +44,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell" forIndexPath:indexPath];
     
+    //Populates the cells with the names of the contacts
     self.contactNames = [self loadContacts];
-    
     cell.textLabel.text = [self.contactNames objectAtIndex:indexPath.row];
-    
     return cell;
 }
 
@@ -95,26 +93,18 @@
 
     
     NSString *payeeName = [self.contactNames objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-    
     int payeeID = [Payee newPayeeID];
-    
     NSDictionary *newPayee = @{@"name" : payeeName,
                                @"payeeID" : [NSNumber numberWithInt:payeeID]};
     
-    
     [Payee AddPayeeFromDictionary:newPayee];
-    
-
-    
-    
     
 }
 
 
 -(NSMutableArray *)loadContacts {
+    //Creates a new contact store
     CNContactStore *store = [[CNContactStore alloc] init];
-
-    
     
     //keys with fetching properties
     NSArray *keys = @[CNContactFamilyNameKey, CNContactGivenNameKey];
@@ -122,21 +112,24 @@
     
     
     //uses the contacts libary to search through the users contacts before assigning all the enteries to a simple array
-    
     CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     NSError *error;
+    
     [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * __nonnull contact, BOOL * __nonnull stop) {
         if (error) {
             
             NSLog(@"error fetching contacts %@", error);
             
         }else{
-            NSString *newContact = [NSString stringWithFormat:@"%@ %@",contact.givenName,contact.familyName];
             
+            //creates string from the given name and family name of the contact into one name as I have no need to seperate the two names
+            NSString *newContact = [NSString stringWithFormat:@"%@ %@",contact.givenName,contact.familyName];
             [tempContacts addObject:newContact];
         }
     }];
     
+    //Sorts the array alphabetically, found on https://stackoverflow.com/questions/4723697/how-can-i-sort-an-nsmutablearray-alphabetically
+    [tempContacts sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     return tempContacts;
 }
