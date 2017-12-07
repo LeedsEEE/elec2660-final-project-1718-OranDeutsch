@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgU-Mk-H0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2554" y="394"/>
+            <point key="canvasLocation" x="-1990" y="331"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="8pQ-85-g2c">
@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28W-YO-Cv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2554.4000000000001" y="1249.9250374812596"/>
+            <point key="canvasLocation" x="-1989" y="1250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7eF-XO-GRo">
@@ -409,21 +409,19 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Kk-bg-JKG" firstAttribute="trailing" secondItem="zut-Sf-XWP" secondAttribute="trailingMargin" id="3T3-Zl-UB5"/>
+                            <constraint firstItem="mKR-Eo-u3u" firstAttribute="top" secondItem="3gI-1W-Qic" secondAttribute="bottom" constant="8" id="3TD-4i-I1K"/>
+                            <constraint firstItem="3gI-1W-Qic" firstAttribute="top" secondItem="4L5-2o-7ub" secondAttribute="bottom" constant="8" id="7Ev-NQ-3H2"/>
                             <constraint firstItem="mKR-Eo-u3u" firstAttribute="leading" secondItem="zut-Sf-XWP" secondAttribute="leadingMargin" id="7ND-B2-cS0"/>
                             <constraint firstItem="qMj-co-tMK" firstAttribute="top" secondItem="mKR-Eo-u3u" secondAttribute="bottom" constant="8" id="Ah9-0Q-A0y"/>
-                            <constraint firstItem="3gI-1W-Qic" firstAttribute="leading" secondItem="zut-Sf-XWP" secondAttribute="leadingMargin" id="Ddt-x0-t9X"/>
-                            <constraint firstItem="3gI-1W-Qic" firstAttribute="top" secondItem="zut-Sf-XWP" secondAttribute="top" constant="72" id="MVX-WS-bXy"/>
                             <constraint firstItem="6Kk-bg-JKG" firstAttribute="top" secondItem="qMj-co-tMK" secondAttribute="bottom" constant="8" id="R1G-VU-cnB"/>
-                            <constraint firstAttribute="trailing" secondItem="3gI-1W-Qic" secondAttribute="trailing" constant="16" id="XyY-K2-xs3"/>
+                            <constraint firstItem="3gI-1W-Qic" firstAttribute="trailing" secondItem="zut-Sf-XWP" secondAttribute="trailingMargin" id="XFr-KO-Yof"/>
                             <constraint firstItem="6Kk-bg-JKG" firstAttribute="leading" secondItem="zut-Sf-XWP" secondAttribute="leadingMargin" id="f7J-w5-4wf"/>
                             <constraint firstItem="qMj-co-tMK" firstAttribute="leading" secondItem="zut-Sf-XWP" secondAttribute="leadingMargin" id="k6m-xy-0Py"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mKR-Eo-u3u" secondAttribute="trailing" id="lDn-VE-tgw"/>
                             <constraint firstItem="qMj-co-tMK" firstAttribute="trailing" secondItem="zut-Sf-XWP" secondAttribute="trailingMargin" id="muG-Om-dUD"/>
                             <constraint firstItem="RJB-BT-f3x" firstAttribute="top" secondItem="6Kk-bg-JKG" secondAttribute="bottom" constant="8" id="myT-lh-HmW"/>
-                            <constraint firstItem="mKR-Eo-u3u" firstAttribute="top" secondItem="3gI-1W-Qic" secondAttribute="bottom" constant="8" id="r6C-28-nVg"/>
-                            <constraint firstItem="3gI-1W-Qic" firstAttribute="trailing" secondItem="zut-Sf-XWP" secondAttribute="trailingMargin" id="tVD-pf-j3s"/>
+                            <constraint firstItem="3gI-1W-Qic" firstAttribute="leading" secondItem="zut-Sf-XWP" secondAttribute="leadingMargin" id="ner-wb-8Ud"/>
                             <constraint firstItem="6Kk-bg-JKG" firstAttribute="height" secondItem="qMj-co-tMK" secondAttribute="height" id="tq3-WZ-a8z"/>
-                            <constraint firstItem="3gI-1W-Qic" firstAttribute="leading" secondItem="zut-Sf-XWP" secondAttribute="leading" constant="16" id="uAr-Ec-ie8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View Debt" id="EAP-A0-zaY"/>
@@ -1403,7 +1401,7 @@
         <image name="icons8-settings-40.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lkP-0E-sz4"/>
+        <segue reference="5wD-qr-n0I"/>
         <segue reference="cEc-fw-IAQ"/>
     </inferredMetricsTieBreakers>
 </document>

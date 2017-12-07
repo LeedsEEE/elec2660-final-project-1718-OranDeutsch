@@ -19,7 +19,7 @@
     
     
  
-    
+    //Tableview delegate and datasource set to self 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -30,18 +30,14 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    //Reloads the table and changes the title every time the view appears
     [self.tableView reloadData];
     [self.tabBarController setTitle:@"Paid Debts"];
     
     //Gives the user some visual feedback that there is no data to display
-    
     if ([self.tableView numberOfRowsInSection:0] == 0) {
-        
         [self.view makeToast:@"No paid debts to display"];
-        
     }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

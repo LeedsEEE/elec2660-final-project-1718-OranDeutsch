@@ -18,22 +18,24 @@
     [super viewDidLoad];
     
     //Picker view setup
-    
     self.amountPicker.delegate = self;
     self.amountPicker.dataSource = self;
     
+    //infomation text field setup
     self.infomationField.delegate = self;
     
+    //Imports current debt infomation from a method in the debt coreData class
     self.debtDictionary = [Debt ViewDebtFromId: self.debtID];
     
     //disable the user from selected a date below the current date for notifications
-    
     self.datePicker.minimumDate = [NSDate date];
     
     
-    
+    //To keep the title neat the first word in the "name" is extracted, usually this will be the first name of the payee
     NSString *firstName = [[[self.debtDictionary objectForKey:@"name"] componentsSeparatedByString:@" "] objectAtIndex:0];
     
+    
+    //Formats the title string depending on if the debt is to or from the payee
     if ([[self.debtDictionary objectForKey:@"IOweDebt"] integerValue] == 1) {
         
         self.titleLabel.text = [NSString stringWithFormat:@"Debt to %@",firstName];
@@ -46,15 +48,13 @@
     }
     
     
-    self.amount = [self.debtDictionary objectForKey:@"amount"] ;
-    
-    
-    self.amountLabel.text = [Debt amountString:self.amount];
+    //Assigns the amount label to the value of the debt being modified
+    self.amountLabel.text = [Debt amountString:[self.debtDictionary objectForKey:@"amount"]];
     
     
 
     
-    //Set up date picker to current due date
+    //Set up date picker to current due date, if there is no due data as the user has disabled notifications then the datw picker is disabled and faded out
     
     
     if ([[self.debtDictionary objectForKey:@"sendNotification"]integerValue] == 1) {
@@ -86,26 +86,22 @@
         int stringLength = (int)[amountString length];
         
         while (stringLength < 7) {
+            //loops so the string will be in the formalt XXXX.XX, for example 32.2 will become 0032.20 or conversion will result in an invaid output
             
             amountString = [NSString stringWithFormat:@"0%@", amountString];
             stringLength = (int)[amountString length];
         }
         
         
-        if (i < 4) {
-        
+        if (i != 4)  {
             
-            NSString *singleChar = [amountString substringWithRange:NSMakeRange(i, 1)];
-            NSInteger row = [singleChar intValue];
-            [self.amountPicker selectRow:row inComponent:i animated:YES];
-            
-        }else if ( i > 4) {
-            
-            NSString *singleChar = [amountString substringWithRange:NSMakeRange(i, 1)];
-            NSInteger row = [singleChar intValue];
-            [self.amountPicker selectRow:row inComponent:i animated:YES];
+            NSString *singleChar = [amountString substringWithRange:NSMakeRange(i, 1)]; //Makes a new string of just one number
+            NSInteger row = [singleChar intValue]; //turns that character into a integer of equal value
+            [self.amountPicker selectRow:row inComponent:i animated:YES]; //uses that integer to select the amount picker row
             
         }else if (i == 4) {
+            
+            //Component 4 contains the decimal place so it will always be on row 0 because it only has one row
             
             [self.amountPicker selectRow:0 inComponent:i animated:YES];
         }
@@ -174,8 +170,7 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     
-    //
-    
+    //The amountlabel is updated from the showAmount method
     self.amountLabel.text = [self showAmount];
     
 }
@@ -203,31 +198,32 @@
 
 - (IBAction)saveChanges:(id)sender {
     
-    
+    //Assigns the due date to the current date on the pickerview
     self.dueDate = self.datePicker.date;
     
+    //to prevent a nil error a placeholder string for infomation 
     if ([self.infomationField.text  isEqual: @""]) {
         self.infomationField.text = @"No description given";
     }
     
     //disable due date from being recorded if user does not want a notification
-    
     if (self.notificationSwitch.on == 0) {
         self.dueDate = [NSDate date];
     }
     
-#pragma mark invalid entry checking
+    #pragma mark invalid entry checking
     
     
     
     
     @try {
         
+        //Extracts infomation either from the view or the imported dictionary to create a new debt
         NSDictionary *newDebt = @{@"payee" : [self.debtDictionary objectForKey:@"payee"],
                                   @"payeeID" : [self.debtDictionary objectForKey:@"payeeID"],
                                   @"amount": self.amount,
                                   @"isPaid": [NSNumber numberWithBool:0],
-                                  @"debtID": [NSNumber numberWithInt:-1],
+                                  @"debtID": [NSNumber numberWithInt:-1],       //The value for debt ID is assigned in the AddDebt method, -1 is used for troubleshooting
                                   @"dateStarted": [self.debtDictionary objectForKey:@"dateStarted"],
                                   @"dateDue" : self.dueDate,
                                   @"infomation": self.infomationField.text,
@@ -237,8 +233,7 @@
                                   };
         
         
-        NSLog(@"creating new debt from : %@", newDebt);
-        
+        //If the dictionary can be loaded then it'll be safe to delete the old debt entry and create a new one with the new details
         [Debt deleteDebtFromID:(int)self.debtID];
         [Debt AddDebtFromDictionary:newDebt];
         
@@ -289,26 +284,29 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
+    
+    //Closes the keyboard if the user hits return
     [textField resignFirstResponder];
     
     return YES;
     
 }
 
-
+#pragma mark supporting methods
 
 -(NSString *) showAmount {
     
     
     //creates a value for amount from theinput on the picker view
-    
-    float tempAmount = [self.amountPicker selectedRowInComponent:0] * 1000;
+    float tempAmount =        [self.amountPicker selectedRowInComponent:0] * 1000;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:1] * 100;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:2] * 10;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:3] * 1;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:5] * 0.1;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:6] * 0.01;
     
+    
+    //the amount stored in the viewcontroller is then updated to match the value calculated from the picker view
     self.amount = [NSNumber numberWithFloat:tempAmount];
     
     NSString *amount = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];

@@ -19,18 +19,19 @@
     [super viewDidLoad];
    
     
-    //set up datasources and delegate for relevant objects
-    
+    //set up datasource and delegate for the amount picker
     self.amountPicker.delegate = self;
     self.amountPicker.dataSource = self;
     
-    self.amount = [NSNumber numberWithFloat:0];
-    
-    self.descriptionTextField.delegate = self;
+    //Sets the inital amount to 0.00
+    self.amount = [NSNumber numberWithFloat:0.00];
     self.amountLabel.text = [self showAmount];
     
-    //disable the user from selected a date below the current date for notifications
+    //set up delegate for the description text field
+    self.descriptionTextField.delegate = self;
     
+    
+    //disable the user from selected a date below the current date for notifications
     self.datePicker.minimumDate = [NSDate date];
     
     [self resetView];
@@ -40,17 +41,14 @@
     [super viewWillAppear:animated];
     
     //set title to change when view shows
-    
     [self.tabBarController setTitle:@"New Debt"];
     [self showAmount];
-    
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     //Updates the amount label incase the currency has been changed when the user was on a different view
-    
     self.amountLabel.text = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
 }
 
@@ -64,7 +62,6 @@
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     
     //as I am working to 6 significant figures and a decimal place I need 7 components
-    
     return 7;
 }
 
@@ -73,7 +70,6 @@
     NSInteger rows;
     
     //sets 10 rows for ever component except the decimal place component at 4
-    
     if (component == 4) {
         rows = 1;
     } else {
@@ -91,7 +87,6 @@
             forComponent:(NSInteger)component{
     
     //sets the rows to a value from 0 to 9 other than the decimal place component
-    
     NSString *rowvalue = [NSString stringWithFormat:@"%i",(int)row];
     
     if (component == 4) {
@@ -108,7 +103,6 @@
     
     
     //sets the amount lavvel to a function which turns the picker view into a amount float and then into a string with the currency symbol
-    
     self.amountLabel.text = [self showAmount];
     
 }
@@ -130,7 +124,7 @@
 
 - (IBAction)payeeSelectComplete:(id)sender {
     
-    
+    //Sets the payee label to the name of the payee that is imprted from the segue
     self.payeeLabel.text = self.payeeName;
     
     
@@ -143,7 +137,6 @@
 - (IBAction)saveDebt:(id)sender {
     
     //conditions data inputs to avoid errors
-    
     self.dueDate = self.datePicker.date;
     
     if ([self.descriptionTextField.text  isEqual: @""]) {
@@ -151,20 +144,17 @@
     }
     
     //disable due date from being recorded if user does not want a notification
-    
     if (self.notificationSwitch.on == 0) {
         self.dueDate = [NSDate date];
     }
     
     
-#pragma mark invalid entry checking
+    #pragma mark invalid entry checking
     
     //try catch used to detect errors inputing data into a dictionary
-    
-    if ([self.amount floatValue] != 0.0) {
+    if ([self.amount floatValue] > 0.00) {
     
         @try {
-        
         
             NSDictionary *newDebt = @{@"payee" : self.payeeName,
                                       @"payeeID" : self.payeeID,
@@ -180,25 +170,20 @@
         
         
         
-        
-            NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
-        
-            NSLog(@"Creating new debt from dictionary : %@", log);
+            //Calls a method to turn the dictionary into a new debt object in the core data stack
+            [Debt AddDebtFromDictionary:newDebt];
         
         
             //Uses the toast libary to give the user visual feedback that the debt has been entered into the system
-        
-            [self.view makeToast:@"New Debt Created"];
+            [self.view makeToast:@"New debt created"];
         
             //Calls a function to bring the view to its default position
-        
             [self resetView];
         }
     
         @catch (NSException *exception) {
         
-        //uses a UI alert controller
-        
+        //uses a UI alert controller to inform the user that they have entered an invalid entry
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alertController animated:YES completion:nil];
@@ -210,7 +195,6 @@
     }else{
         
         //Sends UI alert informing the user they have entered a debt with a value of 0
-        
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter an amount greater than 0" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -221,19 +205,12 @@
 - (IBAction)toggleNotifications:(id)sender {
     
     //fades out the date picker when the user disables notifications
-    
-    
     if (self.notificationSwitch.on == 1) {
-        
         self.datePicker.enabled = 1;
         self.datePicker.alpha = 1;
-        
-        
     }else{
-        
         self.datePicker.enabled = 0;
         self.datePicker.alpha = 0.4;
-        
     }
 }
 
@@ -242,12 +219,9 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     //closes the keyboard when the user types "enter"
-    
-    
     [textField resignFirstResponder];
     
     return YES;
-    
 }
 
 
@@ -257,7 +231,6 @@
 -(NSString *) showAmount {
     
     //takes each element of the pickerview and multiplies it by its respective order of magnitude
-    
     float tempAmount = [self.amountPicker selectedRowInComponent:0] * 1000;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:1] * 100;
     tempAmount = tempAmount + [self.amountPicker selectedRowInComponent:2] * 10;
@@ -267,49 +240,40 @@
     
     
     //Sets the amount value and then calls the Debt method to create a string with the users selected currency
-    
     self.amount = [NSNumber numberWithFloat:tempAmount];
     
-    
-    
+    //Creates the final string from the "amount string" method in my debt class
     NSString *amount = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
-    
     
     return amount;
 }
 
 -(void) resetView {
     
-    //reset amount picker
-    
+    //reset amount
     self.amount = [NSNumber numberWithFloat:0.0];
     
+    //reset amount picker
     for (int i = 0; i < 7; i++) {
-        
         [self.amountPicker selectRow:0 inComponent:i animated:YES];
-        
     }
     
     //reset date picker to current date
-    
     [self.datePicker setDate:[NSDate date]];
     
     //reset notification switch back to disabled
-    
     [self.notificationSwitch setOn:NO];
-    
     self.datePicker.enabled = 0;
     self.datePicker.alpha = 0.4;
     
     //update labels to match
-    
     self.amountLabel.text = [self showAmount];
     self.payeeName = nil;
     self.payeeID = nil;
-    
     self.payeeLabel.text = @"Select Payee";
     
-    
+    //Scroll the table view so the user views the top
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
 
