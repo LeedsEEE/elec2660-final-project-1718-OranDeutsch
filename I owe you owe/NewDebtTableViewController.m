@@ -42,9 +42,15 @@
     //set title to change when view shows
     
     [self.tabBarController setTitle:@"New Debt"];
+    [self showAmount];
     
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.amountLabel.text = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -153,53 +159,60 @@
     
     //try catch used to detect errors inputing data into a dictionary
     
-    @try {
-        
-        
-        NSDictionary *newDebt = @{@"payee" : self.payeeName,
-                                  @"payeeID" : self.payeeID,
-                                  @"amount": self.amount,
-                                  @"isPaid": [NSNumber numberWithBool:0],
-                                  @"debtID": [NSNumber numberWithInt:-1],
-                                  @"dateStarted": [NSDate date],
-                                  @"dateDue" : self.dueDate,
-                                  @"infomation": self.descriptionTextField.text,
-                                  @"imOwedDebt" : [NSNumber numberWithInt:self.ImOwedSwitch.on],
-                                  @"iOweDebt" : [NSNumber numberWithInt:!(self.ImOwedSwitch.on)],
-                                  @"sendNotification" : [NSNumber numberWithInt:(self.notificationSwitch.on)]};
-        
-        
-        
-        
-        NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
-        
-        NSLog(@"Creating new debt from dictionary : %@", log);
-        
-        
-        //Uses the toast libary to give the user visual feedback that the debt has been entered into the system
-        
-        [self.view makeToast:@"New Debt Created"];
-        
-        //Calls a function to bring the view to its default position
-        
-        [self resetView];
-    }
+    if ([self.amount floatValue] != 0.0) {
     
-    @catch (NSException *exception) {
+        @try {
+        
+        
+            NSDictionary *newDebt = @{@"payee" : self.payeeName,
+                                      @"payeeID" : self.payeeID,
+                                      @"amount": self.amount,
+                                      @"isPaid": [NSNumber numberWithBool:0],
+                                      @"debtID": [NSNumber numberWithInt:-1],
+                                      @"dateStarted": [NSDate date],
+                                      @"dateDue" : self.dueDate,
+                                      @"infomation": self.descriptionTextField.text,
+                                      @"imOwedDebt" : [NSNumber numberWithInt:self.ImOwedSwitch.on],
+                                      @"iOweDebt" : [NSNumber numberWithInt:!(self.ImOwedSwitch.on)],
+                                      @"sendNotification" : [NSNumber numberWithInt:(self.notificationSwitch.on)]};
+        
+        
+        
+        
+            NSString *log = [Debt AddDebtFromDictionary:newDebt].description;
+        
+            NSLog(@"Creating new debt from dictionary : %@", log);
+        
+        
+            //Uses the toast libary to give the user visual feedback that the debt has been entered into the system
+        
+            [self.view makeToast:@"New Debt Created"];
+        
+            //Calls a function to bring the view to its default position
+        
+            [self resetView];
+        }
+    
+        @catch (NSException *exception) {
         
         //uses a UI alert controller
         
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Important Entry not selected" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
         
         
-    }
+        }
     
 
-    
-    
+    }else{
         
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please enter an amount greater than 0" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
+    
 }
 - (IBAction)toggleNotifications:(id)sender {
     

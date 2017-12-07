@@ -10,6 +10,8 @@
 
 @interface Currency : NSObject
 
+//Object definition of object currency
+
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *symbol;
 

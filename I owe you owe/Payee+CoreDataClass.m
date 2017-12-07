@@ -10,6 +10,8 @@
 
 @implementation Payee
 
+#pragma mark add objects to payees
+
 + (Payee *) AddPayeeFromDictionary:(NSDictionary *)payeeInfo{
     
     //This code uses elements of HuxTek's youtube tutorial series
@@ -55,6 +57,8 @@
     
     
 }
+
+#pragma mark retun objects from payees
 
 + (NSArray *) returnPayees{
     
@@ -103,69 +107,8 @@
     
 }
 
-+ (int)newPayeeID{
-    
-    //This code uses elements of HuxTek's youtube tutorial series
-    
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
-    NSError *error;
-    
-    //create a new fetch request of all objects in payee entity
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    request = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
-    
-    NSUInteger newID = [context countForFetchRequest:request error:&error];
-    
-    //As an unselected tableview would output a selected row of "0" if there is no selected row I have to make sure a payee with ID of 0 would never exist
-    
-    if (newID == 0) {
-        newID = 1;
-    }
-    
-    //loads up an array to check that generated payee ID value is unique, adds 1 until it is
-    
-    
-    NSArray *payeeIDs = [context executeFetchRequest:request error:&error];    
-    NSMutableArray *results = [[NSMutableArray alloc]init];
-    
-    
-    
-    Payee *payeeEntity;
-    for (payeeEntity in payeeIDs) {
-        
-        [results addObject: [NSNumber numberWithLong:[payeeEntity.payeeID integerValue]]];
-        
-    }
-    
-    
-    while ([results containsObject:[NSNumber numberWithInt:newID]]) {
-        newID++;
-    }
-    
-    
-    return (int)newID;
-}
 
-
-+ (NSDictionary *)payeeEntityToDictonary:(Payee *)payee{
-    
-    NSMutableDictionary *payeeDict = [[NSMutableDictionary alloc] init];
-    
-    //puts payee infomation into new dictionary
-    
-    payeeDict[@"name"] = payee.name;
-    payeeDict[@"payeeID"] = payee.payeeID;
-    
-    
-    return payeeDict;
-    
-    //I had an issue with data being carried over, this reset fixed it
-    
-    payeeDict = nil;
-}
-
+#pragma mark delete objects in Payees methods
 
 + (void)deletePayeeFromID: (NSInteger)payeeID{
     
@@ -227,6 +170,8 @@
     [context save:nil];
 }
 
+#pragma mark supporting untility methods
+
 + (BOOL)payeeHasDebts: (Payee *)payee{
     
     //This code uses elements of HuxTek's youtube tutorial series
@@ -255,6 +200,69 @@
     
     
     return hasDebts;
+}
+
++ (int)newPayeeID{
+    
+    //This code uses elements of HuxTek's youtube tutorial series
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    NSError *error;
+    
+    //create a new fetch request of all objects in payee entity
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Payee"];
+    
+    NSUInteger newID = [context countForFetchRequest:request error:&error];
+    
+    //As an unselected tableview would output a selected row of "0" if there is no selected row I have to make sure a payee with ID of 0 would never exist
+    
+    if (newID == 0) {
+        newID = 1;
+    }
+    
+    //loads up an array to check that generated payee ID value is unique, adds 1 until it is
+    
+    
+    NSArray *payeeIDs = [context executeFetchRequest:request error:&error];
+    NSMutableArray *results = [[NSMutableArray alloc]init];
+    
+    
+    
+    Payee *payeeEntity;
+    for (payeeEntity in payeeIDs) {
+        
+        [results addObject: [NSNumber numberWithLong:[payeeEntity.payeeID integerValue]]];
+        
+    }
+    
+    
+    while ([results containsObject:[NSNumber numberWithInt:(int)newID]]) {
+        newID++;
+    }
+    
+    
+    return (int)newID;
+}
+
+
++ (NSDictionary *)payeeEntityToDictonary:(Payee *)payee{
+    
+    NSMutableDictionary *payeeDict = [[NSMutableDictionary alloc] init];
+    
+    //puts payee infomation into new dictionary
+    
+    payeeDict[@"name"] = payee.name;
+    payeeDict[@"payeeID"] = payee.payeeID;
+    
+    
+    return payeeDict;
+    
+    //I had an issue with data being carried over, this reset fixed it
+    
+    payeeDict = nil;
 }
 
 @end

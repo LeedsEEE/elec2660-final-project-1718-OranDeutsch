@@ -113,7 +113,7 @@
         
         
 
-        
+        [self showAmount];
         
         
     }
@@ -311,7 +311,7 @@
     
     self.amount = [NSNumber numberWithFloat:tempAmount];
     
-    NSString *amount = [NSString stringWithFormat:@"£%.2f", tempAmount];
+    NSString *amount = [NSString stringWithFormat:@"%@", [Debt amountString:self.amount]];
     
     
     return amount;
