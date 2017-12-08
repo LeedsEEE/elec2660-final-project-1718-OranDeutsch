@@ -16,9 +16,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
-
-    
 }
 
     
@@ -29,8 +26,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,14 +35,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
+    //Calls all debts which the user owes and have been paid
     self.IOweDebts = [Debt returnDebts:0 owed:0];
-    
-    
-    int numberOfRows;
-    
-    numberOfRows = (int)[self.IOweDebts count];
-    
+    int numberOfRows = (int)[self.IOweDebts count];
     return numberOfRows;
 }
 
@@ -55,14 +45,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"iowecell" forIndexPath:indexPath];
     
+    //Populates the cell with the name of the payee and the amount they're owed with their selected currency
     cell.textLabel.text = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    
-    
     NSNumber *amountVal = [[self.IOweDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
-    
     cell.detailTextLabel.text = [Debt amountString:amountVal];
 
-    
     return cell;
 }
 

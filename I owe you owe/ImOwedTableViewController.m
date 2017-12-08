@@ -34,9 +34,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    //Calls all upaid debts that that the user is owed by others
     self.ImOwedDebts = [Debt returnDebts:0 owed:1];
-    
-    
     return (int)[self.ImOwedDebts count];
 }
 
@@ -44,15 +43,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imowedcell" forIndexPath:indexPath];
     
-    
-
-    
-    
+    //Populates the cell with their name and the amount they're owed
     NSNumber *amountVal = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"amount"];
-    
-    
     cell.textLabel.text = [[self.ImOwedDebts objectAtIndex:indexPath.row]objectForKey:@"name"];
-    
     cell.detailTextLabel.text = [Debt amountString:amountVal];;
     
     return cell;

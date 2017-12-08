@@ -21,6 +21,7 @@
 
 - (instancetype)init
 {
+    //Loads a list of payees on initalisation
     self = [super init];
     if (self) {
         self.payeeArray = [Payee returnPayees];
@@ -45,9 +46,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    self.payeeArray = [Payee returnPayees];
     
+    //Sets the number of rows to amount of payees
+    self.payeeArray = [Payee returnPayees];
     int rows = (int)[self.payeeArray count];
     
     return rows;
@@ -57,15 +58,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"payee" forIndexPath:indexPath];
     
-    
+    //Populates the cell text with the name of the respective payee
     cell.textLabel.text = [[self.payeeArray objectAtIndex:indexPath.row]objectForKey:@"name"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
     
     self.selectedRow = (int)indexPath.row;
     
