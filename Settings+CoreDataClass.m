@@ -26,9 +26,9 @@
     
     
     //If there are no called settings (the app cant find any objects in an array then a new settings object is created
-    if ([self firstTimeLoad] == YES) {
+    @try {
         CurrentSettings = [fetchedObject objectAtIndex:0];
-    }else{
+    }@catch (NSException *exception) {
         CurrentSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:context];
     }
     
@@ -39,6 +39,7 @@
     //Updates and saves the object
     CurrentSettings.currency = tempCurrency.symbol;
     CurrentSettings.currencyID = [NSNumber numberWithInt: (int32_t)currencyID];
+    
     [context save:nil];
     
 }

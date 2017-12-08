@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "UIView+Toast.h"
 #import <UserNotifications/UserNotifications.h>
 
 

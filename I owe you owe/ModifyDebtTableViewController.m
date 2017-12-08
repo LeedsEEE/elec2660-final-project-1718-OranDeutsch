@@ -60,19 +60,21 @@
 
     //Set up amount picker to current value
     
+    
     //As I needed to split up the float into a series of singular integers I had to convert the 2 decimal place float into a string, make sure it had 7 figures displayed and then seperate each value.
+    
+    self.amount = [self.debtDictionary objectForKey:@"amount"];
+    NSString *amountString = [NSString stringWithFormat:@"%.2f", [self.amount floatValue]];
+    int stringLength = (int)[amountString length];
+    
+    while (stringLength < 7) {
+        //loops so the string will be in the formalt XXXX.XX, for example 32.2 will become 0032.20 or conversion will result in an invaid output
+        amountString = [NSString stringWithFormat:@"0%@", amountString];
+        stringLength = (int)[amountString length];
+    }
     
     //This is to prevent the user having to enter their value again even if they have no intentions to modify it
     for (int i = 0; i < 7; i++) {
-        NSString *amountString = [NSString stringWithFormat:@"%.2f", [self.amount floatValue]];
-        int stringLength = (int)[amountString length];
-        
-        while (stringLength < 7) {
-            //loops so the string will be in the formalt XXXX.XX, for example 32.2 will become 0032.20 or conversion will result in an invaid output
-            amountString = [NSString stringWithFormat:@"0%@", amountString];
-            stringLength = (int)[amountString length];
-        }
-        
         if (i != 4)  {
             NSString *singleChar = [amountString substringWithRange:NSMakeRange(i, 1)]; //Makes a new string of just one number
             NSInteger row = [singleChar intValue]; //turns that character into a integer of equal value
@@ -81,11 +83,14 @@
             //Component 4 contains the decimal place so it will always be on row 0 because it only has one row
             [self.amountPicker selectRow:0 inComponent:i animated:YES];
         }
-        [self showAmount];
+        
+        
+        
         
         
     }
     
+    [self showAmount];
     //Set up infomation field to existing value
     [self.infomationField setText:[self.debtDictionary objectForKey:@"infomation"]];
 }

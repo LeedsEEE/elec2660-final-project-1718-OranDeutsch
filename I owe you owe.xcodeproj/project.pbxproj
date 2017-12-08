@@ -19,6 +19,7 @@
 		621A37F91FCC86FD005C4978 /* Payee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 621A37F31FCC86FD005C4978 /* Payee+CoreDataProperties.m */; };
 		622412BF1FD587BC00373611 /* ModifyDebtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622412BE1FD587BC00373611 /* ModifyDebtTableViewController.m */; };
 		623A62FD1FD6B6F9009D56F7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 623A62FC1FD6B6F9009D56F7 /* UIView+Toast.m */; };
+		6254724E1FDAD928009FD8F0 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6254724D1FDAD928009FD8F0 /* Readme.rtf */; };
 		625574331FD747060082783F /* welcome screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 625574321FD747060082783F /* welcome screen.png */; };
 		625574351FD748B10082783F /* app icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 625574341FD748B10082783F /* app icon 2.png */; };
 		625574371FD74A950082783F /* app background.png in Resources */ = {isa = PBXBuildFile; fileRef = 625574361FD74A950082783F /* app background.png */; };
@@ -122,6 +123,7 @@
 		623CE7281FD6E73200163841 /* I Owe You Owe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I Owe You Owe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623CE7291FD6E73200163841 /* I owe you oweTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623CE72A1FD6E73200163841 /* I owe you oweUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I owe you oweUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6254724D1FDAD928009FD8F0 /* Readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		625574321FD747060082783F /* welcome screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome screen.png"; sourceTree = "<group>"; };
 		625574341FD748B10082783F /* app icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon 2.png"; sourceTree = "<group>"; };
 		625574361FD74A950082783F /* app background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app background.png"; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 		62D4D84C1FC4269500F6B1D4 /* I owe you owe */ = {
 			isa = PBXGroup;
 			children = (
+				6254724D1FDAD928009FD8F0 /* Readme.rtf */,
 				62D4D8501FC4269500F6B1D4 /* AppDelegate.h */,
 				62D4D8511FC4269500F6B1D4 /* AppDelegate.m */,
 				62D4D8591FC4269500F6B1D4 /* Main.storyboard */,
@@ -570,6 +573,7 @@
 				6294C1771FD5F67A00A2B4EE /* icons8-money-40.png in Resources */,
 				3DB70A821FD5EB3800CB57B4 /* Untitled.png in Resources */,
 				6294C16E1FD5F38F00A2B4EE /* icons8-view-details-50.png in Resources */,
+				6254724E1FDAD928009FD8F0 /* Readme.rtf in Resources */,
 				629A2E391FD82294006F8CD3 /* 83pt x2.png in Resources */,
 				6294C1781FD5F67A00A2B4EE /* icons8-payment-history-40.png in Resources */,
 				62D4D85B1FC4269500F6B1D4 /* Main.storyboard in Resources */,
